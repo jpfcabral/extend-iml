@@ -1,0 +1,19 @@
+INDEX VERSION 1.131+C:\Users\jpfca\Documents\turmas\dsl\.metadata\.plugins\org.eclipse.jdt.core
+2492554014.index
+4024959699.index
+759055180.index
+989152104.index
+1799018186.index
+3314985416.index
+689975837.index
+548144765.index
+4086070143.index
+3963649079.index
+2578027250.index
+3407118325.index
+975173489.index
+3417529099.index
+2267432754.index
+1405527374.index
+2728814257.index
+3398916975.index
