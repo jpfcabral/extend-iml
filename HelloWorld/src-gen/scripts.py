@@ -8,14 +8,7 @@ def rotate_image(image, angle):
 	return result
 
 def convert_to_gray(image, luma=False):
-    if luma:
-        params = [0.299, 0.589, 0.114]
-    else:
-        params = [0.2125, 0.7154, 0.0721]    
-    gray_image = np.ceil(np.dot(image[...,:3], params))
-    gray_image[gray_image > 255] = 255
-    
-    return gray_image
+    return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 def blur_image(image, intensity): 
 	size = int(60 * intensity) if intensity >= 0.05 else 3
@@ -25,11 +18,14 @@ def blur_image(image, intensity):
 	return image_t
 
 def equalize_hist(image): 
-	img_to_yuv = cv2.cvtColor(image,cv2.COLOR_BGR2YUV)
-	img_to_yuv[:,:,0] = cv2.equalizeHist(img_to_yuv[:,:,0])
-	hist_equalization_result = cv2.cvtColor(img_to_yuv, cv2.COLOR_YUV2BGR)
-	
-	return hist_equalization_result
+	if (len(image.shape)==3):
+		img_to_yuv = cv2.cvtColor(image,cv2.COLOR_BGR2YUV)
+		img_to_yuv[:,:,0] = cv2.equalizeHist(img_to_yuv[:,:,0])
+		hist_equalization_result = cv2.cvtColor(img_to_yuv, cv2.COLOR_YUV2BGR)
+		return hist_equalization_result
+	elif (len(image.shape)==2):
+		img_eq = cv2.equalizeHist(image)
+		return img_eq
 
 def fill_image(img, size=(_size,_size)):
     h, w = img.shape[:2]
@@ -55,14 +51,16 @@ img = rotate_image(img, 90)
 img = convert_to_gray(img)
 img = rotate_image(img, 45)
 img = blur_image(img, 0.25)
+img = equalize_hist(img)
 
 # DEBUG 
 
-org.xtext.example.iml.extendedIML.impl.ModelImpl@71226ef9
-org.xtext.example.iml.extendedIML.impl.DirImporterImpl@59fb952c (pathDir: no.jpg)
-org.xtext.example.iml.extendedIML.impl.RotateOperationImpl@1cb3db19 (var: A) (degree: 90)
-org.xtext.example.iml.extendedIML.impl.FilterOperationImpl@76aebf35 (var: A)
-org.xtext.example.iml.extendedIML.impl.RotateOperationImpl@149942bf (var: A) (degree: 45)
-org.xtext.example.iml.extendedIML.impl.BlurOperationImpl@11cee7f5 (var: A) (intensity: 25)
-org.xtext.example.iml.extendedIML.impl.ShowImpl@13279dc6 (var: A)
-org.xtext.example.iml.extendedIML.impl.SaveImpl@1073cf80 (var: A)
+org.xtext.example.iml.extendedIML.impl.ModelImpl@3b4302e1
+org.xtext.example.iml.extendedIML.impl.DirImporterImpl@5ad75f3f (pathDir: no.jpg)
+org.xtext.example.iml.extendedIML.impl.RotateOperationImpl@479378 (var: A) (degree: 90)
+org.xtext.example.iml.extendedIML.impl.FilterOperationImpl@2587741e (var: A)
+org.xtext.example.iml.extendedIML.impl.RotateOperationImpl@6f03e45 (var: A) (degree: 45)
+org.xtext.example.iml.extendedIML.impl.BlurOperationImpl@663ea703 (var: A) (intensity: 25)
+org.xtext.example.iml.extendedIML.impl.ShowImpl@5ade24ef (var: A)
+org.xtext.example.iml.extendedIML.impl.SaveImpl@44678c2e (var: A)
+org.xtext.example.iml.extendedIML.impl.EqualizeOperationImpl@436280f1 (var: A)
