@@ -7,6 +7,10 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import org.xtext.example.iml.extendedIML.DirImporter
+import org.xtext.example.iml.extendedIML.Operator
+import java.util.Iterator
+import org.xtext.example.iml.extendedIML.RotateOperation
 
 /**
  * Generates code from your model files on save.
@@ -18,11 +22,30 @@ class ExtendedIMLGenerator extends AbstractGenerator {
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		fsa.generateFile(
 			'scripts.py',
-			header() + resource.allContents
-//				.filter(Model)
-//				.map[name]
+			// Load libs and define main functions
+			header()
+			
+			// Load first image 
+			+ loadImage(
+				resource.allContents
+				.filter(DirImporter)
+				.map[pathDir]
+				.last()
+				.toString()
+			)
+			
+			+ applyOperators(
+				resource.allContents
+				.filter(Operator)
+			)
+
+			// Debug all interpreted lines from IML
+			+ '# DEBUG \n\n'
+			+ resource.allContents
 				.join('\n'))
 	}
+	
+
 	
 	private def header() '''	
 	import numpy as np
@@ -33,5 +56,80 @@ class ExtendedIMLGenerator extends AbstractGenerator {
 		rot_mat = cv2.getRotationMatrix2D(image_center, angle, 1.0)
 		result = cv2.warpAffine(image, rot_mat, image.shape[1::-1], flags=cv2.INTER_LINEAR)
 		return result
+	
+	def convert_to_gray(image, luma=False):
+	    if luma:
+	        params = [0.299, 0.589, 0.114]
+	    else:
+	        params = [0.2125, 0.7154, 0.0721]    
+	    gray_image = np.ceil(np.dot(image[...,:3], params))
+	    gray_image[gray_image > 255] = 255
+	    
+	    return gray_image
+	
+	def blur_image(image, intensity): 
+		size = int(60 * intesity) if intensity >= 0.05 else 3
+		ksize = (size, size)
+		image_t = cv2.blur(image.copy(), ksize, cv2.BORDER_DEFAULT) 
+		
+		return image_t
+	
+	def equalize_hist(image): 
+		img_to_yuv = cv2.cvtColor(img,cv2.COLOR_BGR2YUV)
+		img_to_yuv[:,:,0] = cv2.equalizeHist(img_to_yuv[:,:,0])
+		hist_equalization_result = cv2.cvtColor(img_to_yuv, cv2.COLOR_YUV2BGR)
+		
+		return hist_equalization_result
+	
+	def fill_image(img, size=(_size,_size)):
+	    h, w = img.shape[:2]
+	    c = img.shape[2] if len(img.shape)>2 else 1
+	    if h == w: 
+	        return cv2.resize(img, size, cv2.INTER_AREA)
+	    dif = h if h > w else w
+	    interpolation = cv2.INTER_AREA if dif > (size[0]+size[1])//2 else cv2.INTER_CUBIC
+	    x_pos = (dif - w)//2
+	    y_pos = (dif - h)//2
+	    if len(img.shape) == 2:
+	        mask = np.zeros((dif, dif), dtype=img.dtype)
+	        mask[y_pos:y_pos+h, x_pos:x_pos+w] = img[:h, :w]
+	    else:
+	        mask = np.zeros((dif, dif, c), dtype=img.dtype)
+	        mask[y_pos:y_pos+h, x_pos:x_pos+w, :] = img[:h, :w, :]
+	
+	    return cv2.resize(mask, size, interpolation)
+	
 	'''
+
+	private def String loadImage(CharSequence path) '''
+	img = cv2.imread('«path»')
+	
+	'''
+	
+	private def String applyOperators(Iterator<Operator> op) '''
+	«FOR o : op.toIterable()»
+		«IF o instanceof RotateOperation»
+			img = rotate_image(img, «o.degree»)
+		«ELSE»
+			# OPERADOR NÃO ENCONTRADO
+		«ENDIF»
+	«ENDFOR»
+	
+	'''
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

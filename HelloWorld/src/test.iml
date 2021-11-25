@@ -1,4 +1,4 @@
-images /A/
+images no.jpeg
 rotate A 90
 filter A gray
-blur A
+rotate A 45

@@ -592,6 +592,7 @@ rule__QualifiedPath__Group__3
 	}
 :
 	rule__QualifiedPath__Group__3__Impl
+	rule__QualifiedPath__Group__4
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -603,9 +604,35 @@ rule__QualifiedPath__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getQualifiedPathAccess().getSolidusKeyword_3()); }
+	{ before(grammarAccess.getQualifiedPathAccess().getGroup_3()); }
+	(rule__QualifiedPath__Group_3__0)
+	{ after(grammarAccess.getQualifiedPathAccess().getGroup_3()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__QualifiedPath__Group__4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__QualifiedPath__Group__4__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__QualifiedPath__Group__4__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getQualifiedPathAccess().getSolidusKeyword_4()); }
 	('/')?
-	{ after(grammarAccess.getQualifiedPathAccess().getSolidusKeyword_3()); }
+	{ after(grammarAccess.getQualifiedPathAccess().getSolidusKeyword_4()); }
 )
 ;
 finally {
@@ -660,6 +687,60 @@ rule__QualifiedPath__Group_2__1__Impl
 	{ before(grammarAccess.getQualifiedPathAccess().getIDTerminalRuleCall_2_1()); }
 	RULE_ID
 	{ after(grammarAccess.getQualifiedPathAccess().getIDTerminalRuleCall_2_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__QualifiedPath__Group_3__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__QualifiedPath__Group_3__0__Impl
+	rule__QualifiedPath__Group_3__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__QualifiedPath__Group_3__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getQualifiedPathAccess().getFullStopKeyword_3_0()); }
+	'.'
+	{ after(grammarAccess.getQualifiedPathAccess().getFullStopKeyword_3_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__QualifiedPath__Group_3__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__QualifiedPath__Group_3__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__QualifiedPath__Group_3__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getQualifiedPathAccess().getIDTerminalRuleCall_3_1()); }
+	RULE_ID
+	{ after(grammarAccess.getQualifiedPathAccess().getIDTerminalRuleCall_3_1()); }
 )
 ;
 finally {

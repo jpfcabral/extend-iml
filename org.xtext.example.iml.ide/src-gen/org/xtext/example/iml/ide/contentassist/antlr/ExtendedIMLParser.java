@@ -37,6 +37,7 @@ public class ExtendedIMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getImageImporterAccess().getGroup(), "rule__ImageImporter__Group__0");
 			builder.put(grammarAccess.getQualifiedPathAccess().getGroup(), "rule__QualifiedPath__Group__0");
 			builder.put(grammarAccess.getQualifiedPathAccess().getGroup_2(), "rule__QualifiedPath__Group_2__0");
+			builder.put(grammarAccess.getQualifiedPathAccess().getGroup_3(), "rule__QualifiedPath__Group_3__0");
 			builder.put(grammarAccess.getDirImporterAccess().getGroup(), "rule__DirImporter__Group__0");
 			builder.put(grammarAccess.getRotateOperationAccess().getGroup(), "rule__RotateOperation__Group__0");
 			builder.put(grammarAccess.getFilterOperationAccess().getGroup(), "rule__FilterOperation__Group__0");

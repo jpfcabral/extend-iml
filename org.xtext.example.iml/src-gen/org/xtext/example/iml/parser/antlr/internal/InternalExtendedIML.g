@@ -297,10 +297,24 @@ ruleQualifiedPath returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleT
 			}
 		)*
 		(
+			kw='.'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getQualifiedPathAccess().getFullStopKeyword_3_0());
+			}
+			this_ID_5=RULE_ID
+			{
+				$current.merge(this_ID_5);
+			}
+			{
+				newLeafNode(this_ID_5, grammarAccess.getQualifiedPathAccess().getIDTerminalRuleCall_3_1());
+			}
+		)
+		(
 			kw='/'
 			{
 				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getQualifiedPathAccess().getSolidusKeyword_3());
+				newLeafNode(kw, grammarAccess.getQualifiedPathAccess().getSolidusKeyword_4());
 			}
 		)?
 	)

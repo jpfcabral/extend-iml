@@ -125,13 +125,16 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cSolidusKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final RuleCall cIDTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
-		private final Keyword cSolidusKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cFullStopKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
+		private final Keyword cSolidusKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//QualifiedPath:
-		//    ('/')? ID ('/' ID)* ('/')?;
+		//    ('/')? ID ('/' ID)* ('.' ID) ('/')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('/')? ID ('/' ID)* ('/')?
+		//('/')? ID ('/' ID)* ('.' ID) ('/')?
 		public Group getGroup() { return cGroup; }
 		
 		//('/')?
@@ -149,8 +152,17 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		//ID
 		public RuleCall getIDTerminalRuleCall_2_1() { return cIDTerminalRuleCall_2_1; }
 		
+		//('.' ID)
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_3_0() { return cFullStopKeyword_3_0; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_3_1() { return cIDTerminalRuleCall_3_1; }
+		
 		//('/')?
-		public Keyword getSolidusKeyword_3() { return cSolidusKeyword_3; }
+		public Keyword getSolidusKeyword_4() { return cSolidusKeyword_4; }
 	}
 	public class DirImporterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.DirImporter");
@@ -423,7 +435,7 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//QualifiedPath:
-	//    ('/')? ID ('/' ID)* ('/')?;
+	//    ('/')? ID ('/' ID)* ('.' ID) ('/')?;
 	public QualifiedPathElements getQualifiedPathAccess() {
 		return pQualifiedPath;
 	}
