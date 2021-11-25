@@ -1,5 +1,6 @@
 import numpy as np
 import cv2
+from os import listdir, path, mkdir
 
 def rotate_image(image, angle):
 	image_center = tuple(np.array(image.shape[1::-1]) / 2)
@@ -31,38 +32,17 @@ def equalize_hist(image):
 	
 	return hist_equalization_result
 
-def fill_image(img, size=(_size,_size)):
-    h, w = img.shape[:2]
-    c = img.shape[2] if len(img.shape)>2 else 1
-    if h == w: 
-        return cv2.resize(img, size, cv2.INTER_AREA)
-    dif = h if h > w else w
-    interpolation = cv2.INTER_AREA if dif > (size[0]+size[1])//2 else cv2.INTER_CUBIC
-    x_pos = (dif - w)//2
-    y_pos = (dif - h)//2
-    if len(img.shape) == 2:
-        mask = np.zeros((dif, dif), dtype=img.dtype)
-        mask[y_pos:y_pos+h, x_pos:x_pos+w] = img[:h, :w]
-    else:
-        mask = np.zeros((dif, dif, c), dtype=img.dtype)
-        mask[y_pos:y_pos+h, x_pos:x_pos+w, :] = img[:h, :w, :]
-
-    return cv2.resize(mask, size, interpolation)
-
-img = cv2.imread('no.jpg')
-
-img = rotate_image(img, 90)
-img = convert_to_gray(img)
-img = rotate_image(img, 45)
-img = blur_image(img, 0.25)
-img = equalize_hist(img)
-
-# DEBUG 
-
-org.xtext.example.iml.extendedIML.impl.ModelImpl@17d8206b
-org.xtext.example.iml.extendedIML.impl.DirImporterImpl@264bcac5 (pathDir: no.jpg)
-org.xtext.example.iml.extendedIML.impl.RotateOperationImpl@73f7980c (var: A) (degree: 90)
-org.xtext.example.iml.extendedIML.impl.FilterOperationImpl@5a4efe9d (var: A)
-org.xtext.example.iml.extendedIML.impl.RotateOperationImpl@c4356c7 (var: A) (degree: 45)
-org.xtext.example.iml.extendedIML.impl.BlurOperationImpl@7426b868 (var: A) (intensity: 25)
-org.xtext.example.iml.extendedIML.impl.EqualizeOperationImpl@3b5e6918 (var: A)
+for image_name in listdir('imagens'):
+	image_full_path = path.join('imagens', image_name)
+	img = cv2.imread(image_full_path)
+	if not img is None:
+		img = rotate_image(img, 40)
+		img = convert_to_gray(img)
+		img = rotate_image(img, 45)
+		img = blur_image(img, 0.25)
+		
+		output_dir = path.join('imagens', 'output')
+		if (not path.exists(output_dir)):
+			mkdir(output_dir)
+		output_image_full_path = path.join(output_dir, image_name)
+		cv2.imwrite(output_image_full_path, img)

@@ -28,21 +28,16 @@ import org.xtext.example.iml.extendedIML.RotateOperation;
 public class ExtendedIMLGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    CharSequence _header = this.header();
     final Function1<DirImporter, String> _function = (DirImporter it) -> {
       return it.getPathDir();
     };
-    String _loadImage = this.loadImage(
-      IteratorExtensions.<String>last(IteratorExtensions.<DirImporter, String>map(Iterators.<DirImporter>filter(resource.getAllContents(), DirImporter.class), _function)).toString());
-    String _plus = (_header + _loadImage);
-    String _applyOperators = this.applyOperators(
-      Iterators.<Operator>filter(resource.getAllContents(), Operator.class));
-    String _plus_1 = (_plus + _applyOperators);
-    String _plus_2 = (_plus_1 + "# DEBUG \n\n");
-    String _join = IteratorExtensions.join(resource.getAllContents(), "\n");
-    String _plus_3 = (_plus_2 + _join);
+    final String imagesPath = IteratorExtensions.<String>last(IteratorExtensions.<DirImporter, String>map(Iterators.<DirImporter>filter(resource.getAllContents(), DirImporter.class), _function)).toString();
+    final Iterator<Operator> operators = Iterators.<Operator>filter(resource.getAllContents(), Operator.class);
+    CharSequence _header = this.header();
+    String _processImages = this.processImages(imagesPath, operators);
+    String _plus = (_header + _processImages);
     fsa.generateFile(
-      "scripts.py", _plus_3);
+      "scripts.py", _plus);
   }
   
   private CharSequence header() {
@@ -50,6 +45,8 @@ public class ExtendedIMLGenerator extends AbstractGenerator {
     _builder.append("import numpy as np");
     _builder.newLine();
     _builder.append("import cv2");
+    _builder.newLine();
+    _builder.append("from os import listdir, path, mkdir");
     _builder.newLine();
     _builder.newLine();
     _builder.append("def rotate_image(image, angle):");
@@ -127,64 +124,46 @@ public class ExtendedIMLGenerator extends AbstractGenerator {
     _builder.append("return hist_equalization_result");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("def fill_image(img, size=(_size,_size)):");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("h, w = img.shape[:2]");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("c = img.shape[2] if len(img.shape)>2 else 1");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("if h == w: ");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("return cv2.resize(img, size, cv2.INTER_AREA)");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("dif = h if h > w else w");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("interpolation = cv2.INTER_AREA if dif > (size[0]+size[1])//2 else cv2.INTER_CUBIC");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("x_pos = (dif - w)//2");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("y_pos = (dif - h)//2");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("if len(img.shape) == 2:");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("mask = np.zeros((dif, dif), dtype=img.dtype)");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("mask[y_pos:y_pos+h, x_pos:x_pos+w] = img[:h, :w]");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("else:");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("mask = np.zeros((dif, dif, c), dtype=img.dtype)");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("mask[y_pos:y_pos+h, x_pos:x_pos+w, :] = img[:h, :w, :]");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("return cv2.resize(mask, size, interpolation)");
-    _builder.newLine();
-    _builder.newLine();
     return _builder;
   }
   
-  private String loadImage(final CharSequence path) {
+  private String processImages(final CharSequence path, final Iterator<Operator> operators) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("img = cv2.imread(\'");
+    _builder.append("for image_name in listdir(\'");
     _builder.append(path);
-    _builder.append("\')");
+    _builder.append("\'):");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("image_full_path = path.join(\'");
+    _builder.append(path, "\t");
+    _builder.append("\', image_name)");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("img = cv2.imread(image_full_path)");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("if not img is None:");
+    _builder.newLine();
+    _builder.append("\t\t");
+    String _applyOperators = this.applyOperators(operators);
+    _builder.append(_applyOperators, "\t\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("output_dir = path.join(\'");
+    _builder.append(path, "\t\t");
+    _builder.append("\', \'output\')");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("if (not path.exists(output_dir)):");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("mkdir(output_dir)");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("output_image_full_path = path.join(output_dir, image_name)");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("cv2.imwrite(output_image_full_path, img)");
     _builder.newLine();
     return _builder.toString();
   }
