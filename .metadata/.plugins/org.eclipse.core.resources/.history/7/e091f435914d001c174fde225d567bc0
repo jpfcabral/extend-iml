@@ -1,0 +1,18 @@
+grammar org.xtext.example.iml.ExtendedIML with org.eclipse.xtext.common.Terminals
+
+generate extendedIML "http://www.xtext.org/example/iml/ExtendedIML"
+
+Model:
+	elements+=AbstractElement*;
+	
+AbstractElement:
+	Importer | Operator ;
+	
+Importer:
+	ImageImporter | DirImporter;
+
+ImageImporter:
+	name=ID "=" path=ID;
+	
+DirImporter:
+	"for" "all" "in" name=ID;

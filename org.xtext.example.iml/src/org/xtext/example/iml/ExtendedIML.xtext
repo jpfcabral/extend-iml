@@ -3,7 +3,38 @@ grammar org.xtext.example.iml.ExtendedIML with org.eclipse.xtext.common.Terminal
 generate extendedIML "http://www.xtext.org/example/iml/ExtendedIML"
 
 Model:
-	greetings+=Greeting*;
+	elements+=AbstractElement*;
 	
-Greeting:
-	'Hello' name=ID '!';
+AbstractElement:
+	Importer | Operator ;
+	
+Importer:
+	ImageImporter | DirImporter;
+
+ImageImporter:
+	name=ID "=" importedNamespace=QualifiedImageName;
+	
+QualifiedImageName:
+	ID;
+	
+QualifiedPath:
+	('/')? ID ('/' ID)* ('/')?;
+	
+DirImporter:
+	"images" pathDir=QualifiedPath;
+
+Operator:
+	RotateOperation | FilterOperation | BlurOperation | EqualizeOperation;
+
+RotateOperation:
+		"rotate" ID degree=ID;
+
+FilterOperation:
+	"filter" var=ID "gray";
+
+BlurOperation:
+	"blur" var=ID;
+
+EqualizeOperation:
+	"equalize" var=ID
+;
