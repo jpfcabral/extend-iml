@@ -18,14 +18,14 @@ def convert_to_gray(image, luma=False):
     return gray_image
 
 def blur_image(image, intensity): 
-	size = int(60 * intesity) if intensity >= 0.05 else 3
+	size = int(60 * intensity) if intensity >= 0.05 else 3
 	ksize = (size, size)
 	image_t = cv2.blur(image.copy(), ksize, cv2.BORDER_DEFAULT) 
 	
 	return image_t
 
 def equalize_hist(image): 
-	img_to_yuv = cv2.cvtColor(img,cv2.COLOR_BGR2YUV)
+	img_to_yuv = cv2.cvtColor(image,cv2.COLOR_BGR2YUV)
 	img_to_yuv[:,:,0] = cv2.equalizeHist(img_to_yuv[:,:,0])
 	hist_equalization_result = cv2.cvtColor(img_to_yuv, cv2.COLOR_YUV2BGR)
 	
@@ -49,16 +49,20 @@ def fill_image(img, size=(_size,_size)):
 
     return cv2.resize(mask, size, interpolation)
 
-img = cv2.imread('no.jpeg')
+img = cv2.imread('no.jpg')
 
 img = rotate_image(img, 90)
-# OPERADOR NÃO ENCONTRADO
+img = convert_to_gray(img)
 img = rotate_image(img, 45)
+img = blur_image(img, 0.25)
+img = equalize_hist(img)
 
 # DEBUG 
 
-org.xtext.example.iml.extendedIML.impl.ModelImpl@2c457687
-org.xtext.example.iml.extendedIML.impl.DirImporterImpl@396390cc (pathDir: no.jpeg)
-org.xtext.example.iml.extendedIML.impl.RotateOperationImpl@58379ab7 (var: A) (degree: 90)
-org.xtext.example.iml.extendedIML.impl.FilterOperationImpl@89b184f (var: A)
-org.xtext.example.iml.extendedIML.impl.RotateOperationImpl@f6db695 (var: A) (degree: 45)
+org.xtext.example.iml.extendedIML.impl.ModelImpl@17d8206b
+org.xtext.example.iml.extendedIML.impl.DirImporterImpl@264bcac5 (pathDir: no.jpg)
+org.xtext.example.iml.extendedIML.impl.RotateOperationImpl@73f7980c (var: A) (degree: 90)
+org.xtext.example.iml.extendedIML.impl.FilterOperationImpl@5a4efe9d (var: A)
+org.xtext.example.iml.extendedIML.impl.RotateOperationImpl@c4356c7 (var: A) (degree: 45)
+org.xtext.example.iml.extendedIML.impl.BlurOperationImpl@7426b868 (var: A) (intensity: 25)
+org.xtext.example.iml.extendedIML.impl.EqualizeOperationImpl@3b5e6918 (var: A)

@@ -71,15 +71,18 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     BlurOperation returns BlurOperation
 	 *
 	 * Constraint:
-	 *     var=ID
+	 *     (var=ID intensity=INT)
 	 */
 	protected void sequence_BlurOperation(ISerializationContext context, BlurOperation semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR));
+			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.BLUR_OPERATION__INTENSITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.BLUR_OPERATION__INTENSITY));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getBlurOperationAccess().getVarIDTerminalRuleCall_1_0(), semanticObject.getVar());
+		feeder.accept(grammarAccess.getBlurOperationAccess().getIntensityINTTerminalRuleCall_2_0(), semanticObject.getIntensity());
 		feeder.finish();
 	}
 	

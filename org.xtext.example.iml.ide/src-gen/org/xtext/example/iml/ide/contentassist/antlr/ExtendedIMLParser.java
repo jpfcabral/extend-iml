@@ -51,6 +51,7 @@ public class ExtendedIMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRotateOperationAccess().getDegreeAssignment_2(), "rule__RotateOperation__DegreeAssignment_2");
 			builder.put(grammarAccess.getFilterOperationAccess().getVarAssignment_1(), "rule__FilterOperation__VarAssignment_1");
 			builder.put(grammarAccess.getBlurOperationAccess().getVarAssignment_1(), "rule__BlurOperation__VarAssignment_1");
+			builder.put(grammarAccess.getBlurOperationAccess().getIntensityAssignment_2(), "rule__BlurOperation__IntensityAssignment_2");
 			builder.put(grammarAccess.getEqualizeOperationAccess().getVarAssignment_1(), "rule__EqualizeOperation__VarAssignment_1");
 		}
 	}

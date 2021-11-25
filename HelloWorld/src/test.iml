@@ -1,4 +1,6 @@
-images no.jpeg
+images no.jpg
 rotate A 90
 filter A gray
 rotate A 45
+blur A 25
+equalize A

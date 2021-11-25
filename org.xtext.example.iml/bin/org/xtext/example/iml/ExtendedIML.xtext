@@ -33,7 +33,7 @@ FilterOperation:
 	"filter" var=ID "gray";
 
 BlurOperation:
-	"blur" var=ID;
+	"blur" var=ID intensity=INT;
 
 EqualizeOperation:
 	"equalize" var=ID

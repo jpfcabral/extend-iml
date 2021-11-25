@@ -12,7 +12,10 @@ import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.xtext.example.iml.extendedIML.BlurOperation;
 import org.xtext.example.iml.extendedIML.DirImporter;
+import org.xtext.example.iml.extendedIML.EqualizeOperation;
+import org.xtext.example.iml.extendedIML.FilterOperation;
 import org.xtext.example.iml.extendedIML.Operator;
 import org.xtext.example.iml.extendedIML.RotateOperation;
 
@@ -93,7 +96,7 @@ public class ExtendedIMLGenerator extends AbstractGenerator {
     _builder.append("def blur_image(image, intensity): ");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("size = int(60 * intesity) if intensity >= 0.05 else 3");
+    _builder.append("size = int(60 * intensity) if intensity >= 0.05 else 3");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("ksize = (size, size)");
@@ -110,7 +113,7 @@ public class ExtendedIMLGenerator extends AbstractGenerator {
     _builder.append("def equalize_hist(image): ");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("img_to_yuv = cv2.cvtColor(img,cv2.COLOR_BGR2YUV)");
+    _builder.append("img_to_yuv = cv2.cvtColor(image,cv2.COLOR_BGR2YUV)");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("img_to_yuv[:,:,0] = cv2.equalizeHist(img_to_yuv[:,:,0])");
@@ -199,8 +202,27 @@ public class ExtendedIMLGenerator extends AbstractGenerator {
             _builder.append(")");
             _builder.newLineIfNotEmpty();
           } else {
-            _builder.append("# OPERADOR NÃO ENCONTRADO");
-            _builder.newLine();
+            if ((o instanceof FilterOperation)) {
+              _builder.append("img = convert_to_gray(img)");
+              _builder.newLine();
+            } else {
+              if ((o instanceof BlurOperation)) {
+                _builder.append("img = blur_image(img, ");
+                Integer _valueOf = Integer.valueOf(((BlurOperation)o).getIntensity());
+                double _divide = ((_valueOf).intValue() / 100.0);
+                _builder.append(_divide);
+                _builder.append(")");
+                _builder.newLineIfNotEmpty();
+              } else {
+                if ((o instanceof EqualizeOperation)) {
+                  _builder.append("img = equalize_hist(img)");
+                  _builder.newLine();
+                } else {
+                  _builder.append("# OPERADOR NÃO ENCONTRADO");
+                  _builder.newLine();
+                }
+              }
+            }
           }
         }
       }

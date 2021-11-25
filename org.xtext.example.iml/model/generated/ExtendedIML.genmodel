@@ -25,7 +25,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExtendedIML.ecore#//RotateOperation/degree"/>
     </genClasses>
     <genClasses ecoreClass="ExtendedIML.ecore#//FilterOperation"/>
-    <genClasses ecoreClass="ExtendedIML.ecore#//BlurOperation"/>
+    <genClasses ecoreClass="ExtendedIML.ecore#//BlurOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExtendedIML.ecore#//BlurOperation/intensity"/>
+    </genClasses>
     <genClasses ecoreClass="ExtendedIML.ecore#//EqualizeOperation"/>
   </genPackages>
 </genmodel:GenModel>

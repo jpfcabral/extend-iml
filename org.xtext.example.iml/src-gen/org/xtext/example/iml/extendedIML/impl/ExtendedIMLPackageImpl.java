@@ -335,6 +335,17 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
    * @generated
    */
   @Override
+  public EAttribute getBlurOperation_Intensity()
+  {
+    return (EAttribute)blurOperationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getEqualizeOperation()
   {
     return equalizeOperationEClass;
@@ -394,6 +405,7 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
     filterOperationEClass = createEClass(FILTER_OPERATION);
 
     blurOperationEClass = createEClass(BLUR_OPERATION);
+    createEAttribute(blurOperationEClass, BLUR_OPERATION__INTENSITY);
 
     equalizeOperationEClass = createEClass(EQUALIZE_OPERATION);
   }
@@ -460,6 +472,7 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
     initEClass(filterOperationEClass, FilterOperation.class, "FilterOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(blurOperationEClass, BlurOperation.class, "BlurOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBlurOperation_Intensity(), ecorePackage.getEInt(), "intensity", null, 0, 1, BlurOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(equalizeOperationEClass, EqualizeOperation.class, "EqualizeOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

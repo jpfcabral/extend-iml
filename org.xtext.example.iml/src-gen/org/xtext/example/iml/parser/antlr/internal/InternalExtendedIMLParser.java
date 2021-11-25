@@ -1428,22 +1428,23 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBlurOperation"
-    // InternalExtendedIML.g:531:1: ruleBlurOperation returns [EObject current=null] : (otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) ) ) ;
+    // InternalExtendedIML.g:531:1: ruleBlurOperation returns [EObject current=null] : (otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) ) ( (lv_intensity_2_0= RULE_INT ) ) ) ;
     public final EObject ruleBlurOperation() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_var_1_0=null;
+        Token lv_intensity_2_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalExtendedIML.g:537:2: ( (otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) ) ) )
-            // InternalExtendedIML.g:538:2: (otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) ) )
+            // InternalExtendedIML.g:537:2: ( (otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) ) ( (lv_intensity_2_0= RULE_INT ) ) ) )
+            // InternalExtendedIML.g:538:2: (otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) ) ( (lv_intensity_2_0= RULE_INT ) ) )
             {
-            // InternalExtendedIML.g:538:2: (otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) ) )
-            // InternalExtendedIML.g:539:3: otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) )
+            // InternalExtendedIML.g:538:2: (otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) ) ( (lv_intensity_2_0= RULE_INT ) ) )
+            // InternalExtendedIML.g:539:3: otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) ) ( (lv_intensity_2_0= RULE_INT ) )
             {
             otherlv_0=(Token)match(input,18,FOLLOW_5); 
 
@@ -1455,7 +1456,7 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
             // InternalExtendedIML.g:544:4: (lv_var_1_0= RULE_ID )
             // InternalExtendedIML.g:545:5: lv_var_1_0= RULE_ID
             {
-            lv_var_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+            lv_var_1_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
             					newLeafNode(lv_var_1_0, grammarAccess.getBlurOperationAccess().getVarIDTerminalRuleCall_1_0());
             				
@@ -1468,6 +1469,32 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
             						"var",
             						lv_var_1_0,
             						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalExtendedIML.g:561:3: ( (lv_intensity_2_0= RULE_INT ) )
+            // InternalExtendedIML.g:562:4: (lv_intensity_2_0= RULE_INT )
+            {
+            // InternalExtendedIML.g:562:4: (lv_intensity_2_0= RULE_INT )
+            // InternalExtendedIML.g:563:5: lv_intensity_2_0= RULE_INT
+            {
+            lv_intensity_2_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+            					newLeafNode(lv_intensity_2_0, grammarAccess.getBlurOperationAccess().getIntensityINTTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getBlurOperationRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"intensity",
+            						lv_intensity_2_0,
+            						"org.eclipse.xtext.common.Terminals.INT");
             				
 
             }
@@ -1498,7 +1525,7 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEqualizeOperation"
-    // InternalExtendedIML.g:565:1: entryRuleEqualizeOperation returns [EObject current=null] : iv_ruleEqualizeOperation= ruleEqualizeOperation EOF ;
+    // InternalExtendedIML.g:583:1: entryRuleEqualizeOperation returns [EObject current=null] : iv_ruleEqualizeOperation= ruleEqualizeOperation EOF ;
     public final EObject entryRuleEqualizeOperation() throws RecognitionException {
         EObject current = null;
 
@@ -1506,8 +1533,8 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalExtendedIML.g:565:58: (iv_ruleEqualizeOperation= ruleEqualizeOperation EOF )
-            // InternalExtendedIML.g:566:2: iv_ruleEqualizeOperation= ruleEqualizeOperation EOF
+            // InternalExtendedIML.g:583:58: (iv_ruleEqualizeOperation= ruleEqualizeOperation EOF )
+            // InternalExtendedIML.g:584:2: iv_ruleEqualizeOperation= ruleEqualizeOperation EOF
             {
              newCompositeNode(grammarAccess.getEqualizeOperationRule()); 
             pushFollow(FOLLOW_1);
@@ -1534,7 +1561,7 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEqualizeOperation"
-    // InternalExtendedIML.g:572:1: ruleEqualizeOperation returns [EObject current=null] : (otherlv_0= 'equalize' ( (lv_var_1_0= RULE_ID ) ) ) ;
+    // InternalExtendedIML.g:590:1: ruleEqualizeOperation returns [EObject current=null] : (otherlv_0= 'equalize' ( (lv_var_1_0= RULE_ID ) ) ) ;
     public final EObject ruleEqualizeOperation() throws RecognitionException {
         EObject current = null;
 
@@ -1545,21 +1572,21 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalExtendedIML.g:578:2: ( (otherlv_0= 'equalize' ( (lv_var_1_0= RULE_ID ) ) ) )
-            // InternalExtendedIML.g:579:2: (otherlv_0= 'equalize' ( (lv_var_1_0= RULE_ID ) ) )
+            // InternalExtendedIML.g:596:2: ( (otherlv_0= 'equalize' ( (lv_var_1_0= RULE_ID ) ) ) )
+            // InternalExtendedIML.g:597:2: (otherlv_0= 'equalize' ( (lv_var_1_0= RULE_ID ) ) )
             {
-            // InternalExtendedIML.g:579:2: (otherlv_0= 'equalize' ( (lv_var_1_0= RULE_ID ) ) )
-            // InternalExtendedIML.g:580:3: otherlv_0= 'equalize' ( (lv_var_1_0= RULE_ID ) )
+            // InternalExtendedIML.g:597:2: (otherlv_0= 'equalize' ( (lv_var_1_0= RULE_ID ) ) )
+            // InternalExtendedIML.g:598:3: otherlv_0= 'equalize' ( (lv_var_1_0= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,19,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getEqualizeOperationAccess().getEqualizeKeyword_0());
             		
-            // InternalExtendedIML.g:584:3: ( (lv_var_1_0= RULE_ID ) )
-            // InternalExtendedIML.g:585:4: (lv_var_1_0= RULE_ID )
+            // InternalExtendedIML.g:602:3: ( (lv_var_1_0= RULE_ID ) )
+            // InternalExtendedIML.g:603:4: (lv_var_1_0= RULE_ID )
             {
-            // InternalExtendedIML.g:585:4: (lv_var_1_0= RULE_ID )
-            // InternalExtendedIML.g:586:5: lv_var_1_0= RULE_ID
+            // InternalExtendedIML.g:603:4: (lv_var_1_0= RULE_ID )
+            // InternalExtendedIML.g:604:5: lv_var_1_0= RULE_ID
             {
             lv_var_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 

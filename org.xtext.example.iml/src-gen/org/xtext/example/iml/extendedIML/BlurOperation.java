@@ -9,6 +9,12 @@ package org.xtext.example.iml.extendedIML;
  * A representation of the model object '<em><b>Blur Operation</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.example.iml.extendedIML.BlurOperation#getIntensity <em>Intensity</em>}</li>
+ * </ul>
  *
  * @see org.xtext.example.iml.extendedIML.ExtendedIMLPackage#getBlurOperation()
  * @model
@@ -16,4 +22,26 @@ package org.xtext.example.iml.extendedIML;
  */
 public interface BlurOperation extends Operator
 {
+  /**
+   * Returns the value of the '<em><b>Intensity</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Intensity</em>' attribute.
+   * @see #setIntensity(int)
+   * @see org.xtext.example.iml.extendedIML.ExtendedIMLPackage#getBlurOperation_Intensity()
+   * @model
+   * @generated
+   */
+  int getIntensity();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.iml.extendedIML.BlurOperation#getIntensity <em>Intensity</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Intensity</em>' attribute.
+   * @see #getIntensity()
+   * @generated
+   */
+  void setIntensity(int value);
+
 } // BlurOperation

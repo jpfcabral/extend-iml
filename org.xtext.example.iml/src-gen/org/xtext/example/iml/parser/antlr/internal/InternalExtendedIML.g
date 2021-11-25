@@ -558,6 +558,24 @@ ruleBlurOperation returns [EObject current=null]
 				}
 			)
 		)
+		(
+			(
+				lv_intensity_2_0=RULE_INT
+				{
+					newLeafNode(lv_intensity_2_0, grammarAccess.getBlurOperationAccess().getIntensityINTTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBlurOperationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"intensity",
+						lv_intensity_2_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
 	)
 ;
 

@@ -11,6 +11,9 @@ import org.xtext.example.iml.extendedIML.DirImporter
 import org.xtext.example.iml.extendedIML.Operator
 import java.util.Iterator
 import org.xtext.example.iml.extendedIML.RotateOperation
+import org.xtext.example.iml.extendedIML.FilterOperation
+import org.xtext.example.iml.extendedIML.BlurOperation
+import org.xtext.example.iml.extendedIML.EqualizeOperation
 
 /**
  * Generates code from your model files on save.
@@ -68,14 +71,14 @@ class ExtendedIMLGenerator extends AbstractGenerator {
 	    return gray_image
 	
 	def blur_image(image, intensity): 
-		size = int(60 * intesity) if intensity >= 0.05 else 3
+		size = int(60 * intensity) if intensity >= 0.05 else 3
 		ksize = (size, size)
 		image_t = cv2.blur(image.copy(), ksize, cv2.BORDER_DEFAULT) 
 		
 		return image_t
 	
 	def equalize_hist(image): 
-		img_to_yuv = cv2.cvtColor(img,cv2.COLOR_BGR2YUV)
+		img_to_yuv = cv2.cvtColor(image,cv2.COLOR_BGR2YUV)
 		img_to_yuv[:,:,0] = cv2.equalizeHist(img_to_yuv[:,:,0])
 		hist_equalization_result = cv2.cvtColor(img_to_yuv, cv2.COLOR_YUV2BGR)
 		
@@ -110,6 +113,12 @@ class ExtendedIMLGenerator extends AbstractGenerator {
 	«FOR o : op.toIterable()»
 		«IF o instanceof RotateOperation»
 			img = rotate_image(img, «o.degree»)
+		«ELSEIF o instanceof FilterOperation»
+			img = convert_to_gray(img)
+		«ELSEIF o instanceof BlurOperation»
+			img = blur_image(img, «(Integer.valueOf(o.intensity) / 100.0)»)
+		«ELSEIF o instanceof EqualizeOperation»
+			img = equalize_hist(img)
 		«ELSE»
 			# OPERADOR NÃO ENCONTRADO
 		«ENDIF»

@@ -301,13 +301,22 @@ public interface ExtendedIMLPackage extends EPackage
   int BLUR_OPERATION__VAR = OPERATOR__VAR;
 
   /**
+   * The feature id for the '<em><b>Intensity</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BLUR_OPERATION__INTENSITY = OPERATOR_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Blur Operation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BLUR_OPERATION_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 0;
+  int BLUR_OPERATION_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.iml.extendedIML.impl.EqualizeOperationImpl <em>Equalize Operation</em>}' class.
@@ -495,6 +504,17 @@ public interface ExtendedIMLPackage extends EPackage
   EClass getBlurOperation();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.iml.extendedIML.BlurOperation#getIntensity <em>Intensity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Intensity</em>'.
+   * @see org.xtext.example.iml.extendedIML.BlurOperation#getIntensity()
+   * @see #getBlurOperation()
+   * @generated
+   */
+  EAttribute getBlurOperation_Intensity();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.iml.extendedIML.EqualizeOperation <em>Equalize Operation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -664,6 +684,14 @@ public interface ExtendedIMLPackage extends EPackage
      * @generated
      */
     EClass BLUR_OPERATION = eINSTANCE.getBlurOperation();
+
+    /**
+     * The meta object literal for the '<em><b>Intensity</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BLUR_OPERATION__INTENSITY = eINSTANCE.getBlurOperation_Intensity();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.iml.extendedIML.impl.EqualizeOperationImpl <em>Equalize Operation</em>}' class.
