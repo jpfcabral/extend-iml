@@ -27,7 +27,7 @@ Operator:
 	RotateOperation | FilterOperation | BlurOperation | EqualizeOperation;
 
 RotateOperation:
-		"rotate" ID degree=ID;
+	"rotate" var=ID degree=INT;
 
 FilterOperation:
 	"filter" var=ID "gray";
