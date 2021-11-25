@@ -280,6 +280,17 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
    * @generated
    */
   @Override
+  public EAttribute getOperator_Var()
+  {
+    return (EAttribute)operatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getRotateOperation()
   {
     return rotateOperationEClass;
@@ -313,17 +324,6 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
    * @generated
    */
   @Override
-  public EAttribute getFilterOperation_Var()
-  {
-    return (EAttribute)filterOperationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getBlurOperation()
   {
     return blurOperationEClass;
@@ -335,31 +335,9 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
    * @generated
    */
   @Override
-  public EAttribute getBlurOperation_Var()
-  {
-    return (EAttribute)blurOperationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getEqualizeOperation()
   {
     return equalizeOperationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getEqualizeOperation_Var()
-  {
-    return (EAttribute)equalizeOperationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -408,18 +386,16 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
     createEAttribute(dirImporterEClass, DIR_IMPORTER__PATH_DIR);
 
     operatorEClass = createEClass(OPERATOR);
+    createEAttribute(operatorEClass, OPERATOR__VAR);
 
     rotateOperationEClass = createEClass(ROTATE_OPERATION);
     createEAttribute(rotateOperationEClass, ROTATE_OPERATION__DEGREE);
 
     filterOperationEClass = createEClass(FILTER_OPERATION);
-    createEAttribute(filterOperationEClass, FILTER_OPERATION__VAR);
 
     blurOperationEClass = createEClass(BLUR_OPERATION);
-    createEAttribute(blurOperationEClass, BLUR_OPERATION__VAR);
 
     equalizeOperationEClass = createEClass(EQUALIZE_OPERATION);
-    createEAttribute(equalizeOperationEClass, EQUALIZE_OPERATION__VAR);
   }
 
   /**
@@ -476,18 +452,16 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
     initEAttribute(getDirImporter_PathDir(), ecorePackage.getEString(), "pathDir", null, 0, 1, DirImporter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operatorEClass, Operator.class, "Operator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOperator_Var(), ecorePackage.getEString(), "var", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(rotateOperationEClass, RotateOperation.class, "RotateOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRotateOperation_Degree(), ecorePackage.getEString(), "degree", null, 0, 1, RotateOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRotateOperation_Degree(), ecorePackage.getEInt(), "degree", null, 0, 1, RotateOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(filterOperationEClass, FilterOperation.class, "FilterOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFilterOperation_Var(), ecorePackage.getEString(), "var", null, 0, 1, FilterOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(blurOperationEClass, BlurOperation.class, "BlurOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBlurOperation_Var(), ecorePackage.getEString(), "var", null, 0, 1, BlurOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(equalizeOperationEClass, EqualizeOperation.class, "EqualizeOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEqualizeOperation_Var(), ecorePackage.getEString(), "var", null, 0, 1, EqualizeOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

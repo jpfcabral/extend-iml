@@ -199,13 +199,22 @@ public interface ExtendedIMLPackage extends EPackage
   int OPERATOR = 5;
 
   /**
+   * The feature id for the '<em><b>Var</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATOR__VAR = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Operator</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OPERATOR_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+  int OPERATOR_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.iml.extendedIML.impl.RotateOperationImpl <em>Rotate Operation</em>}' class.
@@ -216,6 +225,15 @@ public interface ExtendedIMLPackage extends EPackage
    * @generated
    */
   int ROTATE_OPERATION = 6;
+
+  /**
+   * The feature id for the '<em><b>Var</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROTATE_OPERATION__VAR = OPERATOR__VAR;
 
   /**
    * The feature id for the '<em><b>Degree</b></em>' attribute.
@@ -252,7 +270,7 @@ public interface ExtendedIMLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FILTER_OPERATION__VAR = OPERATOR_FEATURE_COUNT + 0;
+  int FILTER_OPERATION__VAR = OPERATOR__VAR;
 
   /**
    * The number of structural features of the '<em>Filter Operation</em>' class.
@@ -261,7 +279,7 @@ public interface ExtendedIMLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FILTER_OPERATION_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 1;
+  int FILTER_OPERATION_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.iml.extendedIML.impl.BlurOperationImpl <em>Blur Operation</em>}' class.
@@ -280,7 +298,7 @@ public interface ExtendedIMLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BLUR_OPERATION__VAR = OPERATOR_FEATURE_COUNT + 0;
+  int BLUR_OPERATION__VAR = OPERATOR__VAR;
 
   /**
    * The number of structural features of the '<em>Blur Operation</em>' class.
@@ -289,7 +307,7 @@ public interface ExtendedIMLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BLUR_OPERATION_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 1;
+  int BLUR_OPERATION_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.iml.extendedIML.impl.EqualizeOperationImpl <em>Equalize Operation</em>}' class.
@@ -308,7 +326,7 @@ public interface ExtendedIMLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EQUALIZE_OPERATION__VAR = OPERATOR_FEATURE_COUNT + 0;
+  int EQUALIZE_OPERATION__VAR = OPERATOR__VAR;
 
   /**
    * The number of structural features of the '<em>Equalize Operation</em>' class.
@@ -317,7 +335,7 @@ public interface ExtendedIMLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EQUALIZE_OPERATION_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 1;
+  int EQUALIZE_OPERATION_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 0;
 
 
   /**
@@ -425,6 +443,17 @@ public interface ExtendedIMLPackage extends EPackage
   EClass getOperator();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.iml.extendedIML.Operator#getVar <em>Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Var</em>'.
+   * @see org.xtext.example.iml.extendedIML.Operator#getVar()
+   * @see #getOperator()
+   * @generated
+   */
+  EAttribute getOperator_Var();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.iml.extendedIML.RotateOperation <em>Rotate Operation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -456,17 +485,6 @@ public interface ExtendedIMLPackage extends EPackage
   EClass getFilterOperation();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.iml.extendedIML.FilterOperation#getVar <em>Var</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Var</em>'.
-   * @see org.xtext.example.iml.extendedIML.FilterOperation#getVar()
-   * @see #getFilterOperation()
-   * @generated
-   */
-  EAttribute getFilterOperation_Var();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.iml.extendedIML.BlurOperation <em>Blur Operation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -477,17 +495,6 @@ public interface ExtendedIMLPackage extends EPackage
   EClass getBlurOperation();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.iml.extendedIML.BlurOperation#getVar <em>Var</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Var</em>'.
-   * @see org.xtext.example.iml.extendedIML.BlurOperation#getVar()
-   * @see #getBlurOperation()
-   * @generated
-   */
-  EAttribute getBlurOperation_Var();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.iml.extendedIML.EqualizeOperation <em>Equalize Operation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -496,17 +503,6 @@ public interface ExtendedIMLPackage extends EPackage
    * @generated
    */
   EClass getEqualizeOperation();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.iml.extendedIML.EqualizeOperation#getVar <em>Var</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Var</em>'.
-   * @see org.xtext.example.iml.extendedIML.EqualizeOperation#getVar()
-   * @see #getEqualizeOperation()
-   * @generated
-   */
-  EAttribute getEqualizeOperation_Var();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -624,6 +620,14 @@ public interface ExtendedIMLPackage extends EPackage
     EClass OPERATOR = eINSTANCE.getOperator();
 
     /**
+     * The meta object literal for the '<em><b>Var</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OPERATOR__VAR = eINSTANCE.getOperator_Var();
+
+    /**
      * The meta object literal for the '{@link org.xtext.example.iml.extendedIML.impl.RotateOperationImpl <em>Rotate Operation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -652,14 +656,6 @@ public interface ExtendedIMLPackage extends EPackage
     EClass FILTER_OPERATION = eINSTANCE.getFilterOperation();
 
     /**
-     * The meta object literal for the '<em><b>Var</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FILTER_OPERATION__VAR = eINSTANCE.getFilterOperation_Var();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.iml.extendedIML.impl.BlurOperationImpl <em>Blur Operation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -670,14 +666,6 @@ public interface ExtendedIMLPackage extends EPackage
     EClass BLUR_OPERATION = eINSTANCE.getBlurOperation();
 
     /**
-     * The meta object literal for the '<em><b>Var</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute BLUR_OPERATION__VAR = eINSTANCE.getBlurOperation_Var();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.iml.extendedIML.impl.EqualizeOperationImpl <em>Equalize Operation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -686,14 +674,6 @@ public interface ExtendedIMLPackage extends EPackage
      * @generated
      */
     EClass EQUALIZE_OPERATION = eINSTANCE.getEqualizeOperation();
-
-    /**
-     * The meta object literal for the '<em><b>Var</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EQUALIZE_OPERATION__VAR = eINSTANCE.getEqualizeOperation_Var();
 
   }
 

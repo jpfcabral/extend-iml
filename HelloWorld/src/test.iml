@@ -1,1 +1,4 @@
 images /A/
+rotate A 90
+filter A gray
+blur A

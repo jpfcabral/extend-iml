@@ -35,7 +35,7 @@ public class RotateOperationImpl extends OperatorImpl implements RotateOperation
    * @generated
    * @ordered
    */
-  protected static final String DEGREE_EDEFAULT = null;
+  protected static final int DEGREE_EDEFAULT = 0;
 
   /**
    * The cached value of the '{@link #getDegree() <em>Degree</em>}' attribute.
@@ -45,7 +45,7 @@ public class RotateOperationImpl extends OperatorImpl implements RotateOperation
    * @generated
    * @ordered
    */
-  protected String degree = DEGREE_EDEFAULT;
+  protected int degree = DEGREE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public class RotateOperationImpl extends OperatorImpl implements RotateOperation
    * @generated
    */
   @Override
-  public String getDegree()
+  public int getDegree()
   {
     return degree;
   }
@@ -85,9 +85,9 @@ public class RotateOperationImpl extends OperatorImpl implements RotateOperation
    * @generated
    */
   @Override
-  public void setDegree(String newDegree)
+  public void setDegree(int newDegree)
   {
-    String oldDegree = degree;
+    int oldDegree = degree;
     degree = newDegree;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ExtendedIMLPackage.ROTATE_OPERATION__DEGREE, oldDegree, degree));
@@ -120,7 +120,7 @@ public class RotateOperationImpl extends OperatorImpl implements RotateOperation
     switch (featureID)
     {
       case ExtendedIMLPackage.ROTATE_OPERATION__DEGREE:
-        setDegree((String)newValue);
+        setDegree((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -154,7 +154,7 @@ public class RotateOperationImpl extends OperatorImpl implements RotateOperation
     switch (featureID)
     {
       case ExtendedIMLPackage.ROTATE_OPERATION__DEGREE:
-        return DEGREE_EDEFAULT == null ? degree != null : !DEGREE_EDEFAULT.equals(degree);
+        return degree != DEGREE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }

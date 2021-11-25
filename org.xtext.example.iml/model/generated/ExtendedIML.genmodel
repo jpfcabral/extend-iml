@@ -18,18 +18,14 @@
     <genClasses ecoreClass="ExtendedIML.ecore#//DirImporter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExtendedIML.ecore#//DirImporter/pathDir"/>
     </genClasses>
-    <genClasses ecoreClass="ExtendedIML.ecore#//Operator"/>
+    <genClasses ecoreClass="ExtendedIML.ecore#//Operator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExtendedIML.ecore#//Operator/var"/>
+    </genClasses>
     <genClasses ecoreClass="ExtendedIML.ecore#//RotateOperation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExtendedIML.ecore#//RotateOperation/degree"/>
     </genClasses>
-    <genClasses ecoreClass="ExtendedIML.ecore#//FilterOperation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExtendedIML.ecore#//FilterOperation/var"/>
-    </genClasses>
-    <genClasses ecoreClass="ExtendedIML.ecore#//BlurOperation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExtendedIML.ecore#//BlurOperation/var"/>
-    </genClasses>
-    <genClasses ecoreClass="ExtendedIML.ecore#//EqualizeOperation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExtendedIML.ecore#//EqualizeOperation/var"/>
-    </genClasses>
+    <genClasses ecoreClass="ExtendedIML.ecore#//FilterOperation"/>
+    <genClasses ecoreClass="ExtendedIML.ecore#//BlurOperation"/>
+    <genClasses ecoreClass="ExtendedIML.ecore#//EqualizeOperation"/>
   </genPackages>
 </genmodel:GenModel>

@@ -206,28 +206,32 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.RotateOperation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cRotateKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
 		private final Assignment cDegreeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cDegreeIDTerminalRuleCall_2_0 = (RuleCall)cDegreeAssignment_2.eContents().get(0);
+		private final RuleCall cDegreeINTTerminalRuleCall_2_0 = (RuleCall)cDegreeAssignment_2.eContents().get(0);
 		
 		//RotateOperation:
-		//        "rotate" ID degree=ID;
+		//    "rotate" var=ID degree=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"rotate" ID degree=ID
+		//"rotate" var=ID degree=INT
 		public Group getGroup() { return cGroup; }
 		
 		//"rotate"
 		public Keyword getRotateKeyword_0() { return cRotateKeyword_0; }
 		
-		//ID
-		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+		//var=ID
+		public Assignment getVarAssignment_1() { return cVarAssignment_1; }
 		
-		//degree=ID
+		//ID
+		public RuleCall getVarIDTerminalRuleCall_1_0() { return cVarIDTerminalRuleCall_1_0; }
+		
+		//degree=INT
 		public Assignment getDegreeAssignment_2() { return cDegreeAssignment_2; }
 		
-		//ID
-		public RuleCall getDegreeIDTerminalRuleCall_2_0() { return cDegreeIDTerminalRuleCall_2_0; }
+		//INT
+		public RuleCall getDegreeINTTerminalRuleCall_2_0() { return cDegreeINTTerminalRuleCall_2_0; }
 	}
 	public class FilterOperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.FilterOperation");
@@ -449,7 +453,7 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//RotateOperation:
-	//        "rotate" ID degree=ID;
+	//    "rotate" var=ID degree=INT;
 	public RotateOperationElements getRotateOperationAccess() {
 		return pRotateOperation;
 	}

@@ -422,15 +422,29 @@ ruleRotateOperation returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getRotateOperationAccess().getRotateKeyword_0());
 		}
-		this_ID_1=RULE_ID
-		{
-			newLeafNode(this_ID_1, grammarAccess.getRotateOperationAccess().getIDTerminalRuleCall_1());
-		}
 		(
 			(
-				lv_degree_2_0=RULE_ID
+				lv_var_1_0=RULE_ID
 				{
-					newLeafNode(lv_degree_2_0, grammarAccess.getRotateOperationAccess().getDegreeIDTerminalRuleCall_2_0());
+					newLeafNode(lv_var_1_0, grammarAccess.getRotateOperationAccess().getVarIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRotateOperationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"var",
+						lv_var_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_degree_2_0=RULE_INT
+				{
+					newLeafNode(lv_degree_2_0, grammarAccess.getRotateOperationAccess().getDegreeINTTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -440,7 +454,7 @@ ruleRotateOperation returns [EObject current=null]
 						$current,
 						"degree",
 						lv_degree_2_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
