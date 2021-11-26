@@ -269,38 +269,52 @@ ruleQualifiedPath returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleT
 }:
 	(
 		(
-			kw='/'
+			kw='.'
 			{
 				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getQualifiedPathAccess().getSolidusKeyword_0());
+				newLeafNode(kw, grammarAccess.getQualifiedPathAccess().getFullStopKeyword_0());
 			}
 		)?
-		this_ID_1=RULE_ID
-		{
-			$current.merge(this_ID_1);
-		}
-		{
-			newLeafNode(this_ID_1, grammarAccess.getQualifiedPathAccess().getIDTerminalRuleCall_1());
-		}
 		(
 			kw='/'
 			{
 				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getQualifiedPathAccess().getSolidusKeyword_2_0());
+				newLeafNode(kw, grammarAccess.getQualifiedPathAccess().getSolidusKeyword_1());
 			}
-			this_ID_3=RULE_ID
+		)?
+		this_ID_2=RULE_ID
+		{
+			$current.merge(this_ID_2);
+		}
+		{
+			newLeafNode(this_ID_2, grammarAccess.getQualifiedPathAccess().getIDTerminalRuleCall_2());
+		}
+		(
+			kw=':'
 			{
-				$current.merge(this_ID_3);
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getQualifiedPathAccess().getColonKeyword_3());
+			}
+		)?
+		(
+			kw='/'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getQualifiedPathAccess().getSolidusKeyword_4_0());
+			}
+			this_ID_5=RULE_ID
+			{
+				$current.merge(this_ID_5);
 			}
 			{
-				newLeafNode(this_ID_3, grammarAccess.getQualifiedPathAccess().getIDTerminalRuleCall_2_1());
+				newLeafNode(this_ID_5, grammarAccess.getQualifiedPathAccess().getIDTerminalRuleCall_4_1());
 			}
 		)*
 		(
 			kw='/'
 			{
 				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getQualifiedPathAccess().getSolidusKeyword_3());
+				newLeafNode(kw, grammarAccess.getQualifiedPathAccess().getSolidusKeyword_5());
 			}
 		)?
 	)

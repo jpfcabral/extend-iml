@@ -1,4 +1,4 @@
-path imagens
+path ./teste/
 fill by 500
 rotate by 180
 show it

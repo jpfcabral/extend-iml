@@ -62,8 +62,8 @@ def fill_image(img, _size):
  
 	return cv2.resize(mask, size, interpolation)
 
-for image_name in listdir('imagens'):
-	image_full_path = path.join('imagens', image_name)
+for image_name in listdir('./teste/'):
+	image_full_path = path.join('./teste/', image_name)
 	img = cv2.imread(image_full_path)
 	if not img is None:
 		img = fill_image(img, 500)
