@@ -2,6 +2,10 @@
 
 Uma simples linguagem para realizar operações em imagens inspirado no [iml](https://dl.acm.org/doi/pdf/10.1145/3355378.3355382).
 
+Discentes:
+ - João Pedro Freire Cabral
+ - Mike Job Pereira da Silva
+
 ## Trabalho final da disciplina de código: PPGTI1007 - 	LINGUAGENS DE DOMÍNIO ESPECÍFICO
 
 A finalidade dessa linguagem é realizar operações em um conjunto de imagens utilizando poucos comandos. 
