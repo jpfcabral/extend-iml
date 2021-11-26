@@ -155,19 +155,19 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	public class DirImporterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.DirImporter");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cImagesKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cPathKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cPathDirAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cPathDirQualifiedPathParserRuleCall_1_0 = (RuleCall)cPathDirAssignment_1.eContents().get(0);
 		
 		//DirImporter:
-		//    "images" pathDir=QualifiedPath;
+		//    "path" pathDir=QualifiedPath;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"images" pathDir=QualifiedPath
+		//"path" pathDir=QualifiedPath
 		public Group getGroup() { return cGroup; }
 		
-		//"images"
-		public Keyword getImagesKeyword_0() { return cImagesKeyword_0; }
+		//"path"
+		public Keyword getPathKeyword_0() { return cPathKeyword_0; }
 		
 		//pathDir=QualifiedPath
 		public Assignment getPathDirAssignment_1() { return cPathDirAssignment_1; }
@@ -223,13 +223,13 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
 		private final Assignment cDegreeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cDegreeINTTerminalRuleCall_2_0 = (RuleCall)cDegreeAssignment_2.eContents().get(0);
+		private final RuleCall cDegreeValidRotateIntParserRuleCall_2_0 = (RuleCall)cDegreeAssignment_2.eContents().get(0);
 		
 		//RotateOperation:
-		//    "rotate" var=ID degree=INT;
+		//    "rotate" var=ID degree=ValidRotateInt;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"rotate" var=ID degree=INT
+		//"rotate" var=ID degree=ValidRotateInt
 		public Group getGroup() { return cGroup; }
 		
 		//"rotate"
@@ -241,11 +241,33 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		//ID
 		public RuleCall getVarIDTerminalRuleCall_1_0() { return cVarIDTerminalRuleCall_1_0; }
 		
-		//degree=INT
+		//degree=ValidRotateInt
 		public Assignment getDegreeAssignment_2() { return cDegreeAssignment_2; }
 		
-		//INT
-		public RuleCall getDegreeINTTerminalRuleCall_2_0() { return cDegreeINTTerminalRuleCall_2_0; }
+		//ValidRotateInt
+		public RuleCall getDegreeValidRotateIntParserRuleCall_2_0() { return cDegreeValidRotateIntParserRuleCall_2_0; }
+	}
+	public class ValidRotateIntElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.ValidRotateInt");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cINT1TerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cINT2TerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cINT3TerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//ValidRotateInt: INT1 | INT2 | INT3;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//INT1 | INT2 | INT3
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//INT1
+		public RuleCall getINT1TerminalRuleCall_0() { return cINT1TerminalRuleCall_0; }
+		
+		//INT2
+		public RuleCall getINT2TerminalRuleCall_1() { return cINT2TerminalRuleCall_1; }
+		
+		//INT3
+		public RuleCall getINT3TerminalRuleCall_2() { return cINT3TerminalRuleCall_2; }
 	}
 	public class FilterOperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.FilterOperation");
@@ -281,13 +303,13 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
 		private final Assignment cIntensityAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cIntensityINTTerminalRuleCall_2_0 = (RuleCall)cIntensityAssignment_2.eContents().get(0);
+		private final RuleCall cIntensityValidBlurIntParserRuleCall_2_0 = (RuleCall)cIntensityAssignment_2.eContents().get(0);
 		
 		//BlurOperation:
-		//    "blur" var=ID intensity=INT;
+		//    "blur" var=ID intensity=ValidBlurInt;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"blur" var=ID intensity=INT
+		//"blur" var=ID intensity=ValidBlurInt
 		public Group getGroup() { return cGroup; }
 		
 		//"blur"
@@ -299,11 +321,29 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		//ID
 		public RuleCall getVarIDTerminalRuleCall_1_0() { return cVarIDTerminalRuleCall_1_0; }
 		
-		//intensity=INT
+		//intensity=ValidBlurInt
 		public Assignment getIntensityAssignment_2() { return cIntensityAssignment_2; }
 		
-		//INT
-		public RuleCall getIntensityINTTerminalRuleCall_2_0() { return cIntensityINTTerminalRuleCall_2_0; }
+		//ValidBlurInt
+		public RuleCall getIntensityValidBlurIntParserRuleCall_2_0() { return cIntensityValidBlurIntParserRuleCall_2_0; }
+	}
+	public class ValidBlurIntElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.ValidBlurInt");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cINT1TerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cINT2TerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//ValidBlurInt: INT1 | INT2;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//INT1 | INT2
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//INT1
+		public RuleCall getINT1TerminalRuleCall_0() { return cINT1TerminalRuleCall_0; }
+		
+		//INT2
+		public RuleCall getINT2TerminalRuleCall_1() { return cINT2TerminalRuleCall_1; }
 	}
 	public class EqualizeOperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.EqualizeOperation");
@@ -381,13 +421,13 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
 		private final Assignment cSizeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cSizeINTTerminalRuleCall_2_0 = (RuleCall)cSizeAssignment_2.eContents().get(0);
+		private final RuleCall cSizeValidINTParserRuleCall_2_0 = (RuleCall)cSizeAssignment_2.eContents().get(0);
 		
 		//FillOperation:
-		//    "fill" var=ID size=INT;
+		//    "fill" var=ID size=ValidINT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"fill" var=ID size=INT
+		//"fill" var=ID size=ValidINT
 		public Group getGroup() { return cGroup; }
 		
 		//"fill"
@@ -399,15 +439,40 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		//ID
 		public RuleCall getVarIDTerminalRuleCall_1_0() { return cVarIDTerminalRuleCall_1_0; }
 		
-		//size=INT
+		//size=ValidINT
 		public Assignment getSizeAssignment_2() { return cSizeAssignment_2; }
 		
+		//ValidINT
+		public RuleCall getSizeValidINTParserRuleCall_2_0() { return cSizeValidINTParserRuleCall_2_0; }
+	}
+	public class ValidINTElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.ValidINT");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cINT2TerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cINT3TerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//ValidINT: INT | INT2 | INT3;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//INT | INT2 | INT3
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
 		//INT
-		public RuleCall getSizeINTTerminalRuleCall_2_0() { return cSizeINTTerminalRuleCall_2_0; }
+		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
+		
+		//INT2
+		public RuleCall getINT2TerminalRuleCall_1() { return cINT2TerminalRuleCall_1; }
+		
+		//INT3
+		public RuleCall getINT3TerminalRuleCall_2() { return cINT3TerminalRuleCall_2; }
 	}
 	
 	
 	private final ModelElements pModel;
+	private final TerminalRule tINT1;
+	private final TerminalRule tINT2;
+	private final TerminalRule tINT3;
 	private final AbstractElementElements pAbstractElement;
 	private final ImporterElements pImporter;
 	private final ImageImporterElements pImageImporter;
@@ -416,12 +481,15 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	private final DirImporterElements pDirImporter;
 	private final OperatorElements pOperator;
 	private final RotateOperationElements pRotateOperation;
+	private final ValidRotateIntElements pValidRotateInt;
 	private final FilterOperationElements pFilterOperation;
 	private final BlurOperationElements pBlurOperation;
+	private final ValidBlurIntElements pValidBlurInt;
 	private final EqualizeOperationElements pEqualizeOperation;
 	private final ShowOperationElements pShowOperation;
 	private final SaveOperationElements pSaveOperation;
 	private final FillOperationElements pFillOperation;
+	private final ValidINTElements pValidINT;
 	
 	private final Grammar grammar;
 	
@@ -433,6 +501,9 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
+		this.tINT1 = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.INT1");
+		this.tINT2 = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.INT2");
+		this.tINT3 = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.INT3");
 		this.pAbstractElement = new AbstractElementElements();
 		this.pImporter = new ImporterElements();
 		this.pImageImporter = new ImageImporterElements();
@@ -441,12 +512,15 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.pDirImporter = new DirImporterElements();
 		this.pOperator = new OperatorElements();
 		this.pRotateOperation = new RotateOperationElements();
+		this.pValidRotateInt = new ValidRotateIntElements();
 		this.pFilterOperation = new FilterOperationElements();
 		this.pBlurOperation = new BlurOperationElements();
+		this.pValidBlurInt = new ValidBlurIntElements();
 		this.pEqualizeOperation = new EqualizeOperationElements();
 		this.pShowOperation = new ShowOperationElements();
 		this.pSaveOperation = new SaveOperationElements();
 		this.pFillOperation = new FillOperationElements();
+		this.pValidINT = new ValidINTElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -484,6 +558,21 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	public ParserRule getModelRule() {
 		return getModelAccess().getRule();
+	}
+	
+	//terminal INT1: ('0'..'9');
+	public TerminalRule getINT1Rule() {
+		return tINT1;
+	}
+	
+	//terminal INT2: ('0'..'9')('0'..'9');
+	public TerminalRule getINT2Rule() {
+		return tINT2;
+	}
+	
+	//terminal INT3: ('0'..'9')('0'..'9')('0'..'9');
+	public TerminalRule getINT3Rule() {
+		return tINT3;
 	}
 	
 	//AbstractElement:
@@ -537,7 +626,7 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//DirImporter:
-	//    "images" pathDir=QualifiedPath;
+	//    "path" pathDir=QualifiedPath;
 	public DirImporterElements getDirImporterAccess() {
 		return pDirImporter;
 	}
@@ -558,13 +647,22 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//RotateOperation:
-	//    "rotate" var=ID degree=INT;
+	//    "rotate" var=ID degree=ValidRotateInt;
 	public RotateOperationElements getRotateOperationAccess() {
 		return pRotateOperation;
 	}
 	
 	public ParserRule getRotateOperationRule() {
 		return getRotateOperationAccess().getRule();
+	}
+	
+	//ValidRotateInt: INT1 | INT2 | INT3;
+	public ValidRotateIntElements getValidRotateIntAccess() {
+		return pValidRotateInt;
+	}
+	
+	public ParserRule getValidRotateIntRule() {
+		return getValidRotateIntAccess().getRule();
 	}
 	
 	//FilterOperation:
@@ -578,13 +676,22 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//BlurOperation:
-	//    "blur" var=ID intensity=INT;
+	//    "blur" var=ID intensity=ValidBlurInt;
 	public BlurOperationElements getBlurOperationAccess() {
 		return pBlurOperation;
 	}
 	
 	public ParserRule getBlurOperationRule() {
 		return getBlurOperationAccess().getRule();
+	}
+	
+	//ValidBlurInt: INT1 | INT2;
+	public ValidBlurIntElements getValidBlurIntAccess() {
+		return pValidBlurInt;
+	}
+	
+	public ParserRule getValidBlurIntRule() {
+		return getValidBlurIntAccess().getRule();
 	}
 	
 	//EqualizeOperation:
@@ -618,13 +725,22 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//FillOperation:
-	//    "fill" var=ID size=INT;
+	//    "fill" var=ID size=ValidINT;
 	public FillOperationElements getFillOperationAccess() {
 		return pFillOperation;
 	}
 	
 	public ParserRule getFillOperationRule() {
 		return getFillOperationAccess().getRule();
+	}
+	
+	//ValidINT: INT | INT2 | INT3;
+	public ValidINTElements getValidINTAccess() {
+		return pValidINT;
+	}
+	
+	public ParserRule getValidINTRule() {
+		return getValidINTAccess().getRule();
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

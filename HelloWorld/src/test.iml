@@ -1,6 +1,4 @@
-images imagens
-rotate by 40
-filter by gray
-fill by 400
+path imagens
+fill by 500
+rotate by 180
 show it
-save it

@@ -27,12 +27,12 @@ public interface RotateOperation extends Operator
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Degree</em>' attribute.
-   * @see #setDegree(int)
+   * @see #setDegree(String)
    * @see org.xtext.example.iml.extendedIML.ExtendedIMLPackage#getRotateOperation_Degree()
    * @model
    * @generated
    */
-  int getDegree();
+  String getDegree();
 
   /**
    * Sets the value of the '{@link org.xtext.example.iml.extendedIML.RotateOperation#getDegree <em>Degree</em>}' attribute.
@@ -42,6 +42,6 @@ public interface RotateOperation extends Operator
    * @see #getDegree()
    * @generated
    */
-  void setDegree(int value);
+  void setDegree(String value);
 
 } // RotateOperation

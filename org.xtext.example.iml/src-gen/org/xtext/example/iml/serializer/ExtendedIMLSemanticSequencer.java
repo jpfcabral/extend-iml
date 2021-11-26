@@ -83,7 +83,7 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     BlurOperation returns BlurOperation
 	 *
 	 * Constraint:
-	 *     (var=ID intensity=INT)
+	 *     (var=ID intensity=ValidBlurInt)
 	 */
 	protected void sequence_BlurOperation(ISerializationContext context, BlurOperation semanticObject) {
 		if (errorAcceptor != null) {
@@ -94,7 +94,7 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getBlurOperationAccess().getVarIDTerminalRuleCall_1_0(), semanticObject.getVar());
-		feeder.accept(grammarAccess.getBlurOperationAccess().getIntensityINTTerminalRuleCall_2_0(), semanticObject.getIntensity());
+		feeder.accept(grammarAccess.getBlurOperationAccess().getIntensityValidBlurIntParserRuleCall_2_0(), semanticObject.getIntensity());
 		feeder.finish();
 	}
 	
@@ -146,7 +146,7 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     FillOperation returns FillOperation
 	 *
 	 * Constraint:
-	 *     (var=ID size=INT)
+	 *     (var=ID size=ValidINT)
 	 */
 	protected void sequence_FillOperation(ISerializationContext context, FillOperation semanticObject) {
 		if (errorAcceptor != null) {
@@ -157,7 +157,7 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getFillOperationAccess().getVarIDTerminalRuleCall_1_0(), semanticObject.getVar());
-		feeder.accept(grammarAccess.getFillOperationAccess().getSizeINTTerminalRuleCall_2_0(), semanticObject.getSize());
+		feeder.accept(grammarAccess.getFillOperationAccess().getSizeValidINTParserRuleCall_2_0(), semanticObject.getSize());
 		feeder.finish();
 	}
 	
@@ -224,7 +224,7 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     RotateOperation returns RotateOperation
 	 *
 	 * Constraint:
-	 *     (var=ID degree=INT)
+	 *     (var=ID degree=ValidRotateInt)
 	 */
 	protected void sequence_RotateOperation(ISerializationContext context, RotateOperation semanticObject) {
 		if (errorAcceptor != null) {
@@ -235,7 +235,7 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getRotateOperationAccess().getVarIDTerminalRuleCall_1_0(), semanticObject.getVar());
-		feeder.accept(grammarAccess.getRotateOperationAccess().getDegreeINTTerminalRuleCall_2_0(), semanticObject.getDegree());
+		feeder.accept(grammarAccess.getRotateOperationAccess().getDegreeValidRotateIntParserRuleCall_2_0(), semanticObject.getDegree());
 		feeder.finish();
 	}
 	

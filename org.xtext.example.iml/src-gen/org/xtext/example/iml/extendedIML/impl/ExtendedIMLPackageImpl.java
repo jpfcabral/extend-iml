@@ -545,12 +545,12 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
     initEAttribute(getOperator_Var(), ecorePackage.getEString(), "var", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(rotateOperationEClass, RotateOperation.class, "RotateOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRotateOperation_Degree(), ecorePackage.getEInt(), "degree", null, 0, 1, RotateOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRotateOperation_Degree(), ecorePackage.getEString(), "degree", null, 0, 1, RotateOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(filterOperationEClass, FilterOperation.class, "FilterOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(blurOperationEClass, BlurOperation.class, "BlurOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBlurOperation_Intensity(), ecorePackage.getEInt(), "intensity", null, 0, 1, BlurOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBlurOperation_Intensity(), ecorePackage.getEString(), "intensity", null, 0, 1, BlurOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(equalizeOperationEClass, EqualizeOperation.class, "EqualizeOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -559,7 +559,7 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
     initEClass(saveOperationEClass, SaveOperation.class, "SaveOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(fillOperationEClass, FillOperation.class, "FillOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFillOperation_Size(), ecorePackage.getEInt(), "size", null, 0, 1, FillOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFillOperation_Size(), ecorePackage.getEString(), "size", null, 0, 1, FillOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

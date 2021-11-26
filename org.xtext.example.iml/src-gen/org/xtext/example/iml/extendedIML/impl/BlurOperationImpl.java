@@ -35,7 +35,7 @@ public class BlurOperationImpl extends OperatorImpl implements BlurOperation
    * @generated
    * @ordered
    */
-  protected static final int INTENSITY_EDEFAULT = 0;
+  protected static final String INTENSITY_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getIntensity() <em>Intensity</em>}' attribute.
@@ -45,7 +45,7 @@ public class BlurOperationImpl extends OperatorImpl implements BlurOperation
    * @generated
    * @ordered
    */
-  protected int intensity = INTENSITY_EDEFAULT;
+  protected String intensity = INTENSITY_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public class BlurOperationImpl extends OperatorImpl implements BlurOperation
    * @generated
    */
   @Override
-  public int getIntensity()
+  public String getIntensity()
   {
     return intensity;
   }
@@ -85,9 +85,9 @@ public class BlurOperationImpl extends OperatorImpl implements BlurOperation
    * @generated
    */
   @Override
-  public void setIntensity(int newIntensity)
+  public void setIntensity(String newIntensity)
   {
-    int oldIntensity = intensity;
+    String oldIntensity = intensity;
     intensity = newIntensity;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ExtendedIMLPackage.BLUR_OPERATION__INTENSITY, oldIntensity, intensity));
@@ -120,7 +120,7 @@ public class BlurOperationImpl extends OperatorImpl implements BlurOperation
     switch (featureID)
     {
       case ExtendedIMLPackage.BLUR_OPERATION__INTENSITY:
-        setIntensity((Integer)newValue);
+        setIntensity((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -154,7 +154,7 @@ public class BlurOperationImpl extends OperatorImpl implements BlurOperation
     switch (featureID)
     {
       case ExtendedIMLPackage.BLUR_OPERATION__INTENSITY:
-        return intensity != INTENSITY_EDEFAULT;
+        return INTENSITY_EDEFAULT == null ? intensity != null : !INTENSITY_EDEFAULT.equals(intensity);
     }
     return super.eIsSet(featureID);
   }

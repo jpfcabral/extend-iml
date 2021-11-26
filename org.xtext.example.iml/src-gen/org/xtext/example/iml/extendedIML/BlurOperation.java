@@ -27,12 +27,12 @@ public interface BlurOperation extends Operator
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Intensity</em>' attribute.
-   * @see #setIntensity(int)
+   * @see #setIntensity(String)
    * @see org.xtext.example.iml.extendedIML.ExtendedIMLPackage#getBlurOperation_Intensity()
    * @model
    * @generated
    */
-  int getIntensity();
+  String getIntensity();
 
   /**
    * Sets the value of the '{@link org.xtext.example.iml.extendedIML.BlurOperation#getIntensity <em>Intensity</em>}' attribute.
@@ -42,6 +42,6 @@ public interface BlurOperation extends Operator
    * @see #getIntensity()
    * @generated
    */
-  void setIntensity(int value);
+  void setIntensity(String value);
 
 } // BlurOperation

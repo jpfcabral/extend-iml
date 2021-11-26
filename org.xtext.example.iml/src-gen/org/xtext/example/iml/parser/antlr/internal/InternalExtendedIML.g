@@ -322,9 +322,9 @@ ruleDirImporter returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='images'
+		otherlv_0='path'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getDirImporterAccess().getImagesKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getDirImporterAccess().getPathKeyword_0());
 		}
 		(
 			(
@@ -469,22 +469,65 @@ ruleRotateOperation returns [EObject current=null]
 		)
 		(
 			(
-				lv_degree_2_0=RULE_INT
 				{
-					newLeafNode(lv_degree_2_0, grammarAccess.getRotateOperationAccess().getDegreeINTTerminalRuleCall_2_0());
+					newCompositeNode(grammarAccess.getRotateOperationAccess().getDegreeValidRotateIntParserRuleCall_2_0());
 				}
+				lv_degree_2_0=ruleValidRotateInt
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getRotateOperationRule());
+						$current = createModelElementForParent(grammarAccess.getRotateOperationRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"degree",
 						lv_degree_2_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						"org.xtext.example.iml.ExtendedIML.ValidRotateInt");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleValidRotateInt
+entryRuleValidRotateInt returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getValidRotateIntRule()); }
+	iv_ruleValidRotateInt=ruleValidRotateInt
+	{ $current=$iv_ruleValidRotateInt.current.getText(); }
+	EOF;
+
+// Rule ValidRotateInt
+ruleValidRotateInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_INT1_0=RULE_INT1
+		{
+			$current.merge(this_INT1_0);
+		}
+		{
+			newLeafNode(this_INT1_0, grammarAccess.getValidRotateIntAccess().getINT1TerminalRuleCall_0());
+		}
+		    |
+		this_INT2_1=RULE_INT2
+		{
+			$current.merge(this_INT2_1);
+		}
+		{
+			newLeafNode(this_INT2_1, grammarAccess.getValidRotateIntAccess().getINT2TerminalRuleCall_1());
+		}
+		    |
+		this_INT3_2=RULE_INT3
+		{
+			$current.merge(this_INT3_2);
+		}
+		{
+			newLeafNode(this_INT3_2, grammarAccess.getValidRotateIntAccess().getINT3TerminalRuleCall_2());
+		}
 	)
 ;
 
@@ -573,22 +616,57 @@ ruleBlurOperation returns [EObject current=null]
 		)
 		(
 			(
-				lv_intensity_2_0=RULE_INT
 				{
-					newLeafNode(lv_intensity_2_0, grammarAccess.getBlurOperationAccess().getIntensityINTTerminalRuleCall_2_0());
+					newCompositeNode(grammarAccess.getBlurOperationAccess().getIntensityValidBlurIntParserRuleCall_2_0());
 				}
+				lv_intensity_2_0=ruleValidBlurInt
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getBlurOperationRule());
+						$current = createModelElementForParent(grammarAccess.getBlurOperationRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"intensity",
 						lv_intensity_2_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						"org.xtext.example.iml.ExtendedIML.ValidBlurInt");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleValidBlurInt
+entryRuleValidBlurInt returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getValidBlurIntRule()); }
+	iv_ruleValidBlurInt=ruleValidBlurInt
+	{ $current=$iv_ruleValidBlurInt.current.getText(); }
+	EOF;
+
+// Rule ValidBlurInt
+ruleValidBlurInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_INT1_0=RULE_INT1
+		{
+			$current.merge(this_INT1_0);
+		}
+		{
+			newLeafNode(this_INT1_0, grammarAccess.getValidBlurIntAccess().getINT1TerminalRuleCall_0());
+		}
+		    |
+		this_INT2_1=RULE_INT2
+		{
+			$current.merge(this_INT2_1);
+		}
+		{
+			newLeafNode(this_INT2_1, grammarAccess.getValidBlurIntAccess().getINT2TerminalRuleCall_1());
+		}
 	)
 ;
 
@@ -755,24 +833,73 @@ ruleFillOperation returns [EObject current=null]
 		)
 		(
 			(
-				lv_size_2_0=RULE_INT
 				{
-					newLeafNode(lv_size_2_0, grammarAccess.getFillOperationAccess().getSizeINTTerminalRuleCall_2_0());
+					newCompositeNode(grammarAccess.getFillOperationAccess().getSizeValidINTParserRuleCall_2_0());
 				}
+				lv_size_2_0=ruleValidINT
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFillOperationRule());
+						$current = createModelElementForParent(grammarAccess.getFillOperationRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"size",
 						lv_size_2_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						"org.xtext.example.iml.ExtendedIML.ValidINT");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 	)
 ;
+
+// Entry rule entryRuleValidINT
+entryRuleValidINT returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getValidINTRule()); }
+	iv_ruleValidINT=ruleValidINT
+	{ $current=$iv_ruleValidINT.current.getText(); }
+	EOF;
+
+// Rule ValidINT
+ruleValidINT returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_INT_0=RULE_INT
+		{
+			$current.merge(this_INT_0);
+		}
+		{
+			newLeafNode(this_INT_0, grammarAccess.getValidINTAccess().getINTTerminalRuleCall_0());
+		}
+		    |
+		this_INT2_1=RULE_INT2
+		{
+			$current.merge(this_INT2_1);
+		}
+		{
+			newLeafNode(this_INT2_1, grammarAccess.getValidINTAccess().getINT2TerminalRuleCall_1());
+		}
+		    |
+		this_INT3_2=RULE_INT3
+		{
+			$current.merge(this_INT3_2);
+		}
+		{
+			newLeafNode(this_INT3_2, grammarAccess.getValidINTAccess().getINT3TerminalRuleCall_2());
+		}
+	)
+;
+
+RULE_INT1 : '0'..'9';
+
+RULE_INT2 : '0'..'9' '0'..'9';
+
+RULE_INT3 : '0'..'9' '0'..'9' '0'..'9';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

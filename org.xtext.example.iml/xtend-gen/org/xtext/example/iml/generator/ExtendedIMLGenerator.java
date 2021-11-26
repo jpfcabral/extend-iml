@@ -244,7 +244,7 @@ public class ExtendedIMLGenerator extends AbstractGenerator {
         {
           if ((o instanceof RotateOperation)) {
             _builder.append("img = rotate_image(img, ");
-            int _degree = ((RotateOperation)o).getDegree();
+            String _degree = ((RotateOperation)o).getDegree();
             _builder.append(_degree);
             _builder.append(")");
             _builder.newLineIfNotEmpty();
@@ -267,7 +267,7 @@ public class ExtendedIMLGenerator extends AbstractGenerator {
                 } else {
                   if ((o instanceof FillOperation)) {
                     _builder.append("img = fill_image(img, ");
-                    int _size = ((FillOperation)o).getSize();
+                    String _size = ((FillOperation)o).getSize();
                     _builder.append(_size);
                     _builder.append(")");
                     _builder.newLineIfNotEmpty();

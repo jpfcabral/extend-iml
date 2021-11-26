@@ -66,9 +66,7 @@ for image_name in listdir('imagens'):
 	image_full_path = path.join('imagens', image_name)
 	img = cv2.imread(image_full_path)
 	if not img is None:
-		img = rotate_image(img, 40)
-		img = convert_to_gray(img)
-		img = fill_image(img, 400)
+		img = fill_image(img, 500)
+		img = rotate_image(img, 180)
 		show_image(img)
-		save_image(img, 'imagens')
 		
