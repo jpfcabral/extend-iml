@@ -23,36 +23,27 @@ import org.xtext.example.iml.extendedIML.EqualizeOperation
 class ExtendedIMLGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		val imagesPath = resource.allContents
+			.filter(DirImporter)
+			.map[pathDir]
+			.last()
+			.toString();
+		
+		val operators = resource.allContents
+			.filter(Operator)
+
 		fsa.generateFile(
 			'scripts.py',
 			// Load libs and define main functions
 			header()
-			
-			// Load first image 
-			+ loadImage(
-				resource.allContents
-				.filter(DirImporter)
-				.map[pathDir]
-				.last()
-				.toString()
-			)
-			
-			+ applyOperators(
-				resource.allContents
-				.filter(Operator)
-			)
-
-			// Debug all interpreted lines from IML
-			+ '# DEBUG \n\n'
-			+ resource.allContents
-				.join('\n'))
+			+ processImages(imagesPath, operators)
+		)
 	}
-	
-
 	
 	private def header() '''	
 	import numpy as np
 	import cv2
+	from os import listdir, path, mkdir
 	
 	def rotate_image(image, angle):
 		image_center = tuple(np.array(image.shape[1::-1]) / 2)
@@ -61,14 +52,7 @@ class ExtendedIMLGenerator extends AbstractGenerator {
 		return result
 	
 	def convert_to_gray(image, luma=False):
-	    if luma:
-	        params = [0.299, 0.589, 0.114]
-	    else:
-	        params = [0.2125, 0.7154, 0.0721]    
-	    gray_image = np.ceil(np.dot(image[...,:3], params))
-	    gray_image[gray_image > 255] = 255
-	    
-	    return gray_image
+	    return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 	
 	def blur_image(image, intensity): 
 		size = int(60 * intensity) if intensity >= 0.05 else 3
@@ -78,35 +62,46 @@ class ExtendedIMLGenerator extends AbstractGenerator {
 		return image_t
 	
 	def equalize_hist(image): 
-		img_to_yuv = cv2.cvtColor(image,cv2.COLOR_BGR2YUV)
-		img_to_yuv[:,:,0] = cv2.equalizeHist(img_to_yuv[:,:,0])
-		hist_equalization_result = cv2.cvtColor(img_to_yuv, cv2.COLOR_YUV2BGR)
-		
-		return hist_equalization_result
+		if (len(image.shape)==3):
+			img_to_yuv = cv2.cvtColor(image,cv2.COLOR_BGR2YUV)
+			img_to_yuv[:,:,0] = cv2.equalizeHist(img_to_yuv[:,:,0])
+			hist_equalization_result = cv2.cvtColor(img_to_yuv, cv2.COLOR_YUV2BGR)
+			return hist_equalization_result
+		elif (len(image.shape)==2):
+			img_eq = cv2.equalizeHist(image)
+			return img_eq
 	
-	def fill_image(img, size=(_size,_size)):
-	    h, w = img.shape[:2]
-	    c = img.shape[2] if len(img.shape)>2 else 1
-	    if h == w: 
-	        return cv2.resize(img, size, cv2.INTER_AREA)
-	    dif = h if h > w else w
-	    interpolation = cv2.INTER_AREA if dif > (size[0]+size[1])//2 else cv2.INTER_CUBIC
-	    x_pos = (dif - w)//2
-	    y_pos = (dif - h)//2
-	    if len(img.shape) == 2:
-	        mask = np.zeros((dif, dif), dtype=img.dtype)
-	        mask[y_pos:y_pos+h, x_pos:x_pos+w] = img[:h, :w]
-	    else:
-	        mask = np.zeros((dif, dif, c), dtype=img.dtype)
-	        mask[y_pos:y_pos+h, x_pos:x_pos+w, :] = img[:h, :w, :]
-	
-	    return cv2.resize(mask, size, interpolation)
+	# def fill_image(img, size=(_size,_size)):
+	#     h, w = img.shape[:2]
+	#     c = img.shape[2] if len(img.shape)>2 else 1
+	#     if h == w: 
+	#         return cv2.resize(img, size, cv2.INTER_AREA)
+	#     dif = h if h > w else w
+	#     interpolation = cv2.INTER_AREA if dif > (size[0]+size[1])//2 else cv2.INTER_CUBIC
+	#     x_pos = (dif - w)//2
+	#     y_pos = (dif - h)//2
+	#     if len(img.shape) == 2:
+	#         mask = np.zeros((dif, dif), dtype=img.dtype)
+	#         mask[y_pos:y_pos+h, x_pos:x_pos+w] = img[:h, :w]
+	#     else:
+	#         mask = np.zeros((dif, dif, c), dtype=img.dtype)
+	#         mask[y_pos:y_pos+h, x_pos:x_pos+w, :] = img[:h, :w, :]
+	# 
+	#     return cv2.resize(mask, size, interpolation)
 	
 	'''
 
-	private def String loadImage(CharSequence path) '''
-	img = cv2.imread('«path»')
-	
+	private def String processImages(CharSequence path, Iterator<Operator> operators) '''
+	for image_name in listdir('«path»'):
+		image_full_path = path.join('«path»', image_name)
+		img = cv2.imread(image_full_path)
+		if not img is None:
+			«applyOperators(operators)»
+			output_dir = path.join('«path»', 'output')
+			if (not path.exists(output_dir)):
+				mkdir(output_dir)
+			output_image_full_path = path.join(output_dir, image_name)
+			cv2.imwrite(output_image_full_path, img)
 	'''
 	
 	private def String applyOperators(Iterator<Operator> op) '''
@@ -125,20 +120,5 @@ class ExtendedIMLGenerator extends AbstractGenerator {
 	«ENDFOR»
 	
 	'''
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

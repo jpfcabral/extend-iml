@@ -1,12 +1,11 @@
-'.'=15
 '/'=14
 '='=13
-'blur'=20
-'equalize'=21
-'filter'=18
-'gray'=19
-'images'=16
-'rotate'=17
+'blur'=19
+'equalize'=20
+'filter'=17
+'gray'=18
+'images'=15
+'rotate'=16
 'save'=11
 'show'=12
 RULE_ANY_OTHER=10
@@ -26,4 +25,3 @@ T__17=17
 T__18=18
 T__19=19
 T__20=20
-T__21=21

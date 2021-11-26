@@ -1,8 +1,7 @@
-images no.jpg
-rotate A 90
-filter A gray
-rotate A 45
-blur A 25
-show A
-save A
-equalize A
+images imagens
+rotate by 40
+filter by gray
+rotate by 45
+blur by 25
+equalize it
+show it

@@ -27,7 +27,7 @@ QualifiedImageName:
 	ID;
 	
 QualifiedPath:
-	('/')? ID ('/' ID)* ('.' ID) ('/')?;
+	('/')? ID ('/' ID)* ('/')?;
 	
 DirImporter:
 	"images" pathDir=QualifiedPath;
