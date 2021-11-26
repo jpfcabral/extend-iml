@@ -79,8 +79,7 @@ class ExtendedIMLGenerator extends AbstractGenerator {
 		cv2.waitKey(0)
 		cv2.destroyAllWindows()
 	
-	def save_image(image, source_path):
-		output_dir = path.join(source_path, 'output')
+	def save_image(image, output_dir):
 		if (not path.exists(output_dir)):
 			mkdir(output_dir)
 		output_image_full_path = path.join(output_dir, image_name)
@@ -133,7 +132,8 @@ class ExtendedIMLGenerator extends AbstractGenerator {
 		«ELSEIF o instanceof ShowOperation»
 			show_image(img)
 		«ELSEIF o instanceof SaveOperation»
-			save_image(img, '«path»')
+			default_output_dir = path.join('«path»', 'output')
+			save_image(img, default_output_dir)
 		«ELSE»
 			# OPERADOR NÃO ENCONTRADO
 		«ENDIF»

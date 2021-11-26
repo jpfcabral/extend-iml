@@ -324,8 +324,8 @@ public class InternalExtendedIMLLexer extends Lexer {
         try {
             int _type = RULE_INT1;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalExtendedIML.g:1717:11: ( '0' .. '9' )
-            // InternalExtendedIML.g:1717:13: '0' .. '9'
+            // InternalExtendedIML.g:1852:11: ( '0' .. '9' )
+            // InternalExtendedIML.g:1852:13: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -344,8 +344,8 @@ public class InternalExtendedIMLLexer extends Lexer {
         try {
             int _type = RULE_INT2;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalExtendedIML.g:1719:11: ( '0' .. '9' '0' .. '9' )
-            // InternalExtendedIML.g:1719:13: '0' .. '9' '0' .. '9'
+            // InternalExtendedIML.g:1854:11: ( '0' .. '9' '0' .. '9' )
+            // InternalExtendedIML.g:1854:13: '0' .. '9' '0' .. '9'
             {
             matchRange('0','9'); 
             matchRange('0','9'); 
@@ -365,8 +365,8 @@ public class InternalExtendedIMLLexer extends Lexer {
         try {
             int _type = RULE_INT3;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalExtendedIML.g:1721:11: ( '0' .. '9' '0' .. '9' '0' .. '9' )
-            // InternalExtendedIML.g:1721:13: '0' .. '9' '0' .. '9' '0' .. '9'
+            // InternalExtendedIML.g:1856:11: ( '0' .. '9' '0' .. '9' '0' .. '9' )
+            // InternalExtendedIML.g:1856:13: '0' .. '9' '0' .. '9' '0' .. '9'
             {
             matchRange('0','9'); 
             matchRange('0','9'); 
@@ -387,10 +387,10 @@ public class InternalExtendedIMLLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalExtendedIML.g:1723:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalExtendedIML.g:1723:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalExtendedIML.g:1858:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalExtendedIML.g:1858:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalExtendedIML.g:1723:11: ( '^' )?
+            // InternalExtendedIML.g:1858:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -399,7 +399,7 @@ public class InternalExtendedIMLLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalExtendedIML.g:1723:11: '^'
+                    // InternalExtendedIML.g:1858:11: '^'
                     {
                     match('^'); 
 
@@ -417,7 +417,7 @@ public class InternalExtendedIMLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalExtendedIML.g:1723:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalExtendedIML.g:1858:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -466,10 +466,10 @@ public class InternalExtendedIMLLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalExtendedIML.g:1725:10: ( ( '0' .. '9' )+ )
-            // InternalExtendedIML.g:1725:12: ( '0' .. '9' )+
+            // InternalExtendedIML.g:1860:10: ( ( '0' .. '9' )+ )
+            // InternalExtendedIML.g:1860:12: ( '0' .. '9' )+
             {
-            // InternalExtendedIML.g:1725:12: ( '0' .. '9' )+
+            // InternalExtendedIML.g:1860:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -483,7 +483,7 @@ public class InternalExtendedIMLLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalExtendedIML.g:1725:13: '0' .. '9'
+            	    // InternalExtendedIML.g:1860:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -515,10 +515,10 @@ public class InternalExtendedIMLLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalExtendedIML.g:1727:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalExtendedIML.g:1727:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalExtendedIML.g:1862:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalExtendedIML.g:1862:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalExtendedIML.g:1727:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalExtendedIML.g:1862:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -536,10 +536,10 @@ public class InternalExtendedIMLLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalExtendedIML.g:1727:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalExtendedIML.g:1862:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalExtendedIML.g:1727:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalExtendedIML.g:1862:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -555,7 +555,7 @@ public class InternalExtendedIMLLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalExtendedIML.g:1727:21: '\\\\' .
+                    	    // InternalExtendedIML.g:1862:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -563,7 +563,7 @@ public class InternalExtendedIMLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalExtendedIML.g:1727:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalExtendedIML.g:1862:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -588,10 +588,10 @@ public class InternalExtendedIMLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalExtendedIML.g:1727:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalExtendedIML.g:1862:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalExtendedIML.g:1727:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalExtendedIML.g:1862:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -607,7 +607,7 @@ public class InternalExtendedIMLLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalExtendedIML.g:1727:54: '\\\\' .
+                    	    // InternalExtendedIML.g:1862:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -615,7 +615,7 @@ public class InternalExtendedIMLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalExtendedIML.g:1727:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalExtendedIML.g:1862:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -658,12 +658,12 @@ public class InternalExtendedIMLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalExtendedIML.g:1729:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalExtendedIML.g:1729:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalExtendedIML.g:1864:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalExtendedIML.g:1864:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalExtendedIML.g:1729:24: ( options {greedy=false; } : . )*
+            // InternalExtendedIML.g:1864:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -688,7 +688,7 @@ public class InternalExtendedIMLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalExtendedIML.g:1729:52: .
+            	    // InternalExtendedIML.g:1864:52: .
             	    {
             	    matchAny(); 
 
@@ -718,12 +718,12 @@ public class InternalExtendedIMLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalExtendedIML.g:1731:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalExtendedIML.g:1731:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalExtendedIML.g:1866:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalExtendedIML.g:1866:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalExtendedIML.g:1731:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalExtendedIML.g:1866:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -736,7 +736,7 @@ public class InternalExtendedIMLLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalExtendedIML.g:1731:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalExtendedIML.g:1866:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -756,7 +756,7 @@ public class InternalExtendedIMLLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalExtendedIML.g:1731:40: ( ( '\\r' )? '\\n' )?
+            // InternalExtendedIML.g:1866:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -765,9 +765,9 @@ public class InternalExtendedIMLLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalExtendedIML.g:1731:41: ( '\\r' )? '\\n'
+                    // InternalExtendedIML.g:1866:41: ( '\\r' )? '\\n'
                     {
-                    // InternalExtendedIML.g:1731:41: ( '\\r' )?
+                    // InternalExtendedIML.g:1866:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -776,7 +776,7 @@ public class InternalExtendedIMLLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalExtendedIML.g:1731:41: '\\r'
+                            // InternalExtendedIML.g:1866:41: '\\r'
                             {
                             match('\r'); 
 
@@ -808,10 +808,10 @@ public class InternalExtendedIMLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalExtendedIML.g:1733:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalExtendedIML.g:1733:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalExtendedIML.g:1868:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalExtendedIML.g:1868:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalExtendedIML.g:1733:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalExtendedIML.g:1868:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -865,8 +865,8 @@ public class InternalExtendedIMLLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalExtendedIML.g:1735:16: ( . )
-            // InternalExtendedIML.g:1735:18: .
+            // InternalExtendedIML.g:1870:16: ( . )
+            // InternalExtendedIML.g:1870:18: .
             {
             matchAny(); 
 

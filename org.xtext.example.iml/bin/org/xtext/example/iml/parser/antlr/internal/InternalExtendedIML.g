@@ -480,7 +480,7 @@ ruleRotateOperation returns [EObject current=null]
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
-		)
+		)?
 		(
 			(
 				{
@@ -561,15 +561,22 @@ ruleFilterOperation returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='filter'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getFilterOperationAccess().getFilterOperationAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='filter'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getFilterOperationAccess().getFilterKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getFilterOperationAccess().getFilterKeyword_1());
 		}
 		(
 			(
-				lv_var_1_0=RULE_ID
+				lv_var_2_0=RULE_ID
 				{
-					newLeafNode(lv_var_1_0, grammarAccess.getFilterOperationAccess().getVarIDTerminalRuleCall_1_0());
+					newLeafNode(lv_var_2_0, grammarAccess.getFilterOperationAccess().getVarIDTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -578,14 +585,14 @@ ruleFilterOperation returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"var",
-						lv_var_1_0,
+						lv_var_2_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
-		)
-		otherlv_2='gray'
+		)?
+		otherlv_3='gray'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getFilterOperationAccess().getGrayKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getFilterOperationAccess().getGrayKeyword_3());
 		}
 	)
 ;
@@ -627,13 +634,13 @@ ruleBlurOperation returns [EObject current=null]
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
-		)
+		)?
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getBlurOperationAccess().getIntensityValidBlurIntParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getBlurOperationAccess().getIntensityValidBlurParserRuleCall_2_0());
 				}
-				lv_intensity_2_0=ruleValidBlurInt
+				lv_intensity_2_0=ruleValidBlur
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getBlurOperationRule());
@@ -642,7 +649,7 @@ ruleBlurOperation returns [EObject current=null]
 						$current,
 						"intensity",
 						lv_intensity_2_0,
-						"org.xtext.example.iml.ExtendedIML.ValidBlurInt");
+						"org.xtext.example.iml.ExtendedIML.ValidBlur");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -650,15 +657,15 @@ ruleBlurOperation returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleValidBlurInt
-entryRuleValidBlurInt returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getValidBlurIntRule()); }
-	iv_ruleValidBlurInt=ruleValidBlurInt
-	{ $current=$iv_ruleValidBlurInt.current.getText(); }
+// Entry rule entryRuleValidBlur
+entryRuleValidBlur returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getValidBlurRule()); }
+	iv_ruleValidBlur=ruleValidBlur
+	{ $current=$iv_ruleValidBlur.current.getText(); }
 	EOF;
 
-// Rule ValidBlurInt
-ruleValidBlurInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+// Rule ValidBlur
+ruleValidBlur returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 @init {
 	enterRule();
 }
@@ -671,7 +678,7 @@ ruleValidBlurInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
 			$current.merge(this_INT1_0);
 		}
 		{
-			newLeafNode(this_INT1_0, grammarAccess.getValidBlurIntAccess().getINT1TerminalRuleCall_0());
+			newLeafNode(this_INT1_0, grammarAccess.getValidBlurAccess().getINT1TerminalRuleCall_0());
 		}
 		    |
 		this_INT2_1=RULE_INT2
@@ -679,7 +686,7 @@ ruleValidBlurInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
 			$current.merge(this_INT2_1);
 		}
 		{
-			newLeafNode(this_INT2_1, grammarAccess.getValidBlurIntAccess().getINT2TerminalRuleCall_1());
+			newLeafNode(this_INT2_1, grammarAccess.getValidBlurAccess().getINT2TerminalRuleCall_1());
 		}
 	)
 ;
@@ -700,15 +707,22 @@ ruleEqualizeOperation returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='equalize'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getEqualizeOperationAccess().getEqualizeOperationAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='equalize'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getEqualizeOperationAccess().getEqualizeKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getEqualizeOperationAccess().getEqualizeKeyword_1());
 		}
 		(
 			(
-				lv_var_1_0=RULE_ID
+				lv_var_2_0=RULE_ID
 				{
-					newLeafNode(lv_var_1_0, grammarAccess.getEqualizeOperationAccess().getVarIDTerminalRuleCall_1_0());
+					newLeafNode(lv_var_2_0, grammarAccess.getEqualizeOperationAccess().getVarIDTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -717,11 +731,11 @@ ruleEqualizeOperation returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"var",
-						lv_var_1_0,
+						lv_var_2_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
-		)
+		)?
 	)
 ;
 
@@ -741,15 +755,22 @@ ruleShowOperation returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='show'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getShowOperationAccess().getShowOperationAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='show'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getShowOperationAccess().getShowKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getShowOperationAccess().getShowKeyword_1());
 		}
 		(
 			(
-				lv_var_1_0=RULE_ID
+				lv_var_2_0=RULE_ID
 				{
-					newLeafNode(lv_var_1_0, grammarAccess.getShowOperationAccess().getVarIDTerminalRuleCall_1_0());
+					newLeafNode(lv_var_2_0, grammarAccess.getShowOperationAccess().getVarIDTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -758,11 +779,11 @@ ruleShowOperation returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"var",
-						lv_var_1_0,
+						lv_var_2_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
-		)
+		)?
 	)
 ;
 
@@ -782,15 +803,22 @@ ruleSaveOperation returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='save'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getSaveOperationAccess().getSaveOperationAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='save'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getSaveOperationAccess().getSaveKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getSaveOperationAccess().getSaveKeyword_1());
 		}
 		(
 			(
-				lv_var_1_0=RULE_ID
+				lv_var_2_0=RULE_ID
 				{
-					newLeafNode(lv_var_1_0, grammarAccess.getSaveOperationAccess().getVarIDTerminalRuleCall_1_0());
+					newLeafNode(lv_var_2_0, grammarAccess.getSaveOperationAccess().getVarIDTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -799,11 +827,11 @@ ruleSaveOperation returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"var",
-						lv_var_1_0,
+						lv_var_2_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
-		)
+		)?
 	)
 ;
 
@@ -823,15 +851,22 @@ ruleFillOperation returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='fill'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getFillOperationAccess().getFillOperationAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='fill'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getFillOperationAccess().getFillKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getFillOperationAccess().getFillKeyword_1());
 		}
 		(
 			(
-				lv_var_1_0=RULE_ID
+				lv_var_2_0=RULE_ID
 				{
-					newLeafNode(lv_var_1_0, grammarAccess.getFillOperationAccess().getVarIDTerminalRuleCall_1_0());
+					newLeafNode(lv_var_2_0, grammarAccess.getFillOperationAccess().getVarIDTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -840,17 +875,17 @@ ruleFillOperation returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"var",
-						lv_var_1_0,
+						lv_var_2_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
-		)
+		)?
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFillOperationAccess().getSizeValidINTParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getFillOperationAccess().getSizeValidINTParserRuleCall_3_0());
 				}
-				lv_size_2_0=ruleValidINT
+				lv_size_3_0=ruleValidINT
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFillOperationRule());
@@ -858,7 +893,7 @@ ruleFillOperation returns [EObject current=null]
 					set(
 						$current,
 						"size",
-						lv_size_2_0,
+						lv_size_3_0,
 						"org.xtext.example.iml.ExtendedIML.ValidINT");
 					afterParserOrEnumRuleCall();
 				}

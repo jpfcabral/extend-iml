@@ -8,7 +8,7 @@ Model:
 terminal INT1: ('0'..'9');
 terminal INT2: ('0'..'9')('0'..'9');
 terminal INT3: ('0'..'9')('0'..'9')('0'..'9');
-	
+
 AbstractElement:
 	Importer | Operator;
 	
@@ -32,28 +32,28 @@ Operator:
 	ShowOperation | SaveOperation | FillOperation;
 
 RotateOperation:
-	"rotate" var=ID degree=ValidRotateInt;
+	"rotate" (var=ID)? degree=ValidRotateInt;
 
 ValidRotateInt: INT1 | INT2 | INT3;
 
 FilterOperation:
-	"filter" var=ID "gray";
+	{FilterOperation} "filter" (var=ID)? "gray";
 
 BlurOperation:
-	"blur" var=ID intensity=ValidBlurInt;
+	"blur" (var=ID)? intensity=ValidBlur;
 
-ValidBlurInt: INT1 | INT2;
+ValidBlur: INT1 | INT2;
 
 EqualizeOperation:
-	"equalize" var=ID;
+	{EqualizeOperation} "equalize" (var=ID)?;
 
 ShowOperation:
-	"show" var=ID;
+	{ShowOperation} "show" (var=ID)?;
 
 SaveOperation:
-	"save" var=ID;
+	{SaveOperation} "save" (var=ID)?;
 
 FillOperation:
-	"fill" var=ID size=ValidINT;
+	{FillOperation} "fill" (var=ID)? size=ValidINT;
 
 ValidINT: INT | INT2 | INT3;

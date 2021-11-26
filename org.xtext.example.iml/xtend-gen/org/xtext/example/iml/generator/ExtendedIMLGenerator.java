@@ -129,10 +129,7 @@ public class ExtendedIMLGenerator extends AbstractGenerator {
     _builder.append("cv2.destroyAllWindows()");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("def save_image(image, source_path):");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("output_dir = path.join(source_path, \'output\')");
+    _builder.append("def save_image(image, output_dir):");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("if (not path.exists(output_dir)):");
@@ -277,10 +274,12 @@ public class ExtendedIMLGenerator extends AbstractGenerator {
                       _builder.newLine();
                     } else {
                       if ((o instanceof SaveOperation)) {
-                        _builder.append("save_image(img, \'");
+                        _builder.append("default_output_dir = path.join(\'");
                         _builder.append(path);
-                        _builder.append("\')");
+                        _builder.append("\', \'output\')");
                         _builder.newLineIfNotEmpty();
+                        _builder.append("save_image(img, default_output_dir)");
+                        _builder.newLine();
                       } else {
                         _builder.append("# OPERADOR NÃO ENCONTRADO");
                         _builder.newLine();

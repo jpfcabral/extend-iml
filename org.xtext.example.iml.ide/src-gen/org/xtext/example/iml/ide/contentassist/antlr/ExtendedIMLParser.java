@@ -35,7 +35,7 @@ public class ExtendedIMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getImporterAccess().getAlternatives(), "rule__Importer__Alternatives");
 			builder.put(grammarAccess.getOperatorAccess().getAlternatives(), "rule__Operator__Alternatives");
 			builder.put(grammarAccess.getValidRotateIntAccess().getAlternatives(), "rule__ValidRotateInt__Alternatives");
-			builder.put(grammarAccess.getValidBlurIntAccess().getAlternatives(), "rule__ValidBlurInt__Alternatives");
+			builder.put(grammarAccess.getValidBlurAccess().getAlternatives(), "rule__ValidBlur__Alternatives");
 			builder.put(grammarAccess.getValidINTAccess().getAlternatives(), "rule__ValidINT__Alternatives");
 			builder.put(grammarAccess.getImageImporterAccess().getGroup(), "rule__ImageImporter__Group__0");
 			builder.put(grammarAccess.getQualifiedPathAccess().getGroup(), "rule__QualifiedPath__Group__0");
@@ -54,14 +54,14 @@ public class ExtendedIMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDirImporterAccess().getPathDirAssignment_1(), "rule__DirImporter__PathDirAssignment_1");
 			builder.put(grammarAccess.getRotateOperationAccess().getVarAssignment_1(), "rule__RotateOperation__VarAssignment_1");
 			builder.put(grammarAccess.getRotateOperationAccess().getDegreeAssignment_2(), "rule__RotateOperation__DegreeAssignment_2");
-			builder.put(grammarAccess.getFilterOperationAccess().getVarAssignment_1(), "rule__FilterOperation__VarAssignment_1");
+			builder.put(grammarAccess.getFilterOperationAccess().getVarAssignment_2(), "rule__FilterOperation__VarAssignment_2");
 			builder.put(grammarAccess.getBlurOperationAccess().getVarAssignment_1(), "rule__BlurOperation__VarAssignment_1");
 			builder.put(grammarAccess.getBlurOperationAccess().getIntensityAssignment_2(), "rule__BlurOperation__IntensityAssignment_2");
-			builder.put(grammarAccess.getEqualizeOperationAccess().getVarAssignment_1(), "rule__EqualizeOperation__VarAssignment_1");
-			builder.put(grammarAccess.getShowOperationAccess().getVarAssignment_1(), "rule__ShowOperation__VarAssignment_1");
-			builder.put(grammarAccess.getSaveOperationAccess().getVarAssignment_1(), "rule__SaveOperation__VarAssignment_1");
-			builder.put(grammarAccess.getFillOperationAccess().getVarAssignment_1(), "rule__FillOperation__VarAssignment_1");
-			builder.put(grammarAccess.getFillOperationAccess().getSizeAssignment_2(), "rule__FillOperation__SizeAssignment_2");
+			builder.put(grammarAccess.getEqualizeOperationAccess().getVarAssignment_2(), "rule__EqualizeOperation__VarAssignment_2");
+			builder.put(grammarAccess.getShowOperationAccess().getVarAssignment_2(), "rule__ShowOperation__VarAssignment_2");
+			builder.put(grammarAccess.getSaveOperationAccess().getVarAssignment_2(), "rule__SaveOperation__VarAssignment_2");
+			builder.put(grammarAccess.getFillOperationAccess().getVarAssignment_2(), "rule__FillOperation__VarAssignment_2");
+			builder.put(grammarAccess.getFillOperationAccess().getSizeAssignment_3(), "rule__FillOperation__SizeAssignment_3");
 		}
 	}
 	

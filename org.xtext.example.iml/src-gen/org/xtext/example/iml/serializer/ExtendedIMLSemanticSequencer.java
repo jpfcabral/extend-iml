@@ -83,19 +83,10 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     BlurOperation returns BlurOperation
 	 *
 	 * Constraint:
-	 *     (var=ID intensity=ValidBlurInt)
+	 *     (var=ID? intensity=ValidBlur)
 	 */
 	protected void sequence_BlurOperation(ISerializationContext context, BlurOperation semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR));
-			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.BLUR_OPERATION__INTENSITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.BLUR_OPERATION__INTENSITY));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBlurOperationAccess().getVarIDTerminalRuleCall_1_0(), semanticObject.getVar());
-		feeder.accept(grammarAccess.getBlurOperationAccess().getIntensityValidBlurIntParserRuleCall_2_0(), semanticObject.getIntensity());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -126,16 +117,10 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     EqualizeOperation returns EqualizeOperation
 	 *
 	 * Constraint:
-	 *     var=ID
+	 *     var=ID?
 	 */
 	protected void sequence_EqualizeOperation(ISerializationContext context, EqualizeOperation semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEqualizeOperationAccess().getVarIDTerminalRuleCall_1_0(), semanticObject.getVar());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -146,19 +131,10 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     FillOperation returns FillOperation
 	 *
 	 * Constraint:
-	 *     (var=ID size=ValidINT)
+	 *     (var=ID? size=ValidINT)
 	 */
 	protected void sequence_FillOperation(ISerializationContext context, FillOperation semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR));
-			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.FILL_OPERATION__SIZE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.FILL_OPERATION__SIZE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFillOperationAccess().getVarIDTerminalRuleCall_1_0(), semanticObject.getVar());
-		feeder.accept(grammarAccess.getFillOperationAccess().getSizeValidINTParserRuleCall_2_0(), semanticObject.getSize());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -169,16 +145,10 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     FilterOperation returns FilterOperation
 	 *
 	 * Constraint:
-	 *     var=ID
+	 *     var=ID?
 	 */
 	protected void sequence_FilterOperation(ISerializationContext context, FilterOperation semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFilterOperationAccess().getVarIDTerminalRuleCall_1_0(), semanticObject.getVar());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -224,19 +194,10 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     RotateOperation returns RotateOperation
 	 *
 	 * Constraint:
-	 *     (var=ID degree=ValidRotateInt)
+	 *     (var=ID? degree=ValidRotateInt)
 	 */
 	protected void sequence_RotateOperation(ISerializationContext context, RotateOperation semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR));
-			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.ROTATE_OPERATION__DEGREE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.ROTATE_OPERATION__DEGREE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRotateOperationAccess().getVarIDTerminalRuleCall_1_0(), semanticObject.getVar());
-		feeder.accept(grammarAccess.getRotateOperationAccess().getDegreeValidRotateIntParserRuleCall_2_0(), semanticObject.getDegree());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -247,16 +208,10 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     SaveOperation returns SaveOperation
 	 *
 	 * Constraint:
-	 *     var=ID
+	 *     var=ID?
 	 */
 	protected void sequence_SaveOperation(ISerializationContext context, SaveOperation semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSaveOperationAccess().getVarIDTerminalRuleCall_1_0(), semanticObject.getVar());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -267,16 +222,10 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     ShowOperation returns ShowOperation
 	 *
 	 * Constraint:
-	 *     var=ID
+	 *     var=ID?
 	 */
 	protected void sequence_ShowOperation(ISerializationContext context, ShowOperation semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getShowOperationAccess().getVarIDTerminalRuleCall_1_0(), semanticObject.getVar());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

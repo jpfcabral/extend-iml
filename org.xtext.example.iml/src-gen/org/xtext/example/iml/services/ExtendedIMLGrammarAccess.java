@@ -6,6 +6,7 @@ package org.xtext.example.iml.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
+import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Grammar;
@@ -234,16 +235,16 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final RuleCall cDegreeValidRotateIntParserRuleCall_2_0 = (RuleCall)cDegreeAssignment_2.eContents().get(0);
 		
 		//RotateOperation:
-		//    "rotate" var=ID degree=ValidRotateInt;
+		//    "rotate" (var=ID)? degree=ValidRotateInt;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"rotate" var=ID degree=ValidRotateInt
+		//"rotate" (var=ID)? degree=ValidRotateInt
 		public Group getGroup() { return cGroup; }
 		
 		//"rotate"
 		public Keyword getRotateKeyword_0() { return cRotateKeyword_0; }
 		
-		//var=ID
+		//(var=ID)?
 		public Assignment getVarAssignment_1() { return cVarAssignment_1; }
 		
 		//ID
@@ -280,29 +281,33 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	public class FilterOperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.FilterOperation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFilterKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
-		private final Keyword cGrayKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Action cFilterOperationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cFilterKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cVarAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cVarIDTerminalRuleCall_2_0 = (RuleCall)cVarAssignment_2.eContents().get(0);
+		private final Keyword cGrayKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//FilterOperation:
-		//    "filter" var=ID "gray";
+		//    {FilterOperation} "filter" (var=ID)? "gray";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"filter" var=ID "gray"
+		//{FilterOperation} "filter" (var=ID)? "gray"
 		public Group getGroup() { return cGroup; }
 		
-		//"filter"
-		public Keyword getFilterKeyword_0() { return cFilterKeyword_0; }
+		//{FilterOperation}
+		public Action getFilterOperationAction_0() { return cFilterOperationAction_0; }
 		
-		//var=ID
-		public Assignment getVarAssignment_1() { return cVarAssignment_1; }
+		//"filter"
+		public Keyword getFilterKeyword_1() { return cFilterKeyword_1; }
+		
+		//(var=ID)?
+		public Assignment getVarAssignment_2() { return cVarAssignment_2; }
 		
 		//ID
-		public RuleCall getVarIDTerminalRuleCall_1_0() { return cVarIDTerminalRuleCall_1_0; }
+		public RuleCall getVarIDTerminalRuleCall_2_0() { return cVarIDTerminalRuleCall_2_0; }
 		
 		//"gray"
-		public Keyword getGrayKeyword_2() { return cGrayKeyword_2; }
+		public Keyword getGrayKeyword_3() { return cGrayKeyword_3; }
 	}
 	public class BlurOperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.BlurOperation");
@@ -311,37 +316,37 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
 		private final Assignment cIntensityAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cIntensityValidBlurIntParserRuleCall_2_0 = (RuleCall)cIntensityAssignment_2.eContents().get(0);
+		private final RuleCall cIntensityValidBlurParserRuleCall_2_0 = (RuleCall)cIntensityAssignment_2.eContents().get(0);
 		
 		//BlurOperation:
-		//    "blur" var=ID intensity=ValidBlurInt;
+		//    "blur" (var=ID)? intensity=ValidBlur;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"blur" var=ID intensity=ValidBlurInt
+		//"blur" (var=ID)? intensity=ValidBlur
 		public Group getGroup() { return cGroup; }
 		
 		//"blur"
 		public Keyword getBlurKeyword_0() { return cBlurKeyword_0; }
 		
-		//var=ID
+		//(var=ID)?
 		public Assignment getVarAssignment_1() { return cVarAssignment_1; }
 		
 		//ID
 		public RuleCall getVarIDTerminalRuleCall_1_0() { return cVarIDTerminalRuleCall_1_0; }
 		
-		//intensity=ValidBlurInt
+		//intensity=ValidBlur
 		public Assignment getIntensityAssignment_2() { return cIntensityAssignment_2; }
 		
-		//ValidBlurInt
-		public RuleCall getIntensityValidBlurIntParserRuleCall_2_0() { return cIntensityValidBlurIntParserRuleCall_2_0; }
+		//ValidBlur
+		public RuleCall getIntensityValidBlurParserRuleCall_2_0() { return cIntensityValidBlurParserRuleCall_2_0; }
 	}
-	public class ValidBlurIntElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.ValidBlurInt");
+	public class ValidBlurElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.ValidBlur");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cINT1TerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cINT2TerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//ValidBlurInt: INT1 | INT2;
+		//ValidBlur: INT1 | INT2;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//INT1 | INT2
@@ -356,102 +361,118 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	public class EqualizeOperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.EqualizeOperation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cEqualizeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
+		private final Action cEqualizeOperationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cEqualizeKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cVarAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cVarIDTerminalRuleCall_2_0 = (RuleCall)cVarAssignment_2.eContents().get(0);
 		
 		//EqualizeOperation:
-		//    "equalize" var=ID;
+		//    {EqualizeOperation} "equalize" (var=ID)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"equalize" var=ID
+		//{EqualizeOperation} "equalize" (var=ID)?
 		public Group getGroup() { return cGroup; }
 		
-		//"equalize"
-		public Keyword getEqualizeKeyword_0() { return cEqualizeKeyword_0; }
+		//{EqualizeOperation}
+		public Action getEqualizeOperationAction_0() { return cEqualizeOperationAction_0; }
 		
-		//var=ID
-		public Assignment getVarAssignment_1() { return cVarAssignment_1; }
+		//"equalize"
+		public Keyword getEqualizeKeyword_1() { return cEqualizeKeyword_1; }
+		
+		//(var=ID)?
+		public Assignment getVarAssignment_2() { return cVarAssignment_2; }
 		
 		//ID
-		public RuleCall getVarIDTerminalRuleCall_1_0() { return cVarIDTerminalRuleCall_1_0; }
+		public RuleCall getVarIDTerminalRuleCall_2_0() { return cVarIDTerminalRuleCall_2_0; }
 	}
 	public class ShowOperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.ShowOperation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cShowKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
+		private final Action cShowOperationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cShowKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cVarAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cVarIDTerminalRuleCall_2_0 = (RuleCall)cVarAssignment_2.eContents().get(0);
 		
 		//ShowOperation:
-		//    "show" var=ID;
+		//    {ShowOperation} "show" (var=ID)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"show" var=ID
+		//{ShowOperation} "show" (var=ID)?
 		public Group getGroup() { return cGroup; }
 		
-		//"show"
-		public Keyword getShowKeyword_0() { return cShowKeyword_0; }
+		//{ShowOperation}
+		public Action getShowOperationAction_0() { return cShowOperationAction_0; }
 		
-		//var=ID
-		public Assignment getVarAssignment_1() { return cVarAssignment_1; }
+		//"show"
+		public Keyword getShowKeyword_1() { return cShowKeyword_1; }
+		
+		//(var=ID)?
+		public Assignment getVarAssignment_2() { return cVarAssignment_2; }
 		
 		//ID
-		public RuleCall getVarIDTerminalRuleCall_1_0() { return cVarIDTerminalRuleCall_1_0; }
+		public RuleCall getVarIDTerminalRuleCall_2_0() { return cVarIDTerminalRuleCall_2_0; }
 	}
 	public class SaveOperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.SaveOperation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSaveKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
+		private final Action cSaveOperationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cSaveKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cVarAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cVarIDTerminalRuleCall_2_0 = (RuleCall)cVarAssignment_2.eContents().get(0);
 		
 		//SaveOperation:
-		//    "save" var=ID;
+		//    {SaveOperation} "save" (var=ID)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"save" var=ID
+		//{SaveOperation} "save" (var=ID)?
 		public Group getGroup() { return cGroup; }
 		
-		//"save"
-		public Keyword getSaveKeyword_0() { return cSaveKeyword_0; }
+		//{SaveOperation}
+		public Action getSaveOperationAction_0() { return cSaveOperationAction_0; }
 		
-		//var=ID
-		public Assignment getVarAssignment_1() { return cVarAssignment_1; }
+		//"save"
+		public Keyword getSaveKeyword_1() { return cSaveKeyword_1; }
+		
+		//(var=ID)?
+		public Assignment getVarAssignment_2() { return cVarAssignment_2; }
 		
 		//ID
-		public RuleCall getVarIDTerminalRuleCall_1_0() { return cVarIDTerminalRuleCall_1_0; }
+		public RuleCall getVarIDTerminalRuleCall_2_0() { return cVarIDTerminalRuleCall_2_0; }
 	}
 	public class FillOperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.FillOperation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFillKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
-		private final Assignment cSizeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cSizeValidINTParserRuleCall_2_0 = (RuleCall)cSizeAssignment_2.eContents().get(0);
+		private final Action cFillOperationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cFillKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cVarAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cVarIDTerminalRuleCall_2_0 = (RuleCall)cVarAssignment_2.eContents().get(0);
+		private final Assignment cSizeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cSizeValidINTParserRuleCall_3_0 = (RuleCall)cSizeAssignment_3.eContents().get(0);
 		
 		//FillOperation:
-		//    "fill" var=ID size=ValidINT;
+		//    {FillOperation} "fill" (var=ID)? size=ValidINT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"fill" var=ID size=ValidINT
+		//{FillOperation} "fill" (var=ID)? size=ValidINT
 		public Group getGroup() { return cGroup; }
 		
-		//"fill"
-		public Keyword getFillKeyword_0() { return cFillKeyword_0; }
+		//{FillOperation}
+		public Action getFillOperationAction_0() { return cFillOperationAction_0; }
 		
-		//var=ID
-		public Assignment getVarAssignment_1() { return cVarAssignment_1; }
+		//"fill"
+		public Keyword getFillKeyword_1() { return cFillKeyword_1; }
+		
+		//(var=ID)?
+		public Assignment getVarAssignment_2() { return cVarAssignment_2; }
 		
 		//ID
-		public RuleCall getVarIDTerminalRuleCall_1_0() { return cVarIDTerminalRuleCall_1_0; }
+		public RuleCall getVarIDTerminalRuleCall_2_0() { return cVarIDTerminalRuleCall_2_0; }
 		
 		//size=ValidINT
-		public Assignment getSizeAssignment_2() { return cSizeAssignment_2; }
+		public Assignment getSizeAssignment_3() { return cSizeAssignment_3; }
 		
 		//ValidINT
-		public RuleCall getSizeValidINTParserRuleCall_2_0() { return cSizeValidINTParserRuleCall_2_0; }
+		public RuleCall getSizeValidINTParserRuleCall_3_0() { return cSizeValidINTParserRuleCall_3_0; }
 	}
 	public class ValidINTElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.ValidINT");
@@ -492,7 +513,7 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	private final ValidRotateIntElements pValidRotateInt;
 	private final FilterOperationElements pFilterOperation;
 	private final BlurOperationElements pBlurOperation;
-	private final ValidBlurIntElements pValidBlurInt;
+	private final ValidBlurElements pValidBlur;
 	private final EqualizeOperationElements pEqualizeOperation;
 	private final ShowOperationElements pShowOperation;
 	private final SaveOperationElements pSaveOperation;
@@ -523,7 +544,7 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.pValidRotateInt = new ValidRotateIntElements();
 		this.pFilterOperation = new FilterOperationElements();
 		this.pBlurOperation = new BlurOperationElements();
-		this.pValidBlurInt = new ValidBlurIntElements();
+		this.pValidBlur = new ValidBlurElements();
 		this.pEqualizeOperation = new EqualizeOperationElements();
 		this.pShowOperation = new ShowOperationElements();
 		this.pSaveOperation = new SaveOperationElements();
@@ -655,7 +676,7 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//RotateOperation:
-	//    "rotate" var=ID degree=ValidRotateInt;
+	//    "rotate" (var=ID)? degree=ValidRotateInt;
 	public RotateOperationElements getRotateOperationAccess() {
 		return pRotateOperation;
 	}
@@ -674,7 +695,7 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//FilterOperation:
-	//    "filter" var=ID "gray";
+	//    {FilterOperation} "filter" (var=ID)? "gray";
 	public FilterOperationElements getFilterOperationAccess() {
 		return pFilterOperation;
 	}
@@ -684,7 +705,7 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//BlurOperation:
-	//    "blur" var=ID intensity=ValidBlurInt;
+	//    "blur" (var=ID)? intensity=ValidBlur;
 	public BlurOperationElements getBlurOperationAccess() {
 		return pBlurOperation;
 	}
@@ -693,17 +714,17 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		return getBlurOperationAccess().getRule();
 	}
 	
-	//ValidBlurInt: INT1 | INT2;
-	public ValidBlurIntElements getValidBlurIntAccess() {
-		return pValidBlurInt;
+	//ValidBlur: INT1 | INT2;
+	public ValidBlurElements getValidBlurAccess() {
+		return pValidBlur;
 	}
 	
-	public ParserRule getValidBlurIntRule() {
-		return getValidBlurIntAccess().getRule();
+	public ParserRule getValidBlurRule() {
+		return getValidBlurAccess().getRule();
 	}
 	
 	//EqualizeOperation:
-	//    "equalize" var=ID;
+	//    {EqualizeOperation} "equalize" (var=ID)?;
 	public EqualizeOperationElements getEqualizeOperationAccess() {
 		return pEqualizeOperation;
 	}
@@ -713,7 +734,7 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//ShowOperation:
-	//    "show" var=ID;
+	//    {ShowOperation} "show" (var=ID)?;
 	public ShowOperationElements getShowOperationAccess() {
 		return pShowOperation;
 	}
@@ -723,7 +744,7 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//SaveOperation:
-	//    "save" var=ID;
+	//    {SaveOperation} "save" (var=ID)?;
 	public SaveOperationElements getSaveOperationAccess() {
 		return pSaveOperation;
 	}
@@ -733,7 +754,7 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//FillOperation:
-	//    "fill" var=ID size=ValidINT;
+	//    {FillOperation} "fill" (var=ID)? size=ValidINT;
 	public FillOperationElements getFillOperationAccess() {
 		return pFillOperation;
 	}

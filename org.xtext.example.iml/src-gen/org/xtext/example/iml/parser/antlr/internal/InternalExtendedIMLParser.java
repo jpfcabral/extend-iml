@@ -1303,7 +1303,7 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRotateOperation"
-    // InternalExtendedIML.g:454:1: ruleRotateOperation returns [EObject current=null] : (otherlv_0= 'rotate' ( (lv_var_1_0= RULE_ID ) ) ( (lv_degree_2_0= ruleValidRotateInt ) ) ) ;
+    // InternalExtendedIML.g:454:1: ruleRotateOperation returns [EObject current=null] : (otherlv_0= 'rotate' ( (lv_var_1_0= RULE_ID ) )? ( (lv_degree_2_0= ruleValidRotateInt ) ) ) ;
     public final EObject ruleRotateOperation() throws RecognitionException {
         EObject current = null;
 
@@ -1316,39 +1316,50 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalExtendedIML.g:460:2: ( (otherlv_0= 'rotate' ( (lv_var_1_0= RULE_ID ) ) ( (lv_degree_2_0= ruleValidRotateInt ) ) ) )
-            // InternalExtendedIML.g:461:2: (otherlv_0= 'rotate' ( (lv_var_1_0= RULE_ID ) ) ( (lv_degree_2_0= ruleValidRotateInt ) ) )
+            // InternalExtendedIML.g:460:2: ( (otherlv_0= 'rotate' ( (lv_var_1_0= RULE_ID ) )? ( (lv_degree_2_0= ruleValidRotateInt ) ) ) )
+            // InternalExtendedIML.g:461:2: (otherlv_0= 'rotate' ( (lv_var_1_0= RULE_ID ) )? ( (lv_degree_2_0= ruleValidRotateInt ) ) )
             {
-            // InternalExtendedIML.g:461:2: (otherlv_0= 'rotate' ( (lv_var_1_0= RULE_ID ) ) ( (lv_degree_2_0= ruleValidRotateInt ) ) )
-            // InternalExtendedIML.g:462:3: otherlv_0= 'rotate' ( (lv_var_1_0= RULE_ID ) ) ( (lv_degree_2_0= ruleValidRotateInt ) )
+            // InternalExtendedIML.g:461:2: (otherlv_0= 'rotate' ( (lv_var_1_0= RULE_ID ) )? ( (lv_degree_2_0= ruleValidRotateInt ) ) )
+            // InternalExtendedIML.g:462:3: otherlv_0= 'rotate' ( (lv_var_1_0= RULE_ID ) )? ( (lv_degree_2_0= ruleValidRotateInt ) )
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_5); 
+            otherlv_0=(Token)match(input,19,FOLLOW_10); 
 
             			newLeafNode(otherlv_0, grammarAccess.getRotateOperationAccess().getRotateKeyword_0());
             		
-            // InternalExtendedIML.g:466:3: ( (lv_var_1_0= RULE_ID ) )
-            // InternalExtendedIML.g:467:4: (lv_var_1_0= RULE_ID )
-            {
-            // InternalExtendedIML.g:467:4: (lv_var_1_0= RULE_ID )
-            // InternalExtendedIML.g:468:5: lv_var_1_0= RULE_ID
-            {
-            lv_var_1_0=(Token)match(input,RULE_ID,FOLLOW_10); 
+            // InternalExtendedIML.g:466:3: ( (lv_var_1_0= RULE_ID ) )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            					newLeafNode(lv_var_1_0, grammarAccess.getRotateOperationAccess().getVarIDTerminalRuleCall_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getRotateOperationRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"var",
-            						lv_var_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
-
+            if ( (LA10_0==RULE_ID) ) {
+                alt10=1;
             }
+            switch (alt10) {
+                case 1 :
+                    // InternalExtendedIML.g:467:4: (lv_var_1_0= RULE_ID )
+                    {
+                    // InternalExtendedIML.g:467:4: (lv_var_1_0= RULE_ID )
+                    // InternalExtendedIML.g:468:5: lv_var_1_0= RULE_ID
+                    {
+                    lv_var_1_0=(Token)match(input,RULE_ID,FOLLOW_10); 
 
+                    					newLeafNode(lv_var_1_0, grammarAccess.getRotateOperationAccess().getVarIDTerminalRuleCall_1_0());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getRotateOperationRule());
+                    					}
+                    					setWithLastConsumed(
+                    						current,
+                    						"var",
+                    						lv_var_1_0,
+                    						"org.eclipse.xtext.common.Terminals.ID");
+                    				
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -1458,31 +1469,31 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
             // InternalExtendedIML.g:521:2: (this_INT1_0= RULE_INT1 | this_INT2_1= RULE_INT2 | this_INT3_2= RULE_INT3 )
             {
             // InternalExtendedIML.g:521:2: (this_INT1_0= RULE_INT1 | this_INT2_1= RULE_INT2 | this_INT3_2= RULE_INT3 )
-            int alt10=3;
+            int alt11=3;
             switch ( input.LA(1) ) {
             case RULE_INT1:
                 {
-                alt10=1;
+                alt11=1;
                 }
                 break;
             case RULE_INT2:
                 {
-                alt10=2;
+                alt11=2;
                 }
                 break;
             case RULE_INT3:
                 {
-                alt10=3;
+                alt11=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
+                    new NoViableAltException("", 11, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt10) {
+            switch (alt11) {
                 case 1 :
                     // InternalExtendedIML.g:522:3: this_INT1_0= RULE_INT1
                     {
@@ -1581,57 +1592,79 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFilterOperation"
-    // InternalExtendedIML.g:556:1: ruleFilterOperation returns [EObject current=null] : (otherlv_0= 'filter' ( (lv_var_1_0= RULE_ID ) ) otherlv_2= 'gray' ) ;
+    // InternalExtendedIML.g:556:1: ruleFilterOperation returns [EObject current=null] : ( () otherlv_1= 'filter' ( (lv_var_2_0= RULE_ID ) )? otherlv_3= 'gray' ) ;
     public final EObject ruleFilterOperation() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
-        Token lv_var_1_0=null;
-        Token otherlv_2=null;
+        Token otherlv_1=null;
+        Token lv_var_2_0=null;
+        Token otherlv_3=null;
 
 
         	enterRule();
 
         try {
-            // InternalExtendedIML.g:562:2: ( (otherlv_0= 'filter' ( (lv_var_1_0= RULE_ID ) ) otherlv_2= 'gray' ) )
-            // InternalExtendedIML.g:563:2: (otherlv_0= 'filter' ( (lv_var_1_0= RULE_ID ) ) otherlv_2= 'gray' )
+            // InternalExtendedIML.g:562:2: ( ( () otherlv_1= 'filter' ( (lv_var_2_0= RULE_ID ) )? otherlv_3= 'gray' ) )
+            // InternalExtendedIML.g:563:2: ( () otherlv_1= 'filter' ( (lv_var_2_0= RULE_ID ) )? otherlv_3= 'gray' )
             {
-            // InternalExtendedIML.g:563:2: (otherlv_0= 'filter' ( (lv_var_1_0= RULE_ID ) ) otherlv_2= 'gray' )
-            // InternalExtendedIML.g:564:3: otherlv_0= 'filter' ( (lv_var_1_0= RULE_ID ) ) otherlv_2= 'gray'
+            // InternalExtendedIML.g:563:2: ( () otherlv_1= 'filter' ( (lv_var_2_0= RULE_ID ) )? otherlv_3= 'gray' )
+            // InternalExtendedIML.g:564:3: () otherlv_1= 'filter' ( (lv_var_2_0= RULE_ID ) )? otherlv_3= 'gray'
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_5); 
+            // InternalExtendedIML.g:564:3: ()
+            // InternalExtendedIML.g:565:4: 
+            {
 
-            			newLeafNode(otherlv_0, grammarAccess.getFilterOperationAccess().getFilterKeyword_0());
+            				current = forceCreateModelElement(
+            					grammarAccess.getFilterOperationAccess().getFilterOperationAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,20,FOLLOW_11); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getFilterOperationAccess().getFilterKeyword_1());
             		
-            // InternalExtendedIML.g:568:3: ( (lv_var_1_0= RULE_ID ) )
-            // InternalExtendedIML.g:569:4: (lv_var_1_0= RULE_ID )
-            {
-            // InternalExtendedIML.g:569:4: (lv_var_1_0= RULE_ID )
-            // InternalExtendedIML.g:570:5: lv_var_1_0= RULE_ID
-            {
-            lv_var_1_0=(Token)match(input,RULE_ID,FOLLOW_11); 
+            // InternalExtendedIML.g:575:3: ( (lv_var_2_0= RULE_ID ) )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            					newLeafNode(lv_var_1_0, grammarAccess.getFilterOperationAccess().getVarIDTerminalRuleCall_1_0());
-            				
+            if ( (LA12_0==RULE_ID) ) {
+                alt12=1;
+            }
+            switch (alt12) {
+                case 1 :
+                    // InternalExtendedIML.g:576:4: (lv_var_2_0= RULE_ID )
+                    {
+                    // InternalExtendedIML.g:576:4: (lv_var_2_0= RULE_ID )
+                    // InternalExtendedIML.g:577:5: lv_var_2_0= RULE_ID
+                    {
+                    lv_var_2_0=(Token)match(input,RULE_ID,FOLLOW_12); 
 
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getFilterOperationRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"var",
-            						lv_var_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
+                    					newLeafNode(lv_var_2_0, grammarAccess.getFilterOperationAccess().getVarIDTerminalRuleCall_2_0());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getFilterOperationRule());
+                    					}
+                    					setWithLastConsumed(
+                    						current,
+                    						"var",
+                    						lv_var_2_0,
+                    						"org.eclipse.xtext.common.Terminals.ID");
+                    				
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
+            otherlv_3=(Token)match(input,21,FOLLOW_2); 
 
-            }
-
-            otherlv_2=(Token)match(input,21,FOLLOW_2); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getFilterOperationAccess().getGrayKeyword_2());
+            			newLeafNode(otherlv_3, grammarAccess.getFilterOperationAccess().getGrayKeyword_3());
             		
 
             }
@@ -1656,7 +1689,7 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBlurOperation"
-    // InternalExtendedIML.g:594:1: entryRuleBlurOperation returns [EObject current=null] : iv_ruleBlurOperation= ruleBlurOperation EOF ;
+    // InternalExtendedIML.g:601:1: entryRuleBlurOperation returns [EObject current=null] : iv_ruleBlurOperation= ruleBlurOperation EOF ;
     public final EObject entryRuleBlurOperation() throws RecognitionException {
         EObject current = null;
 
@@ -1664,8 +1697,8 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalExtendedIML.g:594:54: (iv_ruleBlurOperation= ruleBlurOperation EOF )
-            // InternalExtendedIML.g:595:2: iv_ruleBlurOperation= ruleBlurOperation EOF
+            // InternalExtendedIML.g:601:54: (iv_ruleBlurOperation= ruleBlurOperation EOF )
+            // InternalExtendedIML.g:602:2: iv_ruleBlurOperation= ruleBlurOperation EOF
             {
              newCompositeNode(grammarAccess.getBlurOperationRule()); 
             pushFollow(FOLLOW_1);
@@ -1692,7 +1725,7 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBlurOperation"
-    // InternalExtendedIML.g:601:1: ruleBlurOperation returns [EObject current=null] : (otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) ) ( (lv_intensity_2_0= ruleValidBlurInt ) ) ) ;
+    // InternalExtendedIML.g:608:1: ruleBlurOperation returns [EObject current=null] : (otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) )? ( (lv_intensity_2_0= ruleValidBlur ) ) ) ;
     public final EObject ruleBlurOperation() throws RecognitionException {
         EObject current = null;
 
@@ -1705,53 +1738,64 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalExtendedIML.g:607:2: ( (otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) ) ( (lv_intensity_2_0= ruleValidBlurInt ) ) ) )
-            // InternalExtendedIML.g:608:2: (otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) ) ( (lv_intensity_2_0= ruleValidBlurInt ) ) )
+            // InternalExtendedIML.g:614:2: ( (otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) )? ( (lv_intensity_2_0= ruleValidBlur ) ) ) )
+            // InternalExtendedIML.g:615:2: (otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) )? ( (lv_intensity_2_0= ruleValidBlur ) ) )
             {
-            // InternalExtendedIML.g:608:2: (otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) ) ( (lv_intensity_2_0= ruleValidBlurInt ) ) )
-            // InternalExtendedIML.g:609:3: otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) ) ( (lv_intensity_2_0= ruleValidBlurInt ) )
+            // InternalExtendedIML.g:615:2: (otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) )? ( (lv_intensity_2_0= ruleValidBlur ) ) )
+            // InternalExtendedIML.g:616:3: otherlv_0= 'blur' ( (lv_var_1_0= RULE_ID ) )? ( (lv_intensity_2_0= ruleValidBlur ) )
             {
-            otherlv_0=(Token)match(input,22,FOLLOW_5); 
+            otherlv_0=(Token)match(input,22,FOLLOW_13); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBlurOperationAccess().getBlurKeyword_0());
             		
-            // InternalExtendedIML.g:613:3: ( (lv_var_1_0= RULE_ID ) )
-            // InternalExtendedIML.g:614:4: (lv_var_1_0= RULE_ID )
-            {
-            // InternalExtendedIML.g:614:4: (lv_var_1_0= RULE_ID )
-            // InternalExtendedIML.g:615:5: lv_var_1_0= RULE_ID
-            {
-            lv_var_1_0=(Token)match(input,RULE_ID,FOLLOW_12); 
+            // InternalExtendedIML.g:620:3: ( (lv_var_1_0= RULE_ID ) )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            					newLeafNode(lv_var_1_0, grammarAccess.getBlurOperationAccess().getVarIDTerminalRuleCall_1_0());
-            				
+            if ( (LA13_0==RULE_ID) ) {
+                alt13=1;
+            }
+            switch (alt13) {
+                case 1 :
+                    // InternalExtendedIML.g:621:4: (lv_var_1_0= RULE_ID )
+                    {
+                    // InternalExtendedIML.g:621:4: (lv_var_1_0= RULE_ID )
+                    // InternalExtendedIML.g:622:5: lv_var_1_0= RULE_ID
+                    {
+                    lv_var_1_0=(Token)match(input,RULE_ID,FOLLOW_13); 
 
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getBlurOperationRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"var",
-            						lv_var_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
+                    					newLeafNode(lv_var_1_0, grammarAccess.getBlurOperationAccess().getVarIDTerminalRuleCall_1_0());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getBlurOperationRule());
+                    					}
+                    					setWithLastConsumed(
+                    						current,
+                    						"var",
+                    						lv_var_1_0,
+                    						"org.eclipse.xtext.common.Terminals.ID");
+                    				
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
-
-            }
-
-            // InternalExtendedIML.g:631:3: ( (lv_intensity_2_0= ruleValidBlurInt ) )
-            // InternalExtendedIML.g:632:4: (lv_intensity_2_0= ruleValidBlurInt )
+            // InternalExtendedIML.g:638:3: ( (lv_intensity_2_0= ruleValidBlur ) )
+            // InternalExtendedIML.g:639:4: (lv_intensity_2_0= ruleValidBlur )
             {
-            // InternalExtendedIML.g:632:4: (lv_intensity_2_0= ruleValidBlurInt )
-            // InternalExtendedIML.g:633:5: lv_intensity_2_0= ruleValidBlurInt
+            // InternalExtendedIML.g:639:4: (lv_intensity_2_0= ruleValidBlur )
+            // InternalExtendedIML.g:640:5: lv_intensity_2_0= ruleValidBlur
             {
 
-            					newCompositeNode(grammarAccess.getBlurOperationAccess().getIntensityValidBlurIntParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getBlurOperationAccess().getIntensityValidBlurParserRuleCall_2_0());
             				
             pushFollow(FOLLOW_2);
-            lv_intensity_2_0=ruleValidBlurInt();
+            lv_intensity_2_0=ruleValidBlur();
 
             state._fsp--;
 
@@ -1763,7 +1807,7 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
             						current,
             						"intensity",
             						lv_intensity_2_0,
-            						"org.xtext.example.iml.ExtendedIML.ValidBlurInt");
+            						"org.xtext.example.iml.ExtendedIML.ValidBlur");
             					afterParserOrEnumRuleCall();
             				
 
@@ -1794,25 +1838,25 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleBlurOperation"
 
 
-    // $ANTLR start "entryRuleValidBlurInt"
-    // InternalExtendedIML.g:654:1: entryRuleValidBlurInt returns [String current=null] : iv_ruleValidBlurInt= ruleValidBlurInt EOF ;
-    public final String entryRuleValidBlurInt() throws RecognitionException {
+    // $ANTLR start "entryRuleValidBlur"
+    // InternalExtendedIML.g:661:1: entryRuleValidBlur returns [String current=null] : iv_ruleValidBlur= ruleValidBlur EOF ;
+    public final String entryRuleValidBlur() throws RecognitionException {
         String current = null;
 
-        AntlrDatatypeRuleToken iv_ruleValidBlurInt = null;
+        AntlrDatatypeRuleToken iv_ruleValidBlur = null;
 
 
         try {
-            // InternalExtendedIML.g:654:52: (iv_ruleValidBlurInt= ruleValidBlurInt EOF )
-            // InternalExtendedIML.g:655:2: iv_ruleValidBlurInt= ruleValidBlurInt EOF
+            // InternalExtendedIML.g:661:49: (iv_ruleValidBlur= ruleValidBlur EOF )
+            // InternalExtendedIML.g:662:2: iv_ruleValidBlur= ruleValidBlur EOF
             {
-             newCompositeNode(grammarAccess.getValidBlurIntRule()); 
+             newCompositeNode(grammarAccess.getValidBlurRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleValidBlurInt=ruleValidBlurInt();
+            iv_ruleValidBlur=ruleValidBlur();
 
             state._fsp--;
 
-             current =iv_ruleValidBlurInt.getText(); 
+             current =iv_ruleValidBlur.getText(); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -1827,12 +1871,12 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleValidBlurInt"
+    // $ANTLR end "entryRuleValidBlur"
 
 
-    // $ANTLR start "ruleValidBlurInt"
-    // InternalExtendedIML.g:661:1: ruleValidBlurInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT1_0= RULE_INT1 | this_INT2_1= RULE_INT2 ) ;
-    public final AntlrDatatypeRuleToken ruleValidBlurInt() throws RecognitionException {
+    // $ANTLR start "ruleValidBlur"
+    // InternalExtendedIML.g:668:1: ruleValidBlur returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT1_0= RULE_INT1 | this_INT2_1= RULE_INT2 ) ;
+    public final AntlrDatatypeRuleToken ruleValidBlur() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
         Token this_INT1_0=null;
@@ -1842,48 +1886,48 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalExtendedIML.g:667:2: ( (this_INT1_0= RULE_INT1 | this_INT2_1= RULE_INT2 ) )
-            // InternalExtendedIML.g:668:2: (this_INT1_0= RULE_INT1 | this_INT2_1= RULE_INT2 )
+            // InternalExtendedIML.g:674:2: ( (this_INT1_0= RULE_INT1 | this_INT2_1= RULE_INT2 ) )
+            // InternalExtendedIML.g:675:2: (this_INT1_0= RULE_INT1 | this_INT2_1= RULE_INT2 )
             {
-            // InternalExtendedIML.g:668:2: (this_INT1_0= RULE_INT1 | this_INT2_1= RULE_INT2 )
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            // InternalExtendedIML.g:675:2: (this_INT1_0= RULE_INT1 | this_INT2_1= RULE_INT2 )
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA11_0==RULE_INT1) ) {
-                alt11=1;
+            if ( (LA14_0==RULE_INT1) ) {
+                alt14=1;
             }
-            else if ( (LA11_0==RULE_INT2) ) {
-                alt11=2;
+            else if ( (LA14_0==RULE_INT2) ) {
+                alt14=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
+                    new NoViableAltException("", 14, 0, input);
 
                 throw nvae;
             }
-            switch (alt11) {
+            switch (alt14) {
                 case 1 :
-                    // InternalExtendedIML.g:669:3: this_INT1_0= RULE_INT1
+                    // InternalExtendedIML.g:676:3: this_INT1_0= RULE_INT1
                     {
                     this_INT1_0=(Token)match(input,RULE_INT1,FOLLOW_2); 
 
                     			current.merge(this_INT1_0);
                     		
 
-                    			newLeafNode(this_INT1_0, grammarAccess.getValidBlurIntAccess().getINT1TerminalRuleCall_0());
+                    			newLeafNode(this_INT1_0, grammarAccess.getValidBlurAccess().getINT1TerminalRuleCall_0());
                     		
 
                     }
                     break;
                 case 2 :
-                    // InternalExtendedIML.g:677:3: this_INT2_1= RULE_INT2
+                    // InternalExtendedIML.g:684:3: this_INT2_1= RULE_INT2
                     {
                     this_INT2_1=(Token)match(input,RULE_INT2,FOLLOW_2); 
 
                     			current.merge(this_INT2_1);
                     		
 
-                    			newLeafNode(this_INT2_1, grammarAccess.getValidBlurIntAccess().getINT2TerminalRuleCall_1());
+                    			newLeafNode(this_INT2_1, grammarAccess.getValidBlurAccess().getINT2TerminalRuleCall_1());
                     		
 
                     }
@@ -1907,11 +1951,11 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleValidBlurInt"
+    // $ANTLR end "ruleValidBlur"
 
 
     // $ANTLR start "entryRuleEqualizeOperation"
-    // InternalExtendedIML.g:688:1: entryRuleEqualizeOperation returns [EObject current=null] : iv_ruleEqualizeOperation= ruleEqualizeOperation EOF ;
+    // InternalExtendedIML.g:695:1: entryRuleEqualizeOperation returns [EObject current=null] : iv_ruleEqualizeOperation= ruleEqualizeOperation EOF ;
     public final EObject entryRuleEqualizeOperation() throws RecognitionException {
         EObject current = null;
 
@@ -1919,8 +1963,8 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalExtendedIML.g:688:58: (iv_ruleEqualizeOperation= ruleEqualizeOperation EOF )
-            // InternalExtendedIML.g:689:2: iv_ruleEqualizeOperation= ruleEqualizeOperation EOF
+            // InternalExtendedIML.g:695:58: (iv_ruleEqualizeOperation= ruleEqualizeOperation EOF )
+            // InternalExtendedIML.g:696:2: iv_ruleEqualizeOperation= ruleEqualizeOperation EOF
             {
              newCompositeNode(grammarAccess.getEqualizeOperationRule()); 
             pushFollow(FOLLOW_1);
@@ -1947,50 +1991,76 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEqualizeOperation"
-    // InternalExtendedIML.g:695:1: ruleEqualizeOperation returns [EObject current=null] : (otherlv_0= 'equalize' ( (lv_var_1_0= RULE_ID ) ) ) ;
+    // InternalExtendedIML.g:702:1: ruleEqualizeOperation returns [EObject current=null] : ( () otherlv_1= 'equalize' ( (lv_var_2_0= RULE_ID ) )? ) ;
     public final EObject ruleEqualizeOperation() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
-        Token lv_var_1_0=null;
+        Token otherlv_1=null;
+        Token lv_var_2_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalExtendedIML.g:701:2: ( (otherlv_0= 'equalize' ( (lv_var_1_0= RULE_ID ) ) ) )
-            // InternalExtendedIML.g:702:2: (otherlv_0= 'equalize' ( (lv_var_1_0= RULE_ID ) ) )
+            // InternalExtendedIML.g:708:2: ( ( () otherlv_1= 'equalize' ( (lv_var_2_0= RULE_ID ) )? ) )
+            // InternalExtendedIML.g:709:2: ( () otherlv_1= 'equalize' ( (lv_var_2_0= RULE_ID ) )? )
             {
-            // InternalExtendedIML.g:702:2: (otherlv_0= 'equalize' ( (lv_var_1_0= RULE_ID ) ) )
-            // InternalExtendedIML.g:703:3: otherlv_0= 'equalize' ( (lv_var_1_0= RULE_ID ) )
+            // InternalExtendedIML.g:709:2: ( () otherlv_1= 'equalize' ( (lv_var_2_0= RULE_ID ) )? )
+            // InternalExtendedIML.g:710:3: () otherlv_1= 'equalize' ( (lv_var_2_0= RULE_ID ) )?
             {
-            otherlv_0=(Token)match(input,23,FOLLOW_5); 
+            // InternalExtendedIML.g:710:3: ()
+            // InternalExtendedIML.g:711:4: 
+            {
 
-            			newLeafNode(otherlv_0, grammarAccess.getEqualizeOperationAccess().getEqualizeKeyword_0());
-            		
-            // InternalExtendedIML.g:707:3: ( (lv_var_1_0= RULE_ID ) )
-            // InternalExtendedIML.g:708:4: (lv_var_1_0= RULE_ID )
-            {
-            // InternalExtendedIML.g:708:4: (lv_var_1_0= RULE_ID )
-            // InternalExtendedIML.g:709:5: lv_var_1_0= RULE_ID
-            {
-            lv_var_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
-
-            					newLeafNode(lv_var_1_0, grammarAccess.getEqualizeOperationAccess().getVarIDTerminalRuleCall_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getEqualizeOperationRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"var",
-            						lv_var_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
+            				current = forceCreateModelElement(
+            					grammarAccess.getEqualizeOperationAccess().getEqualizeOperationAction_0(),
+            					current);
+            			
 
             }
 
+            otherlv_1=(Token)match(input,23,FOLLOW_14); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getEqualizeOperationAccess().getEqualizeKeyword_1());
+            		
+            // InternalExtendedIML.g:721:3: ( (lv_var_2_0= RULE_ID ) )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
+
+            if ( (LA15_0==RULE_ID) ) {
+                int LA15_1 = input.LA(2);
+
+                if ( (LA15_1==EOF||LA15_1==RULE_ID||(LA15_1>=18 && LA15_1<=20)||(LA15_1>=22 && LA15_1<=26)) ) {
+                    alt15=1;
+                }
+            }
+            switch (alt15) {
+                case 1 :
+                    // InternalExtendedIML.g:722:4: (lv_var_2_0= RULE_ID )
+                    {
+                    // InternalExtendedIML.g:722:4: (lv_var_2_0= RULE_ID )
+                    // InternalExtendedIML.g:723:5: lv_var_2_0= RULE_ID
+                    {
+                    lv_var_2_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+                    					newLeafNode(lv_var_2_0, grammarAccess.getEqualizeOperationAccess().getVarIDTerminalRuleCall_2_0());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getEqualizeOperationRule());
+                    					}
+                    					setWithLastConsumed(
+                    						current,
+                    						"var",
+                    						lv_var_2_0,
+                    						"org.eclipse.xtext.common.Terminals.ID");
+                    				
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -2017,7 +2087,7 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleShowOperation"
-    // InternalExtendedIML.g:729:1: entryRuleShowOperation returns [EObject current=null] : iv_ruleShowOperation= ruleShowOperation EOF ;
+    // InternalExtendedIML.g:743:1: entryRuleShowOperation returns [EObject current=null] : iv_ruleShowOperation= ruleShowOperation EOF ;
     public final EObject entryRuleShowOperation() throws RecognitionException {
         EObject current = null;
 
@@ -2025,8 +2095,8 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalExtendedIML.g:729:54: (iv_ruleShowOperation= ruleShowOperation EOF )
-            // InternalExtendedIML.g:730:2: iv_ruleShowOperation= ruleShowOperation EOF
+            // InternalExtendedIML.g:743:54: (iv_ruleShowOperation= ruleShowOperation EOF )
+            // InternalExtendedIML.g:744:2: iv_ruleShowOperation= ruleShowOperation EOF
             {
              newCompositeNode(grammarAccess.getShowOperationRule()); 
             pushFollow(FOLLOW_1);
@@ -2053,50 +2123,76 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleShowOperation"
-    // InternalExtendedIML.g:736:1: ruleShowOperation returns [EObject current=null] : (otherlv_0= 'show' ( (lv_var_1_0= RULE_ID ) ) ) ;
+    // InternalExtendedIML.g:750:1: ruleShowOperation returns [EObject current=null] : ( () otherlv_1= 'show' ( (lv_var_2_0= RULE_ID ) )? ) ;
     public final EObject ruleShowOperation() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
-        Token lv_var_1_0=null;
+        Token otherlv_1=null;
+        Token lv_var_2_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalExtendedIML.g:742:2: ( (otherlv_0= 'show' ( (lv_var_1_0= RULE_ID ) ) ) )
-            // InternalExtendedIML.g:743:2: (otherlv_0= 'show' ( (lv_var_1_0= RULE_ID ) ) )
+            // InternalExtendedIML.g:756:2: ( ( () otherlv_1= 'show' ( (lv_var_2_0= RULE_ID ) )? ) )
+            // InternalExtendedIML.g:757:2: ( () otherlv_1= 'show' ( (lv_var_2_0= RULE_ID ) )? )
             {
-            // InternalExtendedIML.g:743:2: (otherlv_0= 'show' ( (lv_var_1_0= RULE_ID ) ) )
-            // InternalExtendedIML.g:744:3: otherlv_0= 'show' ( (lv_var_1_0= RULE_ID ) )
+            // InternalExtendedIML.g:757:2: ( () otherlv_1= 'show' ( (lv_var_2_0= RULE_ID ) )? )
+            // InternalExtendedIML.g:758:3: () otherlv_1= 'show' ( (lv_var_2_0= RULE_ID ) )?
             {
-            otherlv_0=(Token)match(input,24,FOLLOW_5); 
+            // InternalExtendedIML.g:758:3: ()
+            // InternalExtendedIML.g:759:4: 
+            {
 
-            			newLeafNode(otherlv_0, grammarAccess.getShowOperationAccess().getShowKeyword_0());
-            		
-            // InternalExtendedIML.g:748:3: ( (lv_var_1_0= RULE_ID ) )
-            // InternalExtendedIML.g:749:4: (lv_var_1_0= RULE_ID )
-            {
-            // InternalExtendedIML.g:749:4: (lv_var_1_0= RULE_ID )
-            // InternalExtendedIML.g:750:5: lv_var_1_0= RULE_ID
-            {
-            lv_var_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
-
-            					newLeafNode(lv_var_1_0, grammarAccess.getShowOperationAccess().getVarIDTerminalRuleCall_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getShowOperationRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"var",
-            						lv_var_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
+            				current = forceCreateModelElement(
+            					grammarAccess.getShowOperationAccess().getShowOperationAction_0(),
+            					current);
+            			
 
             }
 
+            otherlv_1=(Token)match(input,24,FOLLOW_14); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getShowOperationAccess().getShowKeyword_1());
+            		
+            // InternalExtendedIML.g:769:3: ( (lv_var_2_0= RULE_ID ) )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
+
+            if ( (LA16_0==RULE_ID) ) {
+                int LA16_1 = input.LA(2);
+
+                if ( (LA16_1==EOF||LA16_1==RULE_ID||(LA16_1>=18 && LA16_1<=20)||(LA16_1>=22 && LA16_1<=26)) ) {
+                    alt16=1;
+                }
+            }
+            switch (alt16) {
+                case 1 :
+                    // InternalExtendedIML.g:770:4: (lv_var_2_0= RULE_ID )
+                    {
+                    // InternalExtendedIML.g:770:4: (lv_var_2_0= RULE_ID )
+                    // InternalExtendedIML.g:771:5: lv_var_2_0= RULE_ID
+                    {
+                    lv_var_2_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+                    					newLeafNode(lv_var_2_0, grammarAccess.getShowOperationAccess().getVarIDTerminalRuleCall_2_0());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getShowOperationRule());
+                    					}
+                    					setWithLastConsumed(
+                    						current,
+                    						"var",
+                    						lv_var_2_0,
+                    						"org.eclipse.xtext.common.Terminals.ID");
+                    				
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -2123,7 +2219,7 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSaveOperation"
-    // InternalExtendedIML.g:770:1: entryRuleSaveOperation returns [EObject current=null] : iv_ruleSaveOperation= ruleSaveOperation EOF ;
+    // InternalExtendedIML.g:791:1: entryRuleSaveOperation returns [EObject current=null] : iv_ruleSaveOperation= ruleSaveOperation EOF ;
     public final EObject entryRuleSaveOperation() throws RecognitionException {
         EObject current = null;
 
@@ -2131,8 +2227,8 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalExtendedIML.g:770:54: (iv_ruleSaveOperation= ruleSaveOperation EOF )
-            // InternalExtendedIML.g:771:2: iv_ruleSaveOperation= ruleSaveOperation EOF
+            // InternalExtendedIML.g:791:54: (iv_ruleSaveOperation= ruleSaveOperation EOF )
+            // InternalExtendedIML.g:792:2: iv_ruleSaveOperation= ruleSaveOperation EOF
             {
              newCompositeNode(grammarAccess.getSaveOperationRule()); 
             pushFollow(FOLLOW_1);
@@ -2159,50 +2255,76 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSaveOperation"
-    // InternalExtendedIML.g:777:1: ruleSaveOperation returns [EObject current=null] : (otherlv_0= 'save' ( (lv_var_1_0= RULE_ID ) ) ) ;
+    // InternalExtendedIML.g:798:1: ruleSaveOperation returns [EObject current=null] : ( () otherlv_1= 'save' ( (lv_var_2_0= RULE_ID ) )? ) ;
     public final EObject ruleSaveOperation() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
-        Token lv_var_1_0=null;
+        Token otherlv_1=null;
+        Token lv_var_2_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalExtendedIML.g:783:2: ( (otherlv_0= 'save' ( (lv_var_1_0= RULE_ID ) ) ) )
-            // InternalExtendedIML.g:784:2: (otherlv_0= 'save' ( (lv_var_1_0= RULE_ID ) ) )
+            // InternalExtendedIML.g:804:2: ( ( () otherlv_1= 'save' ( (lv_var_2_0= RULE_ID ) )? ) )
+            // InternalExtendedIML.g:805:2: ( () otherlv_1= 'save' ( (lv_var_2_0= RULE_ID ) )? )
             {
-            // InternalExtendedIML.g:784:2: (otherlv_0= 'save' ( (lv_var_1_0= RULE_ID ) ) )
-            // InternalExtendedIML.g:785:3: otherlv_0= 'save' ( (lv_var_1_0= RULE_ID ) )
+            // InternalExtendedIML.g:805:2: ( () otherlv_1= 'save' ( (lv_var_2_0= RULE_ID ) )? )
+            // InternalExtendedIML.g:806:3: () otherlv_1= 'save' ( (lv_var_2_0= RULE_ID ) )?
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_5); 
+            // InternalExtendedIML.g:806:3: ()
+            // InternalExtendedIML.g:807:4: 
+            {
 
-            			newLeafNode(otherlv_0, grammarAccess.getSaveOperationAccess().getSaveKeyword_0());
-            		
-            // InternalExtendedIML.g:789:3: ( (lv_var_1_0= RULE_ID ) )
-            // InternalExtendedIML.g:790:4: (lv_var_1_0= RULE_ID )
-            {
-            // InternalExtendedIML.g:790:4: (lv_var_1_0= RULE_ID )
-            // InternalExtendedIML.g:791:5: lv_var_1_0= RULE_ID
-            {
-            lv_var_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
-
-            					newLeafNode(lv_var_1_0, grammarAccess.getSaveOperationAccess().getVarIDTerminalRuleCall_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getSaveOperationRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"var",
-            						lv_var_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
+            				current = forceCreateModelElement(
+            					grammarAccess.getSaveOperationAccess().getSaveOperationAction_0(),
+            					current);
+            			
 
             }
 
+            otherlv_1=(Token)match(input,25,FOLLOW_14); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getSaveOperationAccess().getSaveKeyword_1());
+            		
+            // InternalExtendedIML.g:817:3: ( (lv_var_2_0= RULE_ID ) )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
+
+            if ( (LA17_0==RULE_ID) ) {
+                int LA17_1 = input.LA(2);
+
+                if ( (LA17_1==EOF||LA17_1==RULE_ID||(LA17_1>=18 && LA17_1<=20)||(LA17_1>=22 && LA17_1<=26)) ) {
+                    alt17=1;
+                }
+            }
+            switch (alt17) {
+                case 1 :
+                    // InternalExtendedIML.g:818:4: (lv_var_2_0= RULE_ID )
+                    {
+                    // InternalExtendedIML.g:818:4: (lv_var_2_0= RULE_ID )
+                    // InternalExtendedIML.g:819:5: lv_var_2_0= RULE_ID
+                    {
+                    lv_var_2_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+                    					newLeafNode(lv_var_2_0, grammarAccess.getSaveOperationAccess().getVarIDTerminalRuleCall_2_0());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getSaveOperationRule());
+                    					}
+                    					setWithLastConsumed(
+                    						current,
+                    						"var",
+                    						lv_var_2_0,
+                    						"org.eclipse.xtext.common.Terminals.ID");
+                    				
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -2229,7 +2351,7 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFillOperation"
-    // InternalExtendedIML.g:811:1: entryRuleFillOperation returns [EObject current=null] : iv_ruleFillOperation= ruleFillOperation EOF ;
+    // InternalExtendedIML.g:839:1: entryRuleFillOperation returns [EObject current=null] : iv_ruleFillOperation= ruleFillOperation EOF ;
     public final EObject entryRuleFillOperation() throws RecognitionException {
         EObject current = null;
 
@@ -2237,8 +2359,8 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalExtendedIML.g:811:54: (iv_ruleFillOperation= ruleFillOperation EOF )
-            // InternalExtendedIML.g:812:2: iv_ruleFillOperation= ruleFillOperation EOF
+            // InternalExtendedIML.g:839:54: (iv_ruleFillOperation= ruleFillOperation EOF )
+            // InternalExtendedIML.g:840:2: iv_ruleFillOperation= ruleFillOperation EOF
             {
              newCompositeNode(grammarAccess.getFillOperationRule()); 
             pushFollow(FOLLOW_1);
@@ -2265,66 +2387,88 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFillOperation"
-    // InternalExtendedIML.g:818:1: ruleFillOperation returns [EObject current=null] : (otherlv_0= 'fill' ( (lv_var_1_0= RULE_ID ) ) ( (lv_size_2_0= ruleValidINT ) ) ) ;
+    // InternalExtendedIML.g:846:1: ruleFillOperation returns [EObject current=null] : ( () otherlv_1= 'fill' ( (lv_var_2_0= RULE_ID ) )? ( (lv_size_3_0= ruleValidINT ) ) ) ;
     public final EObject ruleFillOperation() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
-        Token lv_var_1_0=null;
-        AntlrDatatypeRuleToken lv_size_2_0 = null;
+        Token otherlv_1=null;
+        Token lv_var_2_0=null;
+        AntlrDatatypeRuleToken lv_size_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalExtendedIML.g:824:2: ( (otherlv_0= 'fill' ( (lv_var_1_0= RULE_ID ) ) ( (lv_size_2_0= ruleValidINT ) ) ) )
-            // InternalExtendedIML.g:825:2: (otherlv_0= 'fill' ( (lv_var_1_0= RULE_ID ) ) ( (lv_size_2_0= ruleValidINT ) ) )
+            // InternalExtendedIML.g:852:2: ( ( () otherlv_1= 'fill' ( (lv_var_2_0= RULE_ID ) )? ( (lv_size_3_0= ruleValidINT ) ) ) )
+            // InternalExtendedIML.g:853:2: ( () otherlv_1= 'fill' ( (lv_var_2_0= RULE_ID ) )? ( (lv_size_3_0= ruleValidINT ) ) )
             {
-            // InternalExtendedIML.g:825:2: (otherlv_0= 'fill' ( (lv_var_1_0= RULE_ID ) ) ( (lv_size_2_0= ruleValidINT ) ) )
-            // InternalExtendedIML.g:826:3: otherlv_0= 'fill' ( (lv_var_1_0= RULE_ID ) ) ( (lv_size_2_0= ruleValidINT ) )
+            // InternalExtendedIML.g:853:2: ( () otherlv_1= 'fill' ( (lv_var_2_0= RULE_ID ) )? ( (lv_size_3_0= ruleValidINT ) ) )
+            // InternalExtendedIML.g:854:3: () otherlv_1= 'fill' ( (lv_var_2_0= RULE_ID ) )? ( (lv_size_3_0= ruleValidINT ) )
             {
-            otherlv_0=(Token)match(input,26,FOLLOW_5); 
+            // InternalExtendedIML.g:854:3: ()
+            // InternalExtendedIML.g:855:4: 
+            {
 
-            			newLeafNode(otherlv_0, grammarAccess.getFillOperationAccess().getFillKeyword_0());
+            				current = forceCreateModelElement(
+            					grammarAccess.getFillOperationAccess().getFillOperationAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,26,FOLLOW_15); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getFillOperationAccess().getFillKeyword_1());
             		
-            // InternalExtendedIML.g:830:3: ( (lv_var_1_0= RULE_ID ) )
-            // InternalExtendedIML.g:831:4: (lv_var_1_0= RULE_ID )
-            {
-            // InternalExtendedIML.g:831:4: (lv_var_1_0= RULE_ID )
-            // InternalExtendedIML.g:832:5: lv_var_1_0= RULE_ID
-            {
-            lv_var_1_0=(Token)match(input,RULE_ID,FOLLOW_13); 
+            // InternalExtendedIML.g:865:3: ( (lv_var_2_0= RULE_ID ) )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            					newLeafNode(lv_var_1_0, grammarAccess.getFillOperationAccess().getVarIDTerminalRuleCall_1_0());
-            				
+            if ( (LA18_0==RULE_ID) ) {
+                alt18=1;
+            }
+            switch (alt18) {
+                case 1 :
+                    // InternalExtendedIML.g:866:4: (lv_var_2_0= RULE_ID )
+                    {
+                    // InternalExtendedIML.g:866:4: (lv_var_2_0= RULE_ID )
+                    // InternalExtendedIML.g:867:5: lv_var_2_0= RULE_ID
+                    {
+                    lv_var_2_0=(Token)match(input,RULE_ID,FOLLOW_15); 
 
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getFillOperationRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"var",
-            						lv_var_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
+                    					newLeafNode(lv_var_2_0, grammarAccess.getFillOperationAccess().getVarIDTerminalRuleCall_2_0());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getFillOperationRule());
+                    					}
+                    					setWithLastConsumed(
+                    						current,
+                    						"var",
+                    						lv_var_2_0,
+                    						"org.eclipse.xtext.common.Terminals.ID");
+                    				
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
-
-            }
-
-            // InternalExtendedIML.g:848:3: ( (lv_size_2_0= ruleValidINT ) )
-            // InternalExtendedIML.g:849:4: (lv_size_2_0= ruleValidINT )
+            // InternalExtendedIML.g:883:3: ( (lv_size_3_0= ruleValidINT ) )
+            // InternalExtendedIML.g:884:4: (lv_size_3_0= ruleValidINT )
             {
-            // InternalExtendedIML.g:849:4: (lv_size_2_0= ruleValidINT )
-            // InternalExtendedIML.g:850:5: lv_size_2_0= ruleValidINT
+            // InternalExtendedIML.g:884:4: (lv_size_3_0= ruleValidINT )
+            // InternalExtendedIML.g:885:5: lv_size_3_0= ruleValidINT
             {
 
-            					newCompositeNode(grammarAccess.getFillOperationAccess().getSizeValidINTParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getFillOperationAccess().getSizeValidINTParserRuleCall_3_0());
             				
             pushFollow(FOLLOW_2);
-            lv_size_2_0=ruleValidINT();
+            lv_size_3_0=ruleValidINT();
 
             state._fsp--;
 
@@ -2335,7 +2479,7 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"size",
-            						lv_size_2_0,
+            						lv_size_3_0,
             						"org.xtext.example.iml.ExtendedIML.ValidINT");
             					afterParserOrEnumRuleCall();
             				
@@ -2368,7 +2512,7 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleValidINT"
-    // InternalExtendedIML.g:871:1: entryRuleValidINT returns [String current=null] : iv_ruleValidINT= ruleValidINT EOF ;
+    // InternalExtendedIML.g:906:1: entryRuleValidINT returns [String current=null] : iv_ruleValidINT= ruleValidINT EOF ;
     public final String entryRuleValidINT() throws RecognitionException {
         String current = null;
 
@@ -2376,8 +2520,8 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalExtendedIML.g:871:48: (iv_ruleValidINT= ruleValidINT EOF )
-            // InternalExtendedIML.g:872:2: iv_ruleValidINT= ruleValidINT EOF
+            // InternalExtendedIML.g:906:48: (iv_ruleValidINT= ruleValidINT EOF )
+            // InternalExtendedIML.g:907:2: iv_ruleValidINT= ruleValidINT EOF
             {
              newCompositeNode(grammarAccess.getValidINTRule()); 
             pushFollow(FOLLOW_1);
@@ -2404,7 +2548,7 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleValidINT"
-    // InternalExtendedIML.g:878:1: ruleValidINT returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT | this_INT2_1= RULE_INT2 | this_INT3_2= RULE_INT3 ) ;
+    // InternalExtendedIML.g:913:1: ruleValidINT returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT | this_INT2_1= RULE_INT2 | this_INT3_2= RULE_INT3 ) ;
     public final AntlrDatatypeRuleToken ruleValidINT() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2416,37 +2560,37 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalExtendedIML.g:884:2: ( (this_INT_0= RULE_INT | this_INT2_1= RULE_INT2 | this_INT3_2= RULE_INT3 ) )
-            // InternalExtendedIML.g:885:2: (this_INT_0= RULE_INT | this_INT2_1= RULE_INT2 | this_INT3_2= RULE_INT3 )
+            // InternalExtendedIML.g:919:2: ( (this_INT_0= RULE_INT | this_INT2_1= RULE_INT2 | this_INT3_2= RULE_INT3 ) )
+            // InternalExtendedIML.g:920:2: (this_INT_0= RULE_INT | this_INT2_1= RULE_INT2 | this_INT3_2= RULE_INT3 )
             {
-            // InternalExtendedIML.g:885:2: (this_INT_0= RULE_INT | this_INT2_1= RULE_INT2 | this_INT3_2= RULE_INT3 )
-            int alt12=3;
+            // InternalExtendedIML.g:920:2: (this_INT_0= RULE_INT | this_INT2_1= RULE_INT2 | this_INT3_2= RULE_INT3 )
+            int alt19=3;
             switch ( input.LA(1) ) {
             case RULE_INT:
                 {
-                alt12=1;
+                alt19=1;
                 }
                 break;
             case RULE_INT2:
                 {
-                alt12=2;
+                alt19=2;
                 }
                 break;
             case RULE_INT3:
                 {
-                alt12=3;
+                alt19=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
+                    new NoViableAltException("", 19, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt12) {
+            switch (alt19) {
                 case 1 :
-                    // InternalExtendedIML.g:886:3: this_INT_0= RULE_INT
+                    // InternalExtendedIML.g:921:3: this_INT_0= RULE_INT
                     {
                     this_INT_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -2459,7 +2603,7 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalExtendedIML.g:894:3: this_INT2_1= RULE_INT2
+                    // InternalExtendedIML.g:929:3: this_INT2_1= RULE_INT2
                     {
                     this_INT2_1=(Token)match(input,RULE_INT2,FOLLOW_2); 
 
@@ -2472,7 +2616,7 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalExtendedIML.g:902:3: this_INT3_2= RULE_INT3
+                    // InternalExtendedIML.g:937:3: this_INT3_2= RULE_INT3
                     {
                     this_INT3_2=(Token)match(input,RULE_INT3,FOLLOW_2); 
 
@@ -2519,9 +2663,11 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000030002L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000010002L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000018010L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x00000000000000E0L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x00000000000001C0L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x00000000000000F0L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000200010L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000070L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x00000000000001D0L});
 
 }
