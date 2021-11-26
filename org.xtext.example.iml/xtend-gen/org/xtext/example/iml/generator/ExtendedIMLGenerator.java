@@ -18,6 +18,8 @@ import org.xtext.example.iml.extendedIML.EqualizeOperation;
 import org.xtext.example.iml.extendedIML.FilterOperation;
 import org.xtext.example.iml.extendedIML.Operator;
 import org.xtext.example.iml.extendedIML.RotateOperation;
+import org.xtext.example.iml.extendedIML.SaveOperation;
+import org.xtext.example.iml.extendedIML.ShowOperation;
 
 /**
  * Generates code from your model files on save.
@@ -114,6 +116,36 @@ public class ExtendedIMLGenerator extends AbstractGenerator {
     _builder.append("return img_eq");
     _builder.newLine();
     _builder.newLine();
+    _builder.append("def show_image(image):");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("cv2.imshow(\'Altered\', image)");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("cv2.waitKey(0)");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("cv2.destroyAllWindows()");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("def save_image(image, source_path):");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("output_dir = path.join(source_path, \'output\')");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("if (not path.exists(output_dir)):");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("mkdir(output_dir)");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("output_image_full_path = path.join(output_dir, image_name)");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("cv2.imwrite(output_image_full_path, img)");
+    _builder.newLine();
+    _builder.newLine();
     _builder.append("# def fill_image(img, size=(_size,_size)):");
     _builder.newLine();
     _builder.append("#     h, w = img.shape[:2]");
@@ -152,7 +184,7 @@ public class ExtendedIMLGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  private String processImages(final CharSequence path, final Iterator<Operator> operators) {
+  private String processImages(final String path, final Iterator<Operator> operators) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("for image_name in listdir(\'");
     _builder.append(path);
@@ -170,30 +202,13 @@ public class ExtendedIMLGenerator extends AbstractGenerator {
     _builder.append("if not img is None:");
     _builder.newLine();
     _builder.append("\t\t");
-    String _applyOperators = this.applyOperators(operators);
+    String _applyOperators = this.applyOperators(path, operators);
     _builder.append(_applyOperators, "\t\t");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
-    _builder.append("output_dir = path.join(\'");
-    _builder.append(path, "\t\t");
-    _builder.append("\', \'output\')");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
-    _builder.append("if (not path.exists(output_dir)):");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("mkdir(output_dir)");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("output_image_full_path = path.join(output_dir, image_name)");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("cv2.imwrite(output_image_full_path, img)");
-    _builder.newLine();
     return _builder.toString();
   }
   
-  private String applyOperators(final Iterator<Operator> op) {
+  private String applyOperators(final String path, final Iterator<Operator> op) {
     StringConcatenation _builder = new StringConcatenation();
     {
       Iterable<Operator> _iterable = IteratorExtensions.<Operator>toIterable(op);
@@ -222,8 +237,20 @@ public class ExtendedIMLGenerator extends AbstractGenerator {
                   _builder.append("img = equalize_hist(img)");
                   _builder.newLine();
                 } else {
-                  _builder.append("# OPERADOR NÃO ENCONTRADO");
-                  _builder.newLine();
+                  if ((o instanceof ShowOperation)) {
+                    _builder.append("show_image(img)");
+                    _builder.newLine();
+                  } else {
+                    if ((o instanceof SaveOperation)) {
+                      _builder.append("save_image(img, \'");
+                      _builder.append(path);
+                      _builder.append("\')");
+                      _builder.newLineIfNotEmpty();
+                    } else {
+                      _builder.append("# OPERADOR NÃO ENCONTRADO");
+                      _builder.newLine();
+                    }
+                  }
                 }
               }
             }

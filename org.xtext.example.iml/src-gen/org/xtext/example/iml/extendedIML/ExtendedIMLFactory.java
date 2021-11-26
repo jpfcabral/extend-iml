@@ -42,33 +42,6 @@ public interface ExtendedIMLFactory extends EFactory
   AbstractElement createAbstractElement();
 
   /**
-   * Returns a new object of class '<em>Exporter</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Exporter</em>'.
-   * @generated
-   */
-  Exporter createExporter();
-
-  /**
-   * Returns a new object of class '<em>Save</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Save</em>'.
-   * @generated
-   */
-  Save createSave();
-
-  /**
-   * Returns a new object of class '<em>Show</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Show</em>'.
-   * @generated
-   */
-  Show createShow();
-
-  /**
    * Returns a new object of class '<em>Importer</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -139,6 +112,24 @@ public interface ExtendedIMLFactory extends EFactory
    * @generated
    */
   EqualizeOperation createEqualizeOperation();
+
+  /**
+   * Returns a new object of class '<em>Show Operation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Show Operation</em>'.
+   * @generated
+   */
+  ShowOperation createShowOperation();
+
+  /**
+   * Returns a new object of class '<em>Save Operation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Save Operation</em>'.
+   * @generated
+   */
+  SaveOperation createSaveOperation();
 
   /**
    * Returns the package supported by this factory.

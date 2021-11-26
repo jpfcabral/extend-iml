@@ -6,16 +6,7 @@ Model:
 	elements+=AbstractElement*;
 	
 AbstractElement:
-	Importer | Operator | Exporter;
-	
-Exporter:
-	Save | Show;
-
-Save:
-	"save" var=ID;
-
-Show:
-	"show" var=ID;
+	Importer | Operator;
 	
 Importer:
 	ImageImporter | DirImporter;
@@ -33,7 +24,8 @@ DirImporter:
 	"images" pathDir=QualifiedPath;
 
 Operator:
-	RotateOperation | FilterOperation | BlurOperation | EqualizeOperation;
+	RotateOperation | FilterOperation | BlurOperation | EqualizeOperation |
+	ShowOperation | SaveOperation;
 
 RotateOperation:
 	"rotate" var=ID degree=INT;
@@ -45,5 +37,10 @@ BlurOperation:
 	"blur" var=ID intensity=INT;
 
 EqualizeOperation:
-	"equalize" var=ID
-;
+	"equalize" var=ID;
+
+ShowOperation:
+	"show" var=ID;
+
+SaveOperation:
+	"save" var=ID;

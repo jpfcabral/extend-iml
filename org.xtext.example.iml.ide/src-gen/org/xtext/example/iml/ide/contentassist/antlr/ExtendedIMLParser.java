@@ -32,11 +32,8 @@ public class ExtendedIMLParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, ExtendedIMLGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getAbstractElementAccess().getAlternatives(), "rule__AbstractElement__Alternatives");
-			builder.put(grammarAccess.getExporterAccess().getAlternatives(), "rule__Exporter__Alternatives");
 			builder.put(grammarAccess.getImporterAccess().getAlternatives(), "rule__Importer__Alternatives");
 			builder.put(grammarAccess.getOperatorAccess().getAlternatives(), "rule__Operator__Alternatives");
-			builder.put(grammarAccess.getSaveAccess().getGroup(), "rule__Save__Group__0");
-			builder.put(grammarAccess.getShowAccess().getGroup(), "rule__Show__Group__0");
 			builder.put(grammarAccess.getImageImporterAccess().getGroup(), "rule__ImageImporter__Group__0");
 			builder.put(grammarAccess.getQualifiedPathAccess().getGroup(), "rule__QualifiedPath__Group__0");
 			builder.put(grammarAccess.getQualifiedPathAccess().getGroup_2(), "rule__QualifiedPath__Group_2__0");
@@ -45,9 +42,9 @@ public class ExtendedIMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFilterOperationAccess().getGroup(), "rule__FilterOperation__Group__0");
 			builder.put(grammarAccess.getBlurOperationAccess().getGroup(), "rule__BlurOperation__Group__0");
 			builder.put(grammarAccess.getEqualizeOperationAccess().getGroup(), "rule__EqualizeOperation__Group__0");
+			builder.put(grammarAccess.getShowOperationAccess().getGroup(), "rule__ShowOperation__Group__0");
+			builder.put(grammarAccess.getSaveOperationAccess().getGroup(), "rule__SaveOperation__Group__0");
 			builder.put(grammarAccess.getModelAccess().getElementsAssignment(), "rule__Model__ElementsAssignment");
-			builder.put(grammarAccess.getSaveAccess().getVarAssignment_1(), "rule__Save__VarAssignment_1");
-			builder.put(grammarAccess.getShowAccess().getVarAssignment_1(), "rule__Show__VarAssignment_1");
 			builder.put(grammarAccess.getImageImporterAccess().getNameAssignment_0(), "rule__ImageImporter__NameAssignment_0");
 			builder.put(grammarAccess.getImageImporterAccess().getImportedNamespaceAssignment_2(), "rule__ImageImporter__ImportedNamespaceAssignment_2");
 			builder.put(grammarAccess.getDirImporterAccess().getPathDirAssignment_1(), "rule__DirImporter__PathDirAssignment_1");
@@ -57,6 +54,8 @@ public class ExtendedIMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getBlurOperationAccess().getVarAssignment_1(), "rule__BlurOperation__VarAssignment_1");
 			builder.put(grammarAccess.getBlurOperationAccess().getIntensityAssignment_2(), "rule__BlurOperation__IntensityAssignment_2");
 			builder.put(grammarAccess.getEqualizeOperationAccess().getVarAssignment_1(), "rule__EqualizeOperation__VarAssignment_1");
+			builder.put(grammarAccess.getShowOperationAccess().getVarAssignment_1(), "rule__ShowOperation__VarAssignment_1");
+			builder.put(grammarAccess.getSaveOperationAccess().getVarAssignment_1(), "rule__SaveOperation__VarAssignment_1");
 		}
 	}
 	

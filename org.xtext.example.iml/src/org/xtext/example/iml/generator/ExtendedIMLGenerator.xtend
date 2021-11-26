@@ -14,6 +14,8 @@ import org.xtext.example.iml.extendedIML.RotateOperation
 import org.xtext.example.iml.extendedIML.FilterOperation
 import org.xtext.example.iml.extendedIML.BlurOperation
 import org.xtext.example.iml.extendedIML.EqualizeOperation
+import org.xtext.example.iml.extendedIML.ShowOperation
+import org.xtext.example.iml.extendedIML.SaveOperation
 
 /**
  * Generates code from your model files on save.
@@ -71,6 +73,18 @@ class ExtendedIMLGenerator extends AbstractGenerator {
 			img_eq = cv2.equalizeHist(image)
 			return img_eq
 	
+	def show_image(image):
+		cv2.imshow('Altered', image)
+		cv2.waitKey(0)
+		cv2.destroyAllWindows()
+	
+	def save_image(image, source_path):
+		output_dir = path.join(source_path, 'output')
+		if (not path.exists(output_dir)):
+			mkdir(output_dir)
+		output_image_full_path = path.join(output_dir, image_name)
+		cv2.imwrite(output_image_full_path, img)
+	
 	# def fill_image(img, size=(_size,_size)):
 	#     h, w = img.shape[:2]
 	#     c = img.shape[2] if len(img.shape)>2 else 1
@@ -91,20 +105,15 @@ class ExtendedIMLGenerator extends AbstractGenerator {
 	
 	'''
 
-	private def String processImages(CharSequence path, Iterator<Operator> operators) '''
+	private def String processImages(String path, Iterator<Operator> operators) '''
 	for image_name in listdir('«path»'):
 		image_full_path = path.join('«path»', image_name)
 		img = cv2.imread(image_full_path)
 		if not img is None:
-			«applyOperators(operators)»
-			output_dir = path.join('«path»', 'output')
-			if (not path.exists(output_dir)):
-				mkdir(output_dir)
-			output_image_full_path = path.join(output_dir, image_name)
-			cv2.imwrite(output_image_full_path, img)
+			«applyOperators(path, operators)»
 	'''
 	
-	private def String applyOperators(Iterator<Operator> op) '''
+	private def String applyOperators(String path, Iterator<Operator> op) '''
 	«FOR o : op.toIterable()»
 		«IF o instanceof RotateOperation»
 			img = rotate_image(img, «o.degree»)
@@ -114,6 +123,10 @@ class ExtendedIMLGenerator extends AbstractGenerator {
 			img = blur_image(img, «(Integer.valueOf(o.intensity) / 100.0)»)
 		«ELSEIF o instanceof EqualizeOperation»
 			img = equalize_hist(img)
+		«ELSEIF o instanceof ShowOperation»
+			show_image(img)
+		«ELSEIF o instanceof SaveOperation»
+			save_image(img, '«path»')
 		«ELSE»
 			# OPERADOR NÃO ENCONTRADO
 		«ENDIF»

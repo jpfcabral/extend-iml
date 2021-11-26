@@ -105,90 +105,6 @@ public interface ExtendedIMLPackage extends EPackage
   int ABSTRACT_ELEMENT_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.iml.extendedIML.impl.ExporterImpl <em>Exporter</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.iml.extendedIML.impl.ExporterImpl
-   * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getExporter()
-   * @generated
-   */
-  int EXPORTER = 2;
-
-  /**
-   * The feature id for the '<em><b>Var</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPORTER__VAR = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Exporter</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPORTER_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.iml.extendedIML.impl.SaveImpl <em>Save</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.iml.extendedIML.impl.SaveImpl
-   * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getSave()
-   * @generated
-   */
-  int SAVE = 3;
-
-  /**
-   * The feature id for the '<em><b>Var</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SAVE__VAR = EXPORTER__VAR;
-
-  /**
-   * The number of structural features of the '<em>Save</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SAVE_FEATURE_COUNT = EXPORTER_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.iml.extendedIML.impl.ShowImpl <em>Show</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.iml.extendedIML.impl.ShowImpl
-   * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getShow()
-   * @generated
-   */
-  int SHOW = 4;
-
-  /**
-   * The feature id for the '<em><b>Var</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SHOW__VAR = EXPORTER__VAR;
-
-  /**
-   * The number of structural features of the '<em>Show</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SHOW_FEATURE_COUNT = EXPORTER_FEATURE_COUNT + 0;
-
-  /**
    * The meta object id for the '{@link org.xtext.example.iml.extendedIML.impl.ImporterImpl <em>Importer</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -196,7 +112,7 @@ public interface ExtendedIMLPackage extends EPackage
    * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getImporter()
    * @generated
    */
-  int IMPORTER = 5;
+  int IMPORTER = 2;
 
   /**
    * The number of structural features of the '<em>Importer</em>' class.
@@ -215,7 +131,7 @@ public interface ExtendedIMLPackage extends EPackage
    * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getImageImporter()
    * @generated
    */
-  int IMAGE_IMPORTER = 6;
+  int IMAGE_IMPORTER = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -252,7 +168,7 @@ public interface ExtendedIMLPackage extends EPackage
    * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getDirImporter()
    * @generated
    */
-  int DIR_IMPORTER = 7;
+  int DIR_IMPORTER = 4;
 
   /**
    * The feature id for the '<em><b>Path Dir</b></em>' attribute.
@@ -280,7 +196,7 @@ public interface ExtendedIMLPackage extends EPackage
    * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getOperator()
    * @generated
    */
-  int OPERATOR = 8;
+  int OPERATOR = 5;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' attribute.
@@ -308,7 +224,7 @@ public interface ExtendedIMLPackage extends EPackage
    * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getRotateOperation()
    * @generated
    */
-  int ROTATE_OPERATION = 9;
+  int ROTATE_OPERATION = 6;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' attribute.
@@ -345,7 +261,7 @@ public interface ExtendedIMLPackage extends EPackage
    * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getFilterOperation()
    * @generated
    */
-  int FILTER_OPERATION = 10;
+  int FILTER_OPERATION = 7;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' attribute.
@@ -373,7 +289,7 @@ public interface ExtendedIMLPackage extends EPackage
    * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getBlurOperation()
    * @generated
    */
-  int BLUR_OPERATION = 11;
+  int BLUR_OPERATION = 8;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' attribute.
@@ -410,7 +326,7 @@ public interface ExtendedIMLPackage extends EPackage
    * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getEqualizeOperation()
    * @generated
    */
-  int EQUALIZE_OPERATION = 12;
+  int EQUALIZE_OPERATION = 9;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' attribute.
@@ -429,6 +345,62 @@ public interface ExtendedIMLPackage extends EPackage
    * @ordered
    */
   int EQUALIZE_OPERATION_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.iml.extendedIML.impl.ShowOperationImpl <em>Show Operation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.iml.extendedIML.impl.ShowOperationImpl
+   * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getShowOperation()
+   * @generated
+   */
+  int SHOW_OPERATION = 10;
+
+  /**
+   * The feature id for the '<em><b>Var</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHOW_OPERATION__VAR = OPERATOR__VAR;
+
+  /**
+   * The number of structural features of the '<em>Show Operation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHOW_OPERATION_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.iml.extendedIML.impl.SaveOperationImpl <em>Save Operation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.iml.extendedIML.impl.SaveOperationImpl
+   * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getSaveOperation()
+   * @generated
+   */
+  int SAVE_OPERATION = 11;
+
+  /**
+   * The feature id for the '<em><b>Var</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAVE_OPERATION__VAR = OPERATOR__VAR;
+
+  /**
+   * The number of structural features of the '<em>Save Operation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAVE_OPERATION_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 0;
 
 
   /**
@@ -461,47 +433,6 @@ public interface ExtendedIMLPackage extends EPackage
    * @generated
    */
   EClass getAbstractElement();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.iml.extendedIML.Exporter <em>Exporter</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Exporter</em>'.
-   * @see org.xtext.example.iml.extendedIML.Exporter
-   * @generated
-   */
-  EClass getExporter();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.iml.extendedIML.Exporter#getVar <em>Var</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Var</em>'.
-   * @see org.xtext.example.iml.extendedIML.Exporter#getVar()
-   * @see #getExporter()
-   * @generated
-   */
-  EAttribute getExporter_Var();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.iml.extendedIML.Save <em>Save</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Save</em>'.
-   * @see org.xtext.example.iml.extendedIML.Save
-   * @generated
-   */
-  EClass getSave();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.iml.extendedIML.Show <em>Show</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Show</em>'.
-   * @see org.xtext.example.iml.extendedIML.Show
-   * @generated
-   */
-  EClass getShow();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.iml.extendedIML.Importer <em>Importer</em>}'.
@@ -650,6 +581,26 @@ public interface ExtendedIMLPackage extends EPackage
   EClass getEqualizeOperation();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.example.iml.extendedIML.ShowOperation <em>Show Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Show Operation</em>'.
+   * @see org.xtext.example.iml.extendedIML.ShowOperation
+   * @generated
+   */
+  EClass getShowOperation();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.iml.extendedIML.SaveOperation <em>Save Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Save Operation</em>'.
+   * @see org.xtext.example.iml.extendedIML.SaveOperation
+   * @generated
+   */
+  EClass getSaveOperation();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -699,44 +650,6 @@ public interface ExtendedIMLPackage extends EPackage
      * @generated
      */
     EClass ABSTRACT_ELEMENT = eINSTANCE.getAbstractElement();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.iml.extendedIML.impl.ExporterImpl <em>Exporter</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.iml.extendedIML.impl.ExporterImpl
-     * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getExporter()
-     * @generated
-     */
-    EClass EXPORTER = eINSTANCE.getExporter();
-
-    /**
-     * The meta object literal for the '<em><b>Var</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXPORTER__VAR = eINSTANCE.getExporter_Var();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.iml.extendedIML.impl.SaveImpl <em>Save</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.iml.extendedIML.impl.SaveImpl
-     * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getSave()
-     * @generated
-     */
-    EClass SAVE = eINSTANCE.getSave();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.iml.extendedIML.impl.ShowImpl <em>Show</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.iml.extendedIML.impl.ShowImpl
-     * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getShow()
-     * @generated
-     */
-    EClass SHOW = eINSTANCE.getShow();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.iml.extendedIML.impl.ImporterImpl <em>Importer</em>}' class.
@@ -865,6 +778,26 @@ public interface ExtendedIMLPackage extends EPackage
      * @generated
      */
     EClass EQUALIZE_OPERATION = eINSTANCE.getEqualizeOperation();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.iml.extendedIML.impl.ShowOperationImpl <em>Show Operation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.iml.extendedIML.impl.ShowOperationImpl
+     * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getShowOperation()
+     * @generated
+     */
+    EClass SHOW_OPERATION = eINSTANCE.getShowOperation();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.iml.extendedIML.impl.SaveOperationImpl <em>Save Operation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.iml.extendedIML.impl.SaveOperationImpl
+     * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getSaveOperation()
+     * @generated
+     */
+    EClass SAVE_OPERATION = eINSTANCE.getSaveOperation();
 
   }
 

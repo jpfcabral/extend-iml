@@ -42,13 +42,12 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cImporterParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cOperatorParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cExporterParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//AbstractElement:
-		//    Importer | Operator | Exporter;
+		//    Importer | Operator;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Importer | Operator | Exporter
+		//Importer | Operator
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Importer
@@ -56,74 +55,6 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		
 		//Operator
 		public RuleCall getOperatorParserRuleCall_1() { return cOperatorParserRuleCall_1; }
-		
-		//Exporter
-		public RuleCall getExporterParserRuleCall_2() { return cExporterParserRuleCall_2; }
-	}
-	public class ExporterElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.Exporter");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSaveParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cShowParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//Exporter:
-		//    Save | Show;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//Save | Show
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//Save
-		public RuleCall getSaveParserRuleCall_0() { return cSaveParserRuleCall_0; }
-		
-		//Show
-		public RuleCall getShowParserRuleCall_1() { return cShowParserRuleCall_1; }
-	}
-	public class SaveElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.Save");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSaveKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
-		
-		//Save:
-		//    "save" var=ID;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"save" var=ID
-		public Group getGroup() { return cGroup; }
-		
-		//"save"
-		public Keyword getSaveKeyword_0() { return cSaveKeyword_0; }
-		
-		//var=ID
-		public Assignment getVarAssignment_1() { return cVarAssignment_1; }
-		
-		//ID
-		public RuleCall getVarIDTerminalRuleCall_1_0() { return cVarIDTerminalRuleCall_1_0; }
-	}
-	public class ShowElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.Show");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cShowKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
-		
-		//Show:
-		//    "show" var=ID;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"show" var=ID
-		public Group getGroup() { return cGroup; }
-		
-		//"show"
-		public Keyword getShowKeyword_0() { return cShowKeyword_0; }
-		
-		//var=ID
-		public Assignment getVarAssignment_1() { return cVarAssignment_1; }
-		
-		//ID
-		public RuleCall getVarIDTerminalRuleCall_1_0() { return cVarIDTerminalRuleCall_1_0; }
 	}
 	public class ImporterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.Importer");
@@ -251,12 +182,16 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final RuleCall cFilterOperationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cBlurOperationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cEqualizeOperationParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cShowOperationParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cSaveOperationParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		
 		//Operator:
-		//    RotateOperation | FilterOperation | BlurOperation | EqualizeOperation;
+		//    RotateOperation | FilterOperation | BlurOperation | EqualizeOperation |
+		//    ShowOperation | SaveOperation;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//RotateOperation | FilterOperation | BlurOperation | EqualizeOperation
+		//RotateOperation | FilterOperation | BlurOperation | EqualizeOperation |
+		//ShowOperation | SaveOperation
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//RotateOperation
@@ -270,6 +205,12 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		
 		//EqualizeOperation
 		public RuleCall getEqualizeOperationParserRuleCall_3() { return cEqualizeOperationParserRuleCall_3; }
+		
+		//ShowOperation
+		public RuleCall getShowOperationParserRuleCall_4() { return cShowOperationParserRuleCall_4; }
+		
+		//SaveOperation
+		public RuleCall getSaveOperationParserRuleCall_5() { return cSaveOperationParserRuleCall_5; }
 	}
 	public class RotateOperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.RotateOperation");
@@ -368,8 +309,7 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
 		
 		//EqualizeOperation:
-		//    "equalize" var=ID
-		//;
+		//    "equalize" var=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//"equalize" var=ID
@@ -384,13 +324,56 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		//ID
 		public RuleCall getVarIDTerminalRuleCall_1_0() { return cVarIDTerminalRuleCall_1_0; }
 	}
+	public class ShowOperationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.ShowOperation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cShowKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
+		
+		//ShowOperation:
+		//    "show" var=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"show" var=ID
+		public Group getGroup() { return cGroup; }
+		
+		//"show"
+		public Keyword getShowKeyword_0() { return cShowKeyword_0; }
+		
+		//var=ID
+		public Assignment getVarAssignment_1() { return cVarAssignment_1; }
+		
+		//ID
+		public RuleCall getVarIDTerminalRuleCall_1_0() { return cVarIDTerminalRuleCall_1_0; }
+	}
+	public class SaveOperationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.SaveOperation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSaveKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
+		
+		//SaveOperation:
+		//    "save" var=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"save" var=ID
+		public Group getGroup() { return cGroup; }
+		
+		//"save"
+		public Keyword getSaveKeyword_0() { return cSaveKeyword_0; }
+		
+		//var=ID
+		public Assignment getVarAssignment_1() { return cVarAssignment_1; }
+		
+		//ID
+		public RuleCall getVarIDTerminalRuleCall_1_0() { return cVarIDTerminalRuleCall_1_0; }
+	}
 	
 	
 	private final ModelElements pModel;
 	private final AbstractElementElements pAbstractElement;
-	private final ExporterElements pExporter;
-	private final SaveElements pSave;
-	private final ShowElements pShow;
 	private final ImporterElements pImporter;
 	private final ImageImporterElements pImageImporter;
 	private final QualifiedImageNameElements pQualifiedImageName;
@@ -401,6 +384,8 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	private final FilterOperationElements pFilterOperation;
 	private final BlurOperationElements pBlurOperation;
 	private final EqualizeOperationElements pEqualizeOperation;
+	private final ShowOperationElements pShowOperation;
+	private final SaveOperationElements pSaveOperation;
 	
 	private final Grammar grammar;
 	
@@ -413,9 +398,6 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
 		this.pAbstractElement = new AbstractElementElements();
-		this.pExporter = new ExporterElements();
-		this.pSave = new SaveElements();
-		this.pShow = new ShowElements();
 		this.pImporter = new ImporterElements();
 		this.pImageImporter = new ImageImporterElements();
 		this.pQualifiedImageName = new QualifiedImageNameElements();
@@ -426,6 +408,8 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.pFilterOperation = new FilterOperationElements();
 		this.pBlurOperation = new BlurOperationElements();
 		this.pEqualizeOperation = new EqualizeOperationElements();
+		this.pShowOperation = new ShowOperationElements();
+		this.pSaveOperation = new SaveOperationElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -466,43 +450,13 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//AbstractElement:
-	//    Importer | Operator | Exporter;
+	//    Importer | Operator;
 	public AbstractElementElements getAbstractElementAccess() {
 		return pAbstractElement;
 	}
 	
 	public ParserRule getAbstractElementRule() {
 		return getAbstractElementAccess().getRule();
-	}
-	
-	//Exporter:
-	//    Save | Show;
-	public ExporterElements getExporterAccess() {
-		return pExporter;
-	}
-	
-	public ParserRule getExporterRule() {
-		return getExporterAccess().getRule();
-	}
-	
-	//Save:
-	//    "save" var=ID;
-	public SaveElements getSaveAccess() {
-		return pSave;
-	}
-	
-	public ParserRule getSaveRule() {
-		return getSaveAccess().getRule();
-	}
-	
-	//Show:
-	//    "show" var=ID;
-	public ShowElements getShowAccess() {
-		return pShow;
-	}
-	
-	public ParserRule getShowRule() {
-		return getShowAccess().getRule();
 	}
 	
 	//Importer:
@@ -556,7 +510,8 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Operator:
-	//    RotateOperation | FilterOperation | BlurOperation | EqualizeOperation;
+	//    RotateOperation | FilterOperation | BlurOperation | EqualizeOperation |
+	//    ShowOperation | SaveOperation;
 	public OperatorElements getOperatorAccess() {
 		return pOperator;
 	}
@@ -596,14 +551,33 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//EqualizeOperation:
-	//    "equalize" var=ID
-	//;
+	//    "equalize" var=ID;
 	public EqualizeOperationElements getEqualizeOperationAccess() {
 		return pEqualizeOperation;
 	}
 	
 	public ParserRule getEqualizeOperationRule() {
 		return getEqualizeOperationAccess().getRule();
+	}
+	
+	//ShowOperation:
+	//    "show" var=ID;
+	public ShowOperationElements getShowOperationAccess() {
+		return pShowOperation;
+	}
+	
+	public ParserRule getShowOperationRule() {
+		return getShowOperationAccess().getRule();
+	}
+	
+	//SaveOperation:
+	//    "save" var=ID;
+	public SaveOperationElements getSaveOperationAccess() {
+		return pSaveOperation;
+	}
+	
+	public ParserRule getSaveOperationRule() {
+		return getSaveOperationAccess().getRule();
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

@@ -14,7 +14,6 @@ import org.xtext.example.iml.extendedIML.AbstractElement;
 import org.xtext.example.iml.extendedIML.BlurOperation;
 import org.xtext.example.iml.extendedIML.DirImporter;
 import org.xtext.example.iml.extendedIML.EqualizeOperation;
-import org.xtext.example.iml.extendedIML.Exporter;
 import org.xtext.example.iml.extendedIML.ExtendedIMLFactory;
 import org.xtext.example.iml.extendedIML.ExtendedIMLPackage;
 import org.xtext.example.iml.extendedIML.FilterOperation;
@@ -23,8 +22,8 @@ import org.xtext.example.iml.extendedIML.Importer;
 import org.xtext.example.iml.extendedIML.Model;
 import org.xtext.example.iml.extendedIML.Operator;
 import org.xtext.example.iml.extendedIML.RotateOperation;
-import org.xtext.example.iml.extendedIML.Save;
-import org.xtext.example.iml.extendedIML.Show;
+import org.xtext.example.iml.extendedIML.SaveOperation;
+import org.xtext.example.iml.extendedIML.ShowOperation;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,27 +46,6 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
    * @generated
    */
   private EClass abstractElementEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass exporterEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass saveEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass showEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -124,6 +102,20 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
    * @generated
    */
   private EClass equalizeOperationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass showOperationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saveOperationEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -219,50 +211,6 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
   public EClass getAbstractElement()
   {
     return abstractElementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getExporter()
-  {
-    return exporterEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getExporter_Var()
-  {
-    return (EAttribute)exporterEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getSave()
-  {
-    return saveEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getShow()
-  {
-    return showEClass;
   }
 
   /**
@@ -425,6 +373,28 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
    * @generated
    */
   @Override
+  public EClass getShowOperation()
+  {
+    return showOperationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSaveOperation()
+  {
+    return saveOperationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public ExtendedIMLFactory getExtendedIMLFactory()
   {
     return (ExtendedIMLFactory)getEFactoryInstance();
@@ -455,13 +425,6 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
 
     abstractElementEClass = createEClass(ABSTRACT_ELEMENT);
 
-    exporterEClass = createEClass(EXPORTER);
-    createEAttribute(exporterEClass, EXPORTER__VAR);
-
-    saveEClass = createEClass(SAVE);
-
-    showEClass = createEClass(SHOW);
-
     importerEClass = createEClass(IMPORTER);
 
     imageImporterEClass = createEClass(IMAGE_IMPORTER);
@@ -483,6 +446,10 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
     createEAttribute(blurOperationEClass, BLUR_OPERATION__INTENSITY);
 
     equalizeOperationEClass = createEClass(EQUALIZE_OPERATION);
+
+    showOperationEClass = createEClass(SHOW_OPERATION);
+
+    saveOperationEClass = createEClass(SAVE_OPERATION);
   }
 
   /**
@@ -514,9 +481,6 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    exporterEClass.getESuperTypes().add(this.getAbstractElement());
-    saveEClass.getESuperTypes().add(this.getExporter());
-    showEClass.getESuperTypes().add(this.getExporter());
     importerEClass.getESuperTypes().add(this.getAbstractElement());
     imageImporterEClass.getESuperTypes().add(this.getImporter());
     dirImporterEClass.getESuperTypes().add(this.getImporter());
@@ -525,19 +489,14 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
     filterOperationEClass.getESuperTypes().add(this.getOperator());
     blurOperationEClass.getESuperTypes().add(this.getOperator());
     equalizeOperationEClass.getESuperTypes().add(this.getOperator());
+    showOperationEClass.getESuperTypes().add(this.getOperator());
+    saveOperationEClass.getESuperTypes().add(this.getOperator());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_Elements(), this.getAbstractElement(), null, "elements", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractElementEClass, AbstractElement.class, "AbstractElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(exporterEClass, Exporter.class, "Exporter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getExporter_Var(), ecorePackage.getEString(), "var", null, 0, 1, Exporter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(saveEClass, Save.class, "Save", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(showEClass, Show.class, "Show", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(importerEClass, Importer.class, "Importer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -560,6 +519,10 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
     initEAttribute(getBlurOperation_Intensity(), ecorePackage.getEInt(), "intensity", null, 0, 1, BlurOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(equalizeOperationEClass, EqualizeOperation.class, "EqualizeOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(showOperationEClass, ShowOperation.class, "ShowOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(saveOperationEClass, SaveOperation.class, "SaveOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

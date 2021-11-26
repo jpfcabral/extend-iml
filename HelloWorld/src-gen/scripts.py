@@ -28,6 +28,18 @@ def equalize_hist(image):
 		img_eq = cv2.equalizeHist(image)
 		return img_eq
 
+def show_image(image):
+	cv2.imshow('Altered', image)
+	cv2.waitKey(0)
+	cv2.destroyAllWindows()
+
+def save_image(image, source_path):
+	output_dir = path.join(source_path, 'output')
+	if (not path.exists(output_dir)):
+		mkdir(output_dir)
+	output_image_full_path = path.join(output_dir, image_name)
+	cv2.imwrite(output_image_full_path, img)
+
 # def fill_image(img, size=(_size,_size)):
 #     h, w = img.shape[:2]
 #     c = img.shape[2] if len(img.shape)>2 else 1
@@ -53,11 +65,8 @@ for image_name in listdir('imagens'):
 		img = rotate_image(img, 40)
 		img = convert_to_gray(img)
 		img = rotate_image(img, 45)
-		img = blur_image(img, 0.25)
+		img = blur_image(img, 0.1)
 		img = equalize_hist(img)
+		show_image(img)
+		save_image(img, 'imagens')
 		
-		output_dir = path.join('imagens', 'output')
-		if (not path.exists(output_dir)):
-			mkdir(output_dir)
-		output_image_full_path = path.join(output_dir, image_name)
-		cv2.imwrite(output_image_full_path, img)

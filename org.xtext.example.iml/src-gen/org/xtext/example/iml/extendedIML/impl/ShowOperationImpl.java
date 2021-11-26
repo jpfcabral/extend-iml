@@ -6,23 +6,23 @@ package org.xtext.example.iml.extendedIML.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import org.xtext.example.iml.extendedIML.ExtendedIMLPackage;
-import org.xtext.example.iml.extendedIML.Show;
+import org.xtext.example.iml.extendedIML.ShowOperation;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Show</b></em>'.
+ * An implementation of the model object '<em><b>Show Operation</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ShowImpl extends ExporterImpl implements Show
+public class ShowOperationImpl extends OperatorImpl implements ShowOperation
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ShowImpl()
+  protected ShowOperationImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class ShowImpl extends ExporterImpl implements Show
   @Override
   protected EClass eStaticClass()
   {
-    return ExtendedIMLPackage.Literals.SHOW;
+    return ExtendedIMLPackage.Literals.SHOW_OPERATION;
   }
 
-} //ShowImpl
+} //ShowOperationImpl

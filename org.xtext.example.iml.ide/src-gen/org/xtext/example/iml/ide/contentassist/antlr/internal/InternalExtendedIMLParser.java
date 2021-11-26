@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalExtendedIMLParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'save'", "'show'", "'='", "'/'", "'images'", "'rotate'", "'filter'", "'gray'", "'blur'", "'equalize'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'='", "'/'", "'images'", "'rotate'", "'filter'", "'gray'", "'blur'", "'equalize'", "'show'", "'save'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -128,7 +128,7 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==RULE_ID||(LA1_0>=11 && LA1_0<=12)||(LA1_0>=15 && LA1_0<=17)||(LA1_0>=19 && LA1_0<=20)) ) {
+                if ( (LA1_0==RULE_ID||(LA1_0>=13 && LA1_0<=15)||(LA1_0>=17 && LA1_0<=20)) ) {
                     alt1=1;
                 }
 
@@ -250,243 +250,12 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
     // $ANTLR end "ruleAbstractElement"
 
 
-    // $ANTLR start "entryRuleExporter"
-    // InternalExtendedIML.g:103:1: entryRuleExporter : ruleExporter EOF ;
-    public final void entryRuleExporter() throws RecognitionException {
-        try {
-            // InternalExtendedIML.g:104:1: ( ruleExporter EOF )
-            // InternalExtendedIML.g:105:1: ruleExporter EOF
-            {
-             before(grammarAccess.getExporterRule()); 
-            pushFollow(FOLLOW_1);
-            ruleExporter();
-
-            state._fsp--;
-
-             after(grammarAccess.getExporterRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleExporter"
-
-
-    // $ANTLR start "ruleExporter"
-    // InternalExtendedIML.g:112:1: ruleExporter : ( ( rule__Exporter__Alternatives ) ) ;
-    public final void ruleExporter() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalExtendedIML.g:116:2: ( ( ( rule__Exporter__Alternatives ) ) )
-            // InternalExtendedIML.g:117:2: ( ( rule__Exporter__Alternatives ) )
-            {
-            // InternalExtendedIML.g:117:2: ( ( rule__Exporter__Alternatives ) )
-            // InternalExtendedIML.g:118:3: ( rule__Exporter__Alternatives )
-            {
-             before(grammarAccess.getExporterAccess().getAlternatives()); 
-            // InternalExtendedIML.g:119:3: ( rule__Exporter__Alternatives )
-            // InternalExtendedIML.g:119:4: rule__Exporter__Alternatives
-            {
-            pushFollow(FOLLOW_2);
-            rule__Exporter__Alternatives();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getExporterAccess().getAlternatives()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleExporter"
-
-
-    // $ANTLR start "entryRuleSave"
-    // InternalExtendedIML.g:128:1: entryRuleSave : ruleSave EOF ;
-    public final void entryRuleSave() throws RecognitionException {
-        try {
-            // InternalExtendedIML.g:129:1: ( ruleSave EOF )
-            // InternalExtendedIML.g:130:1: ruleSave EOF
-            {
-             before(grammarAccess.getSaveRule()); 
-            pushFollow(FOLLOW_1);
-            ruleSave();
-
-            state._fsp--;
-
-             after(grammarAccess.getSaveRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleSave"
-
-
-    // $ANTLR start "ruleSave"
-    // InternalExtendedIML.g:137:1: ruleSave : ( ( rule__Save__Group__0 ) ) ;
-    public final void ruleSave() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalExtendedIML.g:141:2: ( ( ( rule__Save__Group__0 ) ) )
-            // InternalExtendedIML.g:142:2: ( ( rule__Save__Group__0 ) )
-            {
-            // InternalExtendedIML.g:142:2: ( ( rule__Save__Group__0 ) )
-            // InternalExtendedIML.g:143:3: ( rule__Save__Group__0 )
-            {
-             before(grammarAccess.getSaveAccess().getGroup()); 
-            // InternalExtendedIML.g:144:3: ( rule__Save__Group__0 )
-            // InternalExtendedIML.g:144:4: rule__Save__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Save__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSaveAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleSave"
-
-
-    // $ANTLR start "entryRuleShow"
-    // InternalExtendedIML.g:153:1: entryRuleShow : ruleShow EOF ;
-    public final void entryRuleShow() throws RecognitionException {
-        try {
-            // InternalExtendedIML.g:154:1: ( ruleShow EOF )
-            // InternalExtendedIML.g:155:1: ruleShow EOF
-            {
-             before(grammarAccess.getShowRule()); 
-            pushFollow(FOLLOW_1);
-            ruleShow();
-
-            state._fsp--;
-
-             after(grammarAccess.getShowRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleShow"
-
-
-    // $ANTLR start "ruleShow"
-    // InternalExtendedIML.g:162:1: ruleShow : ( ( rule__Show__Group__0 ) ) ;
-    public final void ruleShow() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalExtendedIML.g:166:2: ( ( ( rule__Show__Group__0 ) ) )
-            // InternalExtendedIML.g:167:2: ( ( rule__Show__Group__0 ) )
-            {
-            // InternalExtendedIML.g:167:2: ( ( rule__Show__Group__0 ) )
-            // InternalExtendedIML.g:168:3: ( rule__Show__Group__0 )
-            {
-             before(grammarAccess.getShowAccess().getGroup()); 
-            // InternalExtendedIML.g:169:3: ( rule__Show__Group__0 )
-            // InternalExtendedIML.g:169:4: rule__Show__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Show__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getShowAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleShow"
-
-
     // $ANTLR start "entryRuleImporter"
-    // InternalExtendedIML.g:178:1: entryRuleImporter : ruleImporter EOF ;
+    // InternalExtendedIML.g:103:1: entryRuleImporter : ruleImporter EOF ;
     public final void entryRuleImporter() throws RecognitionException {
         try {
-            // InternalExtendedIML.g:179:1: ( ruleImporter EOF )
-            // InternalExtendedIML.g:180:1: ruleImporter EOF
+            // InternalExtendedIML.g:104:1: ( ruleImporter EOF )
+            // InternalExtendedIML.g:105:1: ruleImporter EOF
             {
              before(grammarAccess.getImporterRule()); 
             pushFollow(FOLLOW_1);
@@ -512,21 +281,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleImporter"
-    // InternalExtendedIML.g:187:1: ruleImporter : ( ( rule__Importer__Alternatives ) ) ;
+    // InternalExtendedIML.g:112:1: ruleImporter : ( ( rule__Importer__Alternatives ) ) ;
     public final void ruleImporter() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:191:2: ( ( ( rule__Importer__Alternatives ) ) )
-            // InternalExtendedIML.g:192:2: ( ( rule__Importer__Alternatives ) )
+            // InternalExtendedIML.g:116:2: ( ( ( rule__Importer__Alternatives ) ) )
+            // InternalExtendedIML.g:117:2: ( ( rule__Importer__Alternatives ) )
             {
-            // InternalExtendedIML.g:192:2: ( ( rule__Importer__Alternatives ) )
-            // InternalExtendedIML.g:193:3: ( rule__Importer__Alternatives )
+            // InternalExtendedIML.g:117:2: ( ( rule__Importer__Alternatives ) )
+            // InternalExtendedIML.g:118:3: ( rule__Importer__Alternatives )
             {
              before(grammarAccess.getImporterAccess().getAlternatives()); 
-            // InternalExtendedIML.g:194:3: ( rule__Importer__Alternatives )
-            // InternalExtendedIML.g:194:4: rule__Importer__Alternatives
+            // InternalExtendedIML.g:119:3: ( rule__Importer__Alternatives )
+            // InternalExtendedIML.g:119:4: rule__Importer__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__Importer__Alternatives();
@@ -559,11 +328,11 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleImageImporter"
-    // InternalExtendedIML.g:203:1: entryRuleImageImporter : ruleImageImporter EOF ;
+    // InternalExtendedIML.g:128:1: entryRuleImageImporter : ruleImageImporter EOF ;
     public final void entryRuleImageImporter() throws RecognitionException {
         try {
-            // InternalExtendedIML.g:204:1: ( ruleImageImporter EOF )
-            // InternalExtendedIML.g:205:1: ruleImageImporter EOF
+            // InternalExtendedIML.g:129:1: ( ruleImageImporter EOF )
+            // InternalExtendedIML.g:130:1: ruleImageImporter EOF
             {
              before(grammarAccess.getImageImporterRule()); 
             pushFollow(FOLLOW_1);
@@ -589,21 +358,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleImageImporter"
-    // InternalExtendedIML.g:212:1: ruleImageImporter : ( ( rule__ImageImporter__Group__0 ) ) ;
+    // InternalExtendedIML.g:137:1: ruleImageImporter : ( ( rule__ImageImporter__Group__0 ) ) ;
     public final void ruleImageImporter() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:216:2: ( ( ( rule__ImageImporter__Group__0 ) ) )
-            // InternalExtendedIML.g:217:2: ( ( rule__ImageImporter__Group__0 ) )
+            // InternalExtendedIML.g:141:2: ( ( ( rule__ImageImporter__Group__0 ) ) )
+            // InternalExtendedIML.g:142:2: ( ( rule__ImageImporter__Group__0 ) )
             {
-            // InternalExtendedIML.g:217:2: ( ( rule__ImageImporter__Group__0 ) )
-            // InternalExtendedIML.g:218:3: ( rule__ImageImporter__Group__0 )
+            // InternalExtendedIML.g:142:2: ( ( rule__ImageImporter__Group__0 ) )
+            // InternalExtendedIML.g:143:3: ( rule__ImageImporter__Group__0 )
             {
              before(grammarAccess.getImageImporterAccess().getGroup()); 
-            // InternalExtendedIML.g:219:3: ( rule__ImageImporter__Group__0 )
-            // InternalExtendedIML.g:219:4: rule__ImageImporter__Group__0
+            // InternalExtendedIML.g:144:3: ( rule__ImageImporter__Group__0 )
+            // InternalExtendedIML.g:144:4: rule__ImageImporter__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__ImageImporter__Group__0();
@@ -636,11 +405,11 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleQualifiedImageName"
-    // InternalExtendedIML.g:228:1: entryRuleQualifiedImageName : ruleQualifiedImageName EOF ;
+    // InternalExtendedIML.g:153:1: entryRuleQualifiedImageName : ruleQualifiedImageName EOF ;
     public final void entryRuleQualifiedImageName() throws RecognitionException {
         try {
-            // InternalExtendedIML.g:229:1: ( ruleQualifiedImageName EOF )
-            // InternalExtendedIML.g:230:1: ruleQualifiedImageName EOF
+            // InternalExtendedIML.g:154:1: ( ruleQualifiedImageName EOF )
+            // InternalExtendedIML.g:155:1: ruleQualifiedImageName EOF
             {
              before(grammarAccess.getQualifiedImageNameRule()); 
             pushFollow(FOLLOW_1);
@@ -666,17 +435,17 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleQualifiedImageName"
-    // InternalExtendedIML.g:237:1: ruleQualifiedImageName : ( RULE_ID ) ;
+    // InternalExtendedIML.g:162:1: ruleQualifiedImageName : ( RULE_ID ) ;
     public final void ruleQualifiedImageName() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:241:2: ( ( RULE_ID ) )
-            // InternalExtendedIML.g:242:2: ( RULE_ID )
+            // InternalExtendedIML.g:166:2: ( ( RULE_ID ) )
+            // InternalExtendedIML.g:167:2: ( RULE_ID )
             {
-            // InternalExtendedIML.g:242:2: ( RULE_ID )
-            // InternalExtendedIML.g:243:3: RULE_ID
+            // InternalExtendedIML.g:167:2: ( RULE_ID )
+            // InternalExtendedIML.g:168:3: RULE_ID
             {
              before(grammarAccess.getQualifiedImageNameAccess().getIDTerminalRuleCall()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -703,11 +472,11 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleQualifiedPath"
-    // InternalExtendedIML.g:253:1: entryRuleQualifiedPath : ruleQualifiedPath EOF ;
+    // InternalExtendedIML.g:178:1: entryRuleQualifiedPath : ruleQualifiedPath EOF ;
     public final void entryRuleQualifiedPath() throws RecognitionException {
         try {
-            // InternalExtendedIML.g:254:1: ( ruleQualifiedPath EOF )
-            // InternalExtendedIML.g:255:1: ruleQualifiedPath EOF
+            // InternalExtendedIML.g:179:1: ( ruleQualifiedPath EOF )
+            // InternalExtendedIML.g:180:1: ruleQualifiedPath EOF
             {
              before(grammarAccess.getQualifiedPathRule()); 
             pushFollow(FOLLOW_1);
@@ -733,21 +502,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleQualifiedPath"
-    // InternalExtendedIML.g:262:1: ruleQualifiedPath : ( ( rule__QualifiedPath__Group__0 ) ) ;
+    // InternalExtendedIML.g:187:1: ruleQualifiedPath : ( ( rule__QualifiedPath__Group__0 ) ) ;
     public final void ruleQualifiedPath() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:266:2: ( ( ( rule__QualifiedPath__Group__0 ) ) )
-            // InternalExtendedIML.g:267:2: ( ( rule__QualifiedPath__Group__0 ) )
+            // InternalExtendedIML.g:191:2: ( ( ( rule__QualifiedPath__Group__0 ) ) )
+            // InternalExtendedIML.g:192:2: ( ( rule__QualifiedPath__Group__0 ) )
             {
-            // InternalExtendedIML.g:267:2: ( ( rule__QualifiedPath__Group__0 ) )
-            // InternalExtendedIML.g:268:3: ( rule__QualifiedPath__Group__0 )
+            // InternalExtendedIML.g:192:2: ( ( rule__QualifiedPath__Group__0 ) )
+            // InternalExtendedIML.g:193:3: ( rule__QualifiedPath__Group__0 )
             {
              before(grammarAccess.getQualifiedPathAccess().getGroup()); 
-            // InternalExtendedIML.g:269:3: ( rule__QualifiedPath__Group__0 )
-            // InternalExtendedIML.g:269:4: rule__QualifiedPath__Group__0
+            // InternalExtendedIML.g:194:3: ( rule__QualifiedPath__Group__0 )
+            // InternalExtendedIML.g:194:4: rule__QualifiedPath__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedPath__Group__0();
@@ -780,11 +549,11 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleDirImporter"
-    // InternalExtendedIML.g:278:1: entryRuleDirImporter : ruleDirImporter EOF ;
+    // InternalExtendedIML.g:203:1: entryRuleDirImporter : ruleDirImporter EOF ;
     public final void entryRuleDirImporter() throws RecognitionException {
         try {
-            // InternalExtendedIML.g:279:1: ( ruleDirImporter EOF )
-            // InternalExtendedIML.g:280:1: ruleDirImporter EOF
+            // InternalExtendedIML.g:204:1: ( ruleDirImporter EOF )
+            // InternalExtendedIML.g:205:1: ruleDirImporter EOF
             {
              before(grammarAccess.getDirImporterRule()); 
             pushFollow(FOLLOW_1);
@@ -810,21 +579,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleDirImporter"
-    // InternalExtendedIML.g:287:1: ruleDirImporter : ( ( rule__DirImporter__Group__0 ) ) ;
+    // InternalExtendedIML.g:212:1: ruleDirImporter : ( ( rule__DirImporter__Group__0 ) ) ;
     public final void ruleDirImporter() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:291:2: ( ( ( rule__DirImporter__Group__0 ) ) )
-            // InternalExtendedIML.g:292:2: ( ( rule__DirImporter__Group__0 ) )
+            // InternalExtendedIML.g:216:2: ( ( ( rule__DirImporter__Group__0 ) ) )
+            // InternalExtendedIML.g:217:2: ( ( rule__DirImporter__Group__0 ) )
             {
-            // InternalExtendedIML.g:292:2: ( ( rule__DirImporter__Group__0 ) )
-            // InternalExtendedIML.g:293:3: ( rule__DirImporter__Group__0 )
+            // InternalExtendedIML.g:217:2: ( ( rule__DirImporter__Group__0 ) )
+            // InternalExtendedIML.g:218:3: ( rule__DirImporter__Group__0 )
             {
              before(grammarAccess.getDirImporterAccess().getGroup()); 
-            // InternalExtendedIML.g:294:3: ( rule__DirImporter__Group__0 )
-            // InternalExtendedIML.g:294:4: rule__DirImporter__Group__0
+            // InternalExtendedIML.g:219:3: ( rule__DirImporter__Group__0 )
+            // InternalExtendedIML.g:219:4: rule__DirImporter__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__DirImporter__Group__0();
@@ -857,11 +626,11 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleOperator"
-    // InternalExtendedIML.g:303:1: entryRuleOperator : ruleOperator EOF ;
+    // InternalExtendedIML.g:228:1: entryRuleOperator : ruleOperator EOF ;
     public final void entryRuleOperator() throws RecognitionException {
         try {
-            // InternalExtendedIML.g:304:1: ( ruleOperator EOF )
-            // InternalExtendedIML.g:305:1: ruleOperator EOF
+            // InternalExtendedIML.g:229:1: ( ruleOperator EOF )
+            // InternalExtendedIML.g:230:1: ruleOperator EOF
             {
              before(grammarAccess.getOperatorRule()); 
             pushFollow(FOLLOW_1);
@@ -887,21 +656,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleOperator"
-    // InternalExtendedIML.g:312:1: ruleOperator : ( ( rule__Operator__Alternatives ) ) ;
+    // InternalExtendedIML.g:237:1: ruleOperator : ( ( rule__Operator__Alternatives ) ) ;
     public final void ruleOperator() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:316:2: ( ( ( rule__Operator__Alternatives ) ) )
-            // InternalExtendedIML.g:317:2: ( ( rule__Operator__Alternatives ) )
+            // InternalExtendedIML.g:241:2: ( ( ( rule__Operator__Alternatives ) ) )
+            // InternalExtendedIML.g:242:2: ( ( rule__Operator__Alternatives ) )
             {
-            // InternalExtendedIML.g:317:2: ( ( rule__Operator__Alternatives ) )
-            // InternalExtendedIML.g:318:3: ( rule__Operator__Alternatives )
+            // InternalExtendedIML.g:242:2: ( ( rule__Operator__Alternatives ) )
+            // InternalExtendedIML.g:243:3: ( rule__Operator__Alternatives )
             {
              before(grammarAccess.getOperatorAccess().getAlternatives()); 
-            // InternalExtendedIML.g:319:3: ( rule__Operator__Alternatives )
-            // InternalExtendedIML.g:319:4: rule__Operator__Alternatives
+            // InternalExtendedIML.g:244:3: ( rule__Operator__Alternatives )
+            // InternalExtendedIML.g:244:4: rule__Operator__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__Operator__Alternatives();
@@ -934,11 +703,11 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleRotateOperation"
-    // InternalExtendedIML.g:328:1: entryRuleRotateOperation : ruleRotateOperation EOF ;
+    // InternalExtendedIML.g:253:1: entryRuleRotateOperation : ruleRotateOperation EOF ;
     public final void entryRuleRotateOperation() throws RecognitionException {
         try {
-            // InternalExtendedIML.g:329:1: ( ruleRotateOperation EOF )
-            // InternalExtendedIML.g:330:1: ruleRotateOperation EOF
+            // InternalExtendedIML.g:254:1: ( ruleRotateOperation EOF )
+            // InternalExtendedIML.g:255:1: ruleRotateOperation EOF
             {
              before(grammarAccess.getRotateOperationRule()); 
             pushFollow(FOLLOW_1);
@@ -964,21 +733,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleRotateOperation"
-    // InternalExtendedIML.g:337:1: ruleRotateOperation : ( ( rule__RotateOperation__Group__0 ) ) ;
+    // InternalExtendedIML.g:262:1: ruleRotateOperation : ( ( rule__RotateOperation__Group__0 ) ) ;
     public final void ruleRotateOperation() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:341:2: ( ( ( rule__RotateOperation__Group__0 ) ) )
-            // InternalExtendedIML.g:342:2: ( ( rule__RotateOperation__Group__0 ) )
+            // InternalExtendedIML.g:266:2: ( ( ( rule__RotateOperation__Group__0 ) ) )
+            // InternalExtendedIML.g:267:2: ( ( rule__RotateOperation__Group__0 ) )
             {
-            // InternalExtendedIML.g:342:2: ( ( rule__RotateOperation__Group__0 ) )
-            // InternalExtendedIML.g:343:3: ( rule__RotateOperation__Group__0 )
+            // InternalExtendedIML.g:267:2: ( ( rule__RotateOperation__Group__0 ) )
+            // InternalExtendedIML.g:268:3: ( rule__RotateOperation__Group__0 )
             {
              before(grammarAccess.getRotateOperationAccess().getGroup()); 
-            // InternalExtendedIML.g:344:3: ( rule__RotateOperation__Group__0 )
-            // InternalExtendedIML.g:344:4: rule__RotateOperation__Group__0
+            // InternalExtendedIML.g:269:3: ( rule__RotateOperation__Group__0 )
+            // InternalExtendedIML.g:269:4: rule__RotateOperation__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__RotateOperation__Group__0();
@@ -1011,11 +780,11 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleFilterOperation"
-    // InternalExtendedIML.g:353:1: entryRuleFilterOperation : ruleFilterOperation EOF ;
+    // InternalExtendedIML.g:278:1: entryRuleFilterOperation : ruleFilterOperation EOF ;
     public final void entryRuleFilterOperation() throws RecognitionException {
         try {
-            // InternalExtendedIML.g:354:1: ( ruleFilterOperation EOF )
-            // InternalExtendedIML.g:355:1: ruleFilterOperation EOF
+            // InternalExtendedIML.g:279:1: ( ruleFilterOperation EOF )
+            // InternalExtendedIML.g:280:1: ruleFilterOperation EOF
             {
              before(grammarAccess.getFilterOperationRule()); 
             pushFollow(FOLLOW_1);
@@ -1041,21 +810,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleFilterOperation"
-    // InternalExtendedIML.g:362:1: ruleFilterOperation : ( ( rule__FilterOperation__Group__0 ) ) ;
+    // InternalExtendedIML.g:287:1: ruleFilterOperation : ( ( rule__FilterOperation__Group__0 ) ) ;
     public final void ruleFilterOperation() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:366:2: ( ( ( rule__FilterOperation__Group__0 ) ) )
-            // InternalExtendedIML.g:367:2: ( ( rule__FilterOperation__Group__0 ) )
+            // InternalExtendedIML.g:291:2: ( ( ( rule__FilterOperation__Group__0 ) ) )
+            // InternalExtendedIML.g:292:2: ( ( rule__FilterOperation__Group__0 ) )
             {
-            // InternalExtendedIML.g:367:2: ( ( rule__FilterOperation__Group__0 ) )
-            // InternalExtendedIML.g:368:3: ( rule__FilterOperation__Group__0 )
+            // InternalExtendedIML.g:292:2: ( ( rule__FilterOperation__Group__0 ) )
+            // InternalExtendedIML.g:293:3: ( rule__FilterOperation__Group__0 )
             {
              before(grammarAccess.getFilterOperationAccess().getGroup()); 
-            // InternalExtendedIML.g:369:3: ( rule__FilterOperation__Group__0 )
-            // InternalExtendedIML.g:369:4: rule__FilterOperation__Group__0
+            // InternalExtendedIML.g:294:3: ( rule__FilterOperation__Group__0 )
+            // InternalExtendedIML.g:294:4: rule__FilterOperation__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__FilterOperation__Group__0();
@@ -1088,11 +857,11 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleBlurOperation"
-    // InternalExtendedIML.g:378:1: entryRuleBlurOperation : ruleBlurOperation EOF ;
+    // InternalExtendedIML.g:303:1: entryRuleBlurOperation : ruleBlurOperation EOF ;
     public final void entryRuleBlurOperation() throws RecognitionException {
         try {
-            // InternalExtendedIML.g:379:1: ( ruleBlurOperation EOF )
-            // InternalExtendedIML.g:380:1: ruleBlurOperation EOF
+            // InternalExtendedIML.g:304:1: ( ruleBlurOperation EOF )
+            // InternalExtendedIML.g:305:1: ruleBlurOperation EOF
             {
              before(grammarAccess.getBlurOperationRule()); 
             pushFollow(FOLLOW_1);
@@ -1118,21 +887,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleBlurOperation"
-    // InternalExtendedIML.g:387:1: ruleBlurOperation : ( ( rule__BlurOperation__Group__0 ) ) ;
+    // InternalExtendedIML.g:312:1: ruleBlurOperation : ( ( rule__BlurOperation__Group__0 ) ) ;
     public final void ruleBlurOperation() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:391:2: ( ( ( rule__BlurOperation__Group__0 ) ) )
-            // InternalExtendedIML.g:392:2: ( ( rule__BlurOperation__Group__0 ) )
+            // InternalExtendedIML.g:316:2: ( ( ( rule__BlurOperation__Group__0 ) ) )
+            // InternalExtendedIML.g:317:2: ( ( rule__BlurOperation__Group__0 ) )
             {
-            // InternalExtendedIML.g:392:2: ( ( rule__BlurOperation__Group__0 ) )
-            // InternalExtendedIML.g:393:3: ( rule__BlurOperation__Group__0 )
+            // InternalExtendedIML.g:317:2: ( ( rule__BlurOperation__Group__0 ) )
+            // InternalExtendedIML.g:318:3: ( rule__BlurOperation__Group__0 )
             {
              before(grammarAccess.getBlurOperationAccess().getGroup()); 
-            // InternalExtendedIML.g:394:3: ( rule__BlurOperation__Group__0 )
-            // InternalExtendedIML.g:394:4: rule__BlurOperation__Group__0
+            // InternalExtendedIML.g:319:3: ( rule__BlurOperation__Group__0 )
+            // InternalExtendedIML.g:319:4: rule__BlurOperation__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__BlurOperation__Group__0();
@@ -1165,11 +934,11 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleEqualizeOperation"
-    // InternalExtendedIML.g:403:1: entryRuleEqualizeOperation : ruleEqualizeOperation EOF ;
+    // InternalExtendedIML.g:328:1: entryRuleEqualizeOperation : ruleEqualizeOperation EOF ;
     public final void entryRuleEqualizeOperation() throws RecognitionException {
         try {
-            // InternalExtendedIML.g:404:1: ( ruleEqualizeOperation EOF )
-            // InternalExtendedIML.g:405:1: ruleEqualizeOperation EOF
+            // InternalExtendedIML.g:329:1: ( ruleEqualizeOperation EOF )
+            // InternalExtendedIML.g:330:1: ruleEqualizeOperation EOF
             {
              before(grammarAccess.getEqualizeOperationRule()); 
             pushFollow(FOLLOW_1);
@@ -1195,21 +964,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleEqualizeOperation"
-    // InternalExtendedIML.g:412:1: ruleEqualizeOperation : ( ( rule__EqualizeOperation__Group__0 ) ) ;
+    // InternalExtendedIML.g:337:1: ruleEqualizeOperation : ( ( rule__EqualizeOperation__Group__0 ) ) ;
     public final void ruleEqualizeOperation() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:416:2: ( ( ( rule__EqualizeOperation__Group__0 ) ) )
-            // InternalExtendedIML.g:417:2: ( ( rule__EqualizeOperation__Group__0 ) )
+            // InternalExtendedIML.g:341:2: ( ( ( rule__EqualizeOperation__Group__0 ) ) )
+            // InternalExtendedIML.g:342:2: ( ( rule__EqualizeOperation__Group__0 ) )
             {
-            // InternalExtendedIML.g:417:2: ( ( rule__EqualizeOperation__Group__0 ) )
-            // InternalExtendedIML.g:418:3: ( rule__EqualizeOperation__Group__0 )
+            // InternalExtendedIML.g:342:2: ( ( rule__EqualizeOperation__Group__0 ) )
+            // InternalExtendedIML.g:343:3: ( rule__EqualizeOperation__Group__0 )
             {
              before(grammarAccess.getEqualizeOperationAccess().getGroup()); 
-            // InternalExtendedIML.g:419:3: ( rule__EqualizeOperation__Group__0 )
-            // InternalExtendedIML.g:419:4: rule__EqualizeOperation__Group__0
+            // InternalExtendedIML.g:344:3: ( rule__EqualizeOperation__Group__0 )
+            // InternalExtendedIML.g:344:4: rule__EqualizeOperation__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__EqualizeOperation__Group__0();
@@ -1241,49 +1010,189 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
     // $ANTLR end "ruleEqualizeOperation"
 
 
+    // $ANTLR start "entryRuleShowOperation"
+    // InternalExtendedIML.g:353:1: entryRuleShowOperation : ruleShowOperation EOF ;
+    public final void entryRuleShowOperation() throws RecognitionException {
+        try {
+            // InternalExtendedIML.g:354:1: ( ruleShowOperation EOF )
+            // InternalExtendedIML.g:355:1: ruleShowOperation EOF
+            {
+             before(grammarAccess.getShowOperationRule()); 
+            pushFollow(FOLLOW_1);
+            ruleShowOperation();
+
+            state._fsp--;
+
+             after(grammarAccess.getShowOperationRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleShowOperation"
+
+
+    // $ANTLR start "ruleShowOperation"
+    // InternalExtendedIML.g:362:1: ruleShowOperation : ( ( rule__ShowOperation__Group__0 ) ) ;
+    public final void ruleShowOperation() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalExtendedIML.g:366:2: ( ( ( rule__ShowOperation__Group__0 ) ) )
+            // InternalExtendedIML.g:367:2: ( ( rule__ShowOperation__Group__0 ) )
+            {
+            // InternalExtendedIML.g:367:2: ( ( rule__ShowOperation__Group__0 ) )
+            // InternalExtendedIML.g:368:3: ( rule__ShowOperation__Group__0 )
+            {
+             before(grammarAccess.getShowOperationAccess().getGroup()); 
+            // InternalExtendedIML.g:369:3: ( rule__ShowOperation__Group__0 )
+            // InternalExtendedIML.g:369:4: rule__ShowOperation__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__ShowOperation__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getShowOperationAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleShowOperation"
+
+
+    // $ANTLR start "entryRuleSaveOperation"
+    // InternalExtendedIML.g:378:1: entryRuleSaveOperation : ruleSaveOperation EOF ;
+    public final void entryRuleSaveOperation() throws RecognitionException {
+        try {
+            // InternalExtendedIML.g:379:1: ( ruleSaveOperation EOF )
+            // InternalExtendedIML.g:380:1: ruleSaveOperation EOF
+            {
+             before(grammarAccess.getSaveOperationRule()); 
+            pushFollow(FOLLOW_1);
+            ruleSaveOperation();
+
+            state._fsp--;
+
+             after(grammarAccess.getSaveOperationRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleSaveOperation"
+
+
+    // $ANTLR start "ruleSaveOperation"
+    // InternalExtendedIML.g:387:1: ruleSaveOperation : ( ( rule__SaveOperation__Group__0 ) ) ;
+    public final void ruleSaveOperation() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalExtendedIML.g:391:2: ( ( ( rule__SaveOperation__Group__0 ) ) )
+            // InternalExtendedIML.g:392:2: ( ( rule__SaveOperation__Group__0 ) )
+            {
+            // InternalExtendedIML.g:392:2: ( ( rule__SaveOperation__Group__0 ) )
+            // InternalExtendedIML.g:393:3: ( rule__SaveOperation__Group__0 )
+            {
+             before(grammarAccess.getSaveOperationAccess().getGroup()); 
+            // InternalExtendedIML.g:394:3: ( rule__SaveOperation__Group__0 )
+            // InternalExtendedIML.g:394:4: rule__SaveOperation__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__SaveOperation__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSaveOperationAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleSaveOperation"
+
+
     // $ANTLR start "rule__AbstractElement__Alternatives"
-    // InternalExtendedIML.g:427:1: rule__AbstractElement__Alternatives : ( ( ruleImporter ) | ( ruleOperator ) | ( ruleExporter ) );
+    // InternalExtendedIML.g:402:1: rule__AbstractElement__Alternatives : ( ( ruleImporter ) | ( ruleOperator ) );
     public final void rule__AbstractElement__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:431:1: ( ( ruleImporter ) | ( ruleOperator ) | ( ruleExporter ) )
-            int alt2=3;
-            switch ( input.LA(1) ) {
-            case RULE_ID:
-            case 15:
-                {
+            // InternalExtendedIML.g:406:1: ( ( ruleImporter ) | ( ruleOperator ) )
+            int alt2=2;
+            int LA2_0 = input.LA(1);
+
+            if ( (LA2_0==RULE_ID||LA2_0==13) ) {
                 alt2=1;
-                }
-                break;
-            case 16:
-            case 17:
-            case 19:
-            case 20:
-                {
+            }
+            else if ( ((LA2_0>=14 && LA2_0<=15)||(LA2_0>=17 && LA2_0<=20)) ) {
                 alt2=2;
-                }
-                break;
-            case 11:
-            case 12:
-                {
-                alt2=3;
-                }
-                break;
-            default:
+            }
+            else {
                 NoViableAltException nvae =
                     new NoViableAltException("", 2, 0, input);
 
                 throw nvae;
             }
-
             switch (alt2) {
                 case 1 :
-                    // InternalExtendedIML.g:432:2: ( ruleImporter )
+                    // InternalExtendedIML.g:407:2: ( ruleImporter )
                     {
-                    // InternalExtendedIML.g:432:2: ( ruleImporter )
-                    // InternalExtendedIML.g:433:3: ruleImporter
+                    // InternalExtendedIML.g:407:2: ( ruleImporter )
+                    // InternalExtendedIML.g:408:3: ruleImporter
                     {
                      before(grammarAccess.getAbstractElementAccess().getImporterParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -1299,10 +1208,10 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalExtendedIML.g:438:2: ( ruleOperator )
+                    // InternalExtendedIML.g:413:2: ( ruleOperator )
                     {
-                    // InternalExtendedIML.g:438:2: ( ruleOperator )
-                    // InternalExtendedIML.g:439:3: ruleOperator
+                    // InternalExtendedIML.g:413:2: ( ruleOperator )
+                    // InternalExtendedIML.g:414:3: ruleOperator
                     {
                      before(grammarAccess.getAbstractElementAccess().getOperatorParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1311,25 +1220,6 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
                     state._fsp--;
 
                      after(grammarAccess.getAbstractElementAccess().getOperatorParserRuleCall_1()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalExtendedIML.g:444:2: ( ruleExporter )
-                    {
-                    // InternalExtendedIML.g:444:2: ( ruleExporter )
-                    // InternalExtendedIML.g:445:3: ruleExporter
-                    {
-                     before(grammarAccess.getAbstractElementAccess().getExporterParserRuleCall_2()); 
-                    pushFollow(FOLLOW_2);
-                    ruleExporter();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getAbstractElementAccess().getExporterParserRuleCall_2()); 
 
                     }
 
@@ -1353,21 +1243,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__AbstractElement__Alternatives"
 
 
-    // $ANTLR start "rule__Exporter__Alternatives"
-    // InternalExtendedIML.g:454:1: rule__Exporter__Alternatives : ( ( ruleSave ) | ( ruleShow ) );
-    public final void rule__Exporter__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__Importer__Alternatives"
+    // InternalExtendedIML.g:423:1: rule__Importer__Alternatives : ( ( ruleImageImporter ) | ( ruleDirImporter ) );
+    public final void rule__Importer__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:458:1: ( ( ruleSave ) | ( ruleShow ) )
+            // InternalExtendedIML.g:427:1: ( ( ruleImageImporter ) | ( ruleDirImporter ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==11) ) {
+            if ( (LA3_0==RULE_ID) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==12) ) {
+            else if ( (LA3_0==13) ) {
                 alt3=2;
             }
             else {
@@ -1378,89 +1268,10 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
             }
             switch (alt3) {
                 case 1 :
-                    // InternalExtendedIML.g:459:2: ( ruleSave )
+                    // InternalExtendedIML.g:428:2: ( ruleImageImporter )
                     {
-                    // InternalExtendedIML.g:459:2: ( ruleSave )
-                    // InternalExtendedIML.g:460:3: ruleSave
-                    {
-                     before(grammarAccess.getExporterAccess().getSaveParserRuleCall_0()); 
-                    pushFollow(FOLLOW_2);
-                    ruleSave();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getExporterAccess().getSaveParserRuleCall_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalExtendedIML.g:465:2: ( ruleShow )
-                    {
-                    // InternalExtendedIML.g:465:2: ( ruleShow )
-                    // InternalExtendedIML.g:466:3: ruleShow
-                    {
-                     before(grammarAccess.getExporterAccess().getShowParserRuleCall_1()); 
-                    pushFollow(FOLLOW_2);
-                    ruleShow();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getExporterAccess().getShowParserRuleCall_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Exporter__Alternatives"
-
-
-    // $ANTLR start "rule__Importer__Alternatives"
-    // InternalExtendedIML.g:475:1: rule__Importer__Alternatives : ( ( ruleImageImporter ) | ( ruleDirImporter ) );
-    public final void rule__Importer__Alternatives() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalExtendedIML.g:479:1: ( ( ruleImageImporter ) | ( ruleDirImporter ) )
-            int alt4=2;
-            int LA4_0 = input.LA(1);
-
-            if ( (LA4_0==RULE_ID) ) {
-                alt4=1;
-            }
-            else if ( (LA4_0==15) ) {
-                alt4=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
-
-                throw nvae;
-            }
-            switch (alt4) {
-                case 1 :
-                    // InternalExtendedIML.g:480:2: ( ruleImageImporter )
-                    {
-                    // InternalExtendedIML.g:480:2: ( ruleImageImporter )
-                    // InternalExtendedIML.g:481:3: ruleImageImporter
+                    // InternalExtendedIML.g:428:2: ( ruleImageImporter )
+                    // InternalExtendedIML.g:429:3: ruleImageImporter
                     {
                      before(grammarAccess.getImporterAccess().getImageImporterParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -1476,10 +1287,10 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalExtendedIML.g:486:2: ( ruleDirImporter )
+                    // InternalExtendedIML.g:434:2: ( ruleDirImporter )
                     {
-                    // InternalExtendedIML.g:486:2: ( ruleDirImporter )
-                    // InternalExtendedIML.g:487:3: ruleDirImporter
+                    // InternalExtendedIML.g:434:2: ( ruleDirImporter )
+                    // InternalExtendedIML.g:435:3: ruleDirImporter
                     {
                      before(grammarAccess.getImporterAccess().getDirImporterParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1512,48 +1323,58 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Operator__Alternatives"
-    // InternalExtendedIML.g:496:1: rule__Operator__Alternatives : ( ( ruleRotateOperation ) | ( ruleFilterOperation ) | ( ruleBlurOperation ) | ( ruleEqualizeOperation ) );
+    // InternalExtendedIML.g:444:1: rule__Operator__Alternatives : ( ( ruleRotateOperation ) | ( ruleFilterOperation ) | ( ruleBlurOperation ) | ( ruleEqualizeOperation ) | ( ruleShowOperation ) | ( ruleSaveOperation ) );
     public final void rule__Operator__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:500:1: ( ( ruleRotateOperation ) | ( ruleFilterOperation ) | ( ruleBlurOperation ) | ( ruleEqualizeOperation ) )
-            int alt5=4;
+            // InternalExtendedIML.g:448:1: ( ( ruleRotateOperation ) | ( ruleFilterOperation ) | ( ruleBlurOperation ) | ( ruleEqualizeOperation ) | ( ruleShowOperation ) | ( ruleSaveOperation ) )
+            int alt4=6;
             switch ( input.LA(1) ) {
-            case 16:
+            case 14:
                 {
-                alt5=1;
+                alt4=1;
+                }
+                break;
+            case 15:
+                {
+                alt4=2;
                 }
                 break;
             case 17:
                 {
-                alt5=2;
+                alt4=3;
+                }
+                break;
+            case 18:
+                {
+                alt4=4;
                 }
                 break;
             case 19:
                 {
-                alt5=3;
+                alt4=5;
                 }
                 break;
             case 20:
                 {
-                alt5=4;
+                alt4=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
+                    new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt5) {
+            switch (alt4) {
                 case 1 :
-                    // InternalExtendedIML.g:501:2: ( ruleRotateOperation )
+                    // InternalExtendedIML.g:449:2: ( ruleRotateOperation )
                     {
-                    // InternalExtendedIML.g:501:2: ( ruleRotateOperation )
-                    // InternalExtendedIML.g:502:3: ruleRotateOperation
+                    // InternalExtendedIML.g:449:2: ( ruleRotateOperation )
+                    // InternalExtendedIML.g:450:3: ruleRotateOperation
                     {
                      before(grammarAccess.getOperatorAccess().getRotateOperationParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -1569,10 +1390,10 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalExtendedIML.g:507:2: ( ruleFilterOperation )
+                    // InternalExtendedIML.g:455:2: ( ruleFilterOperation )
                     {
-                    // InternalExtendedIML.g:507:2: ( ruleFilterOperation )
-                    // InternalExtendedIML.g:508:3: ruleFilterOperation
+                    // InternalExtendedIML.g:455:2: ( ruleFilterOperation )
+                    // InternalExtendedIML.g:456:3: ruleFilterOperation
                     {
                      before(grammarAccess.getOperatorAccess().getFilterOperationParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1588,10 +1409,10 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 3 :
-                    // InternalExtendedIML.g:513:2: ( ruleBlurOperation )
+                    // InternalExtendedIML.g:461:2: ( ruleBlurOperation )
                     {
-                    // InternalExtendedIML.g:513:2: ( ruleBlurOperation )
-                    // InternalExtendedIML.g:514:3: ruleBlurOperation
+                    // InternalExtendedIML.g:461:2: ( ruleBlurOperation )
+                    // InternalExtendedIML.g:462:3: ruleBlurOperation
                     {
                      before(grammarAccess.getOperatorAccess().getBlurOperationParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -1607,10 +1428,10 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 4 :
-                    // InternalExtendedIML.g:519:2: ( ruleEqualizeOperation )
+                    // InternalExtendedIML.g:467:2: ( ruleEqualizeOperation )
                     {
-                    // InternalExtendedIML.g:519:2: ( ruleEqualizeOperation )
-                    // InternalExtendedIML.g:520:3: ruleEqualizeOperation
+                    // InternalExtendedIML.g:467:2: ( ruleEqualizeOperation )
+                    // InternalExtendedIML.g:468:3: ruleEqualizeOperation
                     {
                      before(grammarAccess.getOperatorAccess().getEqualizeOperationParserRuleCall_3()); 
                     pushFollow(FOLLOW_2);
@@ -1619,6 +1440,44 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
                     state._fsp--;
 
                      after(grammarAccess.getOperatorAccess().getEqualizeOperationParserRuleCall_3()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // InternalExtendedIML.g:473:2: ( ruleShowOperation )
+                    {
+                    // InternalExtendedIML.g:473:2: ( ruleShowOperation )
+                    // InternalExtendedIML.g:474:3: ruleShowOperation
+                    {
+                     before(grammarAccess.getOperatorAccess().getShowOperationParserRuleCall_4()); 
+                    pushFollow(FOLLOW_2);
+                    ruleShowOperation();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getOperatorAccess().getShowOperationParserRuleCall_4()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 6 :
+                    // InternalExtendedIML.g:479:2: ( ruleSaveOperation )
+                    {
+                    // InternalExtendedIML.g:479:2: ( ruleSaveOperation )
+                    // InternalExtendedIML.g:480:3: ruleSaveOperation
+                    {
+                     before(grammarAccess.getOperatorAccess().getSaveOperationParserRuleCall_5()); 
+                    pushFollow(FOLLOW_2);
+                    ruleSaveOperation();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getOperatorAccess().getSaveOperationParserRuleCall_5()); 
 
                     }
 
@@ -1642,327 +1501,17 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Operator__Alternatives"
 
 
-    // $ANTLR start "rule__Save__Group__0"
-    // InternalExtendedIML.g:529:1: rule__Save__Group__0 : rule__Save__Group__0__Impl rule__Save__Group__1 ;
-    public final void rule__Save__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalExtendedIML.g:533:1: ( rule__Save__Group__0__Impl rule__Save__Group__1 )
-            // InternalExtendedIML.g:534:2: rule__Save__Group__0__Impl rule__Save__Group__1
-            {
-            pushFollow(FOLLOW_4);
-            rule__Save__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Save__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Save__Group__0"
-
-
-    // $ANTLR start "rule__Save__Group__0__Impl"
-    // InternalExtendedIML.g:541:1: rule__Save__Group__0__Impl : ( 'save' ) ;
-    public final void rule__Save__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalExtendedIML.g:545:1: ( ( 'save' ) )
-            // InternalExtendedIML.g:546:1: ( 'save' )
-            {
-            // InternalExtendedIML.g:546:1: ( 'save' )
-            // InternalExtendedIML.g:547:2: 'save'
-            {
-             before(grammarAccess.getSaveAccess().getSaveKeyword_0()); 
-            match(input,11,FOLLOW_2); 
-             after(grammarAccess.getSaveAccess().getSaveKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Save__Group__0__Impl"
-
-
-    // $ANTLR start "rule__Save__Group__1"
-    // InternalExtendedIML.g:556:1: rule__Save__Group__1 : rule__Save__Group__1__Impl ;
-    public final void rule__Save__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalExtendedIML.g:560:1: ( rule__Save__Group__1__Impl )
-            // InternalExtendedIML.g:561:2: rule__Save__Group__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Save__Group__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Save__Group__1"
-
-
-    // $ANTLR start "rule__Save__Group__1__Impl"
-    // InternalExtendedIML.g:567:1: rule__Save__Group__1__Impl : ( ( rule__Save__VarAssignment_1 ) ) ;
-    public final void rule__Save__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalExtendedIML.g:571:1: ( ( ( rule__Save__VarAssignment_1 ) ) )
-            // InternalExtendedIML.g:572:1: ( ( rule__Save__VarAssignment_1 ) )
-            {
-            // InternalExtendedIML.g:572:1: ( ( rule__Save__VarAssignment_1 ) )
-            // InternalExtendedIML.g:573:2: ( rule__Save__VarAssignment_1 )
-            {
-             before(grammarAccess.getSaveAccess().getVarAssignment_1()); 
-            // InternalExtendedIML.g:574:2: ( rule__Save__VarAssignment_1 )
-            // InternalExtendedIML.g:574:3: rule__Save__VarAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Save__VarAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSaveAccess().getVarAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Save__Group__1__Impl"
-
-
-    // $ANTLR start "rule__Show__Group__0"
-    // InternalExtendedIML.g:583:1: rule__Show__Group__0 : rule__Show__Group__0__Impl rule__Show__Group__1 ;
-    public final void rule__Show__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalExtendedIML.g:587:1: ( rule__Show__Group__0__Impl rule__Show__Group__1 )
-            // InternalExtendedIML.g:588:2: rule__Show__Group__0__Impl rule__Show__Group__1
-            {
-            pushFollow(FOLLOW_4);
-            rule__Show__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Show__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Show__Group__0"
-
-
-    // $ANTLR start "rule__Show__Group__0__Impl"
-    // InternalExtendedIML.g:595:1: rule__Show__Group__0__Impl : ( 'show' ) ;
-    public final void rule__Show__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalExtendedIML.g:599:1: ( ( 'show' ) )
-            // InternalExtendedIML.g:600:1: ( 'show' )
-            {
-            // InternalExtendedIML.g:600:1: ( 'show' )
-            // InternalExtendedIML.g:601:2: 'show'
-            {
-             before(grammarAccess.getShowAccess().getShowKeyword_0()); 
-            match(input,12,FOLLOW_2); 
-             after(grammarAccess.getShowAccess().getShowKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Show__Group__0__Impl"
-
-
-    // $ANTLR start "rule__Show__Group__1"
-    // InternalExtendedIML.g:610:1: rule__Show__Group__1 : rule__Show__Group__1__Impl ;
-    public final void rule__Show__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalExtendedIML.g:614:1: ( rule__Show__Group__1__Impl )
-            // InternalExtendedIML.g:615:2: rule__Show__Group__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Show__Group__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Show__Group__1"
-
-
-    // $ANTLR start "rule__Show__Group__1__Impl"
-    // InternalExtendedIML.g:621:1: rule__Show__Group__1__Impl : ( ( rule__Show__VarAssignment_1 ) ) ;
-    public final void rule__Show__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalExtendedIML.g:625:1: ( ( ( rule__Show__VarAssignment_1 ) ) )
-            // InternalExtendedIML.g:626:1: ( ( rule__Show__VarAssignment_1 ) )
-            {
-            // InternalExtendedIML.g:626:1: ( ( rule__Show__VarAssignment_1 ) )
-            // InternalExtendedIML.g:627:2: ( rule__Show__VarAssignment_1 )
-            {
-             before(grammarAccess.getShowAccess().getVarAssignment_1()); 
-            // InternalExtendedIML.g:628:2: ( rule__Show__VarAssignment_1 )
-            // InternalExtendedIML.g:628:3: rule__Show__VarAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Show__VarAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getShowAccess().getVarAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Show__Group__1__Impl"
-
-
     // $ANTLR start "rule__ImageImporter__Group__0"
-    // InternalExtendedIML.g:637:1: rule__ImageImporter__Group__0 : rule__ImageImporter__Group__0__Impl rule__ImageImporter__Group__1 ;
+    // InternalExtendedIML.g:489:1: rule__ImageImporter__Group__0 : rule__ImageImporter__Group__0__Impl rule__ImageImporter__Group__1 ;
     public final void rule__ImageImporter__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:641:1: ( rule__ImageImporter__Group__0__Impl rule__ImageImporter__Group__1 )
-            // InternalExtendedIML.g:642:2: rule__ImageImporter__Group__0__Impl rule__ImageImporter__Group__1
+            // InternalExtendedIML.g:493:1: ( rule__ImageImporter__Group__0__Impl rule__ImageImporter__Group__1 )
+            // InternalExtendedIML.g:494:2: rule__ImageImporter__Group__0__Impl rule__ImageImporter__Group__1
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_4);
             rule__ImageImporter__Group__0__Impl();
 
             state._fsp--;
@@ -1991,21 +1540,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ImageImporter__Group__0__Impl"
-    // InternalExtendedIML.g:649:1: rule__ImageImporter__Group__0__Impl : ( ( rule__ImageImporter__NameAssignment_0 ) ) ;
+    // InternalExtendedIML.g:501:1: rule__ImageImporter__Group__0__Impl : ( ( rule__ImageImporter__NameAssignment_0 ) ) ;
     public final void rule__ImageImporter__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:653:1: ( ( ( rule__ImageImporter__NameAssignment_0 ) ) )
-            // InternalExtendedIML.g:654:1: ( ( rule__ImageImporter__NameAssignment_0 ) )
+            // InternalExtendedIML.g:505:1: ( ( ( rule__ImageImporter__NameAssignment_0 ) ) )
+            // InternalExtendedIML.g:506:1: ( ( rule__ImageImporter__NameAssignment_0 ) )
             {
-            // InternalExtendedIML.g:654:1: ( ( rule__ImageImporter__NameAssignment_0 ) )
-            // InternalExtendedIML.g:655:2: ( rule__ImageImporter__NameAssignment_0 )
+            // InternalExtendedIML.g:506:1: ( ( rule__ImageImporter__NameAssignment_0 ) )
+            // InternalExtendedIML.g:507:2: ( rule__ImageImporter__NameAssignment_0 )
             {
              before(grammarAccess.getImageImporterAccess().getNameAssignment_0()); 
-            // InternalExtendedIML.g:656:2: ( rule__ImageImporter__NameAssignment_0 )
-            // InternalExtendedIML.g:656:3: rule__ImageImporter__NameAssignment_0
+            // InternalExtendedIML.g:508:2: ( rule__ImageImporter__NameAssignment_0 )
+            // InternalExtendedIML.g:508:3: rule__ImageImporter__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__ImageImporter__NameAssignment_0();
@@ -2038,16 +1587,16 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ImageImporter__Group__1"
-    // InternalExtendedIML.g:664:1: rule__ImageImporter__Group__1 : rule__ImageImporter__Group__1__Impl rule__ImageImporter__Group__2 ;
+    // InternalExtendedIML.g:516:1: rule__ImageImporter__Group__1 : rule__ImageImporter__Group__1__Impl rule__ImageImporter__Group__2 ;
     public final void rule__ImageImporter__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:668:1: ( rule__ImageImporter__Group__1__Impl rule__ImageImporter__Group__2 )
-            // InternalExtendedIML.g:669:2: rule__ImageImporter__Group__1__Impl rule__ImageImporter__Group__2
+            // InternalExtendedIML.g:520:1: ( rule__ImageImporter__Group__1__Impl rule__ImageImporter__Group__2 )
+            // InternalExtendedIML.g:521:2: rule__ImageImporter__Group__1__Impl rule__ImageImporter__Group__2
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_5);
             rule__ImageImporter__Group__1__Impl();
 
             state._fsp--;
@@ -2076,20 +1625,20 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ImageImporter__Group__1__Impl"
-    // InternalExtendedIML.g:676:1: rule__ImageImporter__Group__1__Impl : ( '=' ) ;
+    // InternalExtendedIML.g:528:1: rule__ImageImporter__Group__1__Impl : ( '=' ) ;
     public final void rule__ImageImporter__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:680:1: ( ( '=' ) )
-            // InternalExtendedIML.g:681:1: ( '=' )
+            // InternalExtendedIML.g:532:1: ( ( '=' ) )
+            // InternalExtendedIML.g:533:1: ( '=' )
             {
-            // InternalExtendedIML.g:681:1: ( '=' )
-            // InternalExtendedIML.g:682:2: '='
+            // InternalExtendedIML.g:533:1: ( '=' )
+            // InternalExtendedIML.g:534:2: '='
             {
              before(grammarAccess.getImageImporterAccess().getEqualsSignKeyword_1()); 
-            match(input,13,FOLLOW_2); 
+            match(input,11,FOLLOW_2); 
              after(grammarAccess.getImageImporterAccess().getEqualsSignKeyword_1()); 
 
             }
@@ -2113,14 +1662,14 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ImageImporter__Group__2"
-    // InternalExtendedIML.g:691:1: rule__ImageImporter__Group__2 : rule__ImageImporter__Group__2__Impl ;
+    // InternalExtendedIML.g:543:1: rule__ImageImporter__Group__2 : rule__ImageImporter__Group__2__Impl ;
     public final void rule__ImageImporter__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:695:1: ( rule__ImageImporter__Group__2__Impl )
-            // InternalExtendedIML.g:696:2: rule__ImageImporter__Group__2__Impl
+            // InternalExtendedIML.g:547:1: ( rule__ImageImporter__Group__2__Impl )
+            // InternalExtendedIML.g:548:2: rule__ImageImporter__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ImageImporter__Group__2__Impl();
@@ -2146,21 +1695,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ImageImporter__Group__2__Impl"
-    // InternalExtendedIML.g:702:1: rule__ImageImporter__Group__2__Impl : ( ( rule__ImageImporter__ImportedNamespaceAssignment_2 ) ) ;
+    // InternalExtendedIML.g:554:1: rule__ImageImporter__Group__2__Impl : ( ( rule__ImageImporter__ImportedNamespaceAssignment_2 ) ) ;
     public final void rule__ImageImporter__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:706:1: ( ( ( rule__ImageImporter__ImportedNamespaceAssignment_2 ) ) )
-            // InternalExtendedIML.g:707:1: ( ( rule__ImageImporter__ImportedNamespaceAssignment_2 ) )
+            // InternalExtendedIML.g:558:1: ( ( ( rule__ImageImporter__ImportedNamespaceAssignment_2 ) ) )
+            // InternalExtendedIML.g:559:1: ( ( rule__ImageImporter__ImportedNamespaceAssignment_2 ) )
             {
-            // InternalExtendedIML.g:707:1: ( ( rule__ImageImporter__ImportedNamespaceAssignment_2 ) )
-            // InternalExtendedIML.g:708:2: ( rule__ImageImporter__ImportedNamespaceAssignment_2 )
+            // InternalExtendedIML.g:559:1: ( ( rule__ImageImporter__ImportedNamespaceAssignment_2 ) )
+            // InternalExtendedIML.g:560:2: ( rule__ImageImporter__ImportedNamespaceAssignment_2 )
             {
              before(grammarAccess.getImageImporterAccess().getImportedNamespaceAssignment_2()); 
-            // InternalExtendedIML.g:709:2: ( rule__ImageImporter__ImportedNamespaceAssignment_2 )
-            // InternalExtendedIML.g:709:3: rule__ImageImporter__ImportedNamespaceAssignment_2
+            // InternalExtendedIML.g:561:2: ( rule__ImageImporter__ImportedNamespaceAssignment_2 )
+            // InternalExtendedIML.g:561:3: rule__ImageImporter__ImportedNamespaceAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ImageImporter__ImportedNamespaceAssignment_2();
@@ -2193,16 +1742,16 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedPath__Group__0"
-    // InternalExtendedIML.g:718:1: rule__QualifiedPath__Group__0 : rule__QualifiedPath__Group__0__Impl rule__QualifiedPath__Group__1 ;
+    // InternalExtendedIML.g:570:1: rule__QualifiedPath__Group__0 : rule__QualifiedPath__Group__0__Impl rule__QualifiedPath__Group__1 ;
     public final void rule__QualifiedPath__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:722:1: ( rule__QualifiedPath__Group__0__Impl rule__QualifiedPath__Group__1 )
-            // InternalExtendedIML.g:723:2: rule__QualifiedPath__Group__0__Impl rule__QualifiedPath__Group__1
+            // InternalExtendedIML.g:574:1: ( rule__QualifiedPath__Group__0__Impl rule__QualifiedPath__Group__1 )
+            // InternalExtendedIML.g:575:2: rule__QualifiedPath__Group__0__Impl rule__QualifiedPath__Group__1
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_5);
             rule__QualifiedPath__Group__0__Impl();
 
             state._fsp--;
@@ -2231,31 +1780,31 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedPath__Group__0__Impl"
-    // InternalExtendedIML.g:730:1: rule__QualifiedPath__Group__0__Impl : ( ( '/' )? ) ;
+    // InternalExtendedIML.g:582:1: rule__QualifiedPath__Group__0__Impl : ( ( '/' )? ) ;
     public final void rule__QualifiedPath__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:734:1: ( ( ( '/' )? ) )
-            // InternalExtendedIML.g:735:1: ( ( '/' )? )
+            // InternalExtendedIML.g:586:1: ( ( ( '/' )? ) )
+            // InternalExtendedIML.g:587:1: ( ( '/' )? )
             {
-            // InternalExtendedIML.g:735:1: ( ( '/' )? )
-            // InternalExtendedIML.g:736:2: ( '/' )?
+            // InternalExtendedIML.g:587:1: ( ( '/' )? )
+            // InternalExtendedIML.g:588:2: ( '/' )?
             {
              before(grammarAccess.getQualifiedPathAccess().getSolidusKeyword_0()); 
-            // InternalExtendedIML.g:737:2: ( '/' )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // InternalExtendedIML.g:589:2: ( '/' )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            if ( (LA6_0==14) ) {
-                alt6=1;
+            if ( (LA5_0==12) ) {
+                alt5=1;
             }
-            switch (alt6) {
+            switch (alt5) {
                 case 1 :
-                    // InternalExtendedIML.g:737:3: '/'
+                    // InternalExtendedIML.g:589:3: '/'
                     {
-                    match(input,14,FOLLOW_2); 
+                    match(input,12,FOLLOW_2); 
 
                     }
                     break;
@@ -2285,14 +1834,14 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedPath__Group__1"
-    // InternalExtendedIML.g:745:1: rule__QualifiedPath__Group__1 : rule__QualifiedPath__Group__1__Impl rule__QualifiedPath__Group__2 ;
+    // InternalExtendedIML.g:597:1: rule__QualifiedPath__Group__1 : rule__QualifiedPath__Group__1__Impl rule__QualifiedPath__Group__2 ;
     public final void rule__QualifiedPath__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:749:1: ( rule__QualifiedPath__Group__1__Impl rule__QualifiedPath__Group__2 )
-            // InternalExtendedIML.g:750:2: rule__QualifiedPath__Group__1__Impl rule__QualifiedPath__Group__2
+            // InternalExtendedIML.g:601:1: ( rule__QualifiedPath__Group__1__Impl rule__QualifiedPath__Group__2 )
+            // InternalExtendedIML.g:602:2: rule__QualifiedPath__Group__1__Impl rule__QualifiedPath__Group__2
             {
             pushFollow(FOLLOW_6);
             rule__QualifiedPath__Group__1__Impl();
@@ -2323,17 +1872,17 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedPath__Group__1__Impl"
-    // InternalExtendedIML.g:757:1: rule__QualifiedPath__Group__1__Impl : ( RULE_ID ) ;
+    // InternalExtendedIML.g:609:1: rule__QualifiedPath__Group__1__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedPath__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:761:1: ( ( RULE_ID ) )
-            // InternalExtendedIML.g:762:1: ( RULE_ID )
+            // InternalExtendedIML.g:613:1: ( ( RULE_ID ) )
+            // InternalExtendedIML.g:614:1: ( RULE_ID )
             {
-            // InternalExtendedIML.g:762:1: ( RULE_ID )
-            // InternalExtendedIML.g:763:2: RULE_ID
+            // InternalExtendedIML.g:614:1: ( RULE_ID )
+            // InternalExtendedIML.g:615:2: RULE_ID
             {
              before(grammarAccess.getQualifiedPathAccess().getIDTerminalRuleCall_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -2360,14 +1909,14 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedPath__Group__2"
-    // InternalExtendedIML.g:772:1: rule__QualifiedPath__Group__2 : rule__QualifiedPath__Group__2__Impl rule__QualifiedPath__Group__3 ;
+    // InternalExtendedIML.g:624:1: rule__QualifiedPath__Group__2 : rule__QualifiedPath__Group__2__Impl rule__QualifiedPath__Group__3 ;
     public final void rule__QualifiedPath__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:776:1: ( rule__QualifiedPath__Group__2__Impl rule__QualifiedPath__Group__3 )
-            // InternalExtendedIML.g:777:2: rule__QualifiedPath__Group__2__Impl rule__QualifiedPath__Group__3
+            // InternalExtendedIML.g:628:1: ( rule__QualifiedPath__Group__2__Impl rule__QualifiedPath__Group__3 )
+            // InternalExtendedIML.g:629:2: rule__QualifiedPath__Group__2__Impl rule__QualifiedPath__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__QualifiedPath__Group__2__Impl();
@@ -2398,33 +1947,33 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedPath__Group__2__Impl"
-    // InternalExtendedIML.g:784:1: rule__QualifiedPath__Group__2__Impl : ( ( rule__QualifiedPath__Group_2__0 )* ) ;
+    // InternalExtendedIML.g:636:1: rule__QualifiedPath__Group__2__Impl : ( ( rule__QualifiedPath__Group_2__0 )* ) ;
     public final void rule__QualifiedPath__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:788:1: ( ( ( rule__QualifiedPath__Group_2__0 )* ) )
-            // InternalExtendedIML.g:789:1: ( ( rule__QualifiedPath__Group_2__0 )* )
+            // InternalExtendedIML.g:640:1: ( ( ( rule__QualifiedPath__Group_2__0 )* ) )
+            // InternalExtendedIML.g:641:1: ( ( rule__QualifiedPath__Group_2__0 )* )
             {
-            // InternalExtendedIML.g:789:1: ( ( rule__QualifiedPath__Group_2__0 )* )
-            // InternalExtendedIML.g:790:2: ( rule__QualifiedPath__Group_2__0 )*
+            // InternalExtendedIML.g:641:1: ( ( rule__QualifiedPath__Group_2__0 )* )
+            // InternalExtendedIML.g:642:2: ( rule__QualifiedPath__Group_2__0 )*
             {
              before(grammarAccess.getQualifiedPathAccess().getGroup_2()); 
-            // InternalExtendedIML.g:791:2: ( rule__QualifiedPath__Group_2__0 )*
-            loop7:
+            // InternalExtendedIML.g:643:2: ( rule__QualifiedPath__Group_2__0 )*
+            loop6:
             do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+                int alt6=2;
+                int LA6_0 = input.LA(1);
 
-                if ( (LA7_0==14) ) {
-                    int LA7_1 = input.LA(2);
+                if ( (LA6_0==12) ) {
+                    int LA6_1 = input.LA(2);
 
-                    if ( (LA7_1==RULE_ID) ) {
-                        int LA7_3 = input.LA(3);
+                    if ( (LA6_1==RULE_ID) ) {
+                        int LA6_3 = input.LA(3);
 
-                        if ( (LA7_3==EOF||LA7_3==RULE_ID||(LA7_3>=11 && LA7_3<=12)||(LA7_3>=14 && LA7_3<=17)||(LA7_3>=19 && LA7_3<=20)) ) {
-                            alt7=1;
+                        if ( (LA6_3==EOF||LA6_3==RULE_ID||(LA6_3>=12 && LA6_3<=15)||(LA6_3>=17 && LA6_3<=20)) ) {
+                            alt6=1;
                         }
 
 
@@ -2434,9 +1983,9 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
                 }
 
 
-                switch (alt7) {
+                switch (alt6) {
             	case 1 :
-            	    // InternalExtendedIML.g:791:3: rule__QualifiedPath__Group_2__0
+            	    // InternalExtendedIML.g:643:3: rule__QualifiedPath__Group_2__0
             	    {
             	    pushFollow(FOLLOW_7);
             	    rule__QualifiedPath__Group_2__0();
@@ -2448,7 +1997,7 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
             	    break;
 
             	default :
-            	    break loop7;
+            	    break loop6;
                 }
             } while (true);
 
@@ -2475,14 +2024,14 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedPath__Group__3"
-    // InternalExtendedIML.g:799:1: rule__QualifiedPath__Group__3 : rule__QualifiedPath__Group__3__Impl ;
+    // InternalExtendedIML.g:651:1: rule__QualifiedPath__Group__3 : rule__QualifiedPath__Group__3__Impl ;
     public final void rule__QualifiedPath__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:803:1: ( rule__QualifiedPath__Group__3__Impl )
-            // InternalExtendedIML.g:804:2: rule__QualifiedPath__Group__3__Impl
+            // InternalExtendedIML.g:655:1: ( rule__QualifiedPath__Group__3__Impl )
+            // InternalExtendedIML.g:656:2: rule__QualifiedPath__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedPath__Group__3__Impl();
@@ -2508,31 +2057,31 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedPath__Group__3__Impl"
-    // InternalExtendedIML.g:810:1: rule__QualifiedPath__Group__3__Impl : ( ( '/' )? ) ;
+    // InternalExtendedIML.g:662:1: rule__QualifiedPath__Group__3__Impl : ( ( '/' )? ) ;
     public final void rule__QualifiedPath__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:814:1: ( ( ( '/' )? ) )
-            // InternalExtendedIML.g:815:1: ( ( '/' )? )
+            // InternalExtendedIML.g:666:1: ( ( ( '/' )? ) )
+            // InternalExtendedIML.g:667:1: ( ( '/' )? )
             {
-            // InternalExtendedIML.g:815:1: ( ( '/' )? )
-            // InternalExtendedIML.g:816:2: ( '/' )?
+            // InternalExtendedIML.g:667:1: ( ( '/' )? )
+            // InternalExtendedIML.g:668:2: ( '/' )?
             {
              before(grammarAccess.getQualifiedPathAccess().getSolidusKeyword_3()); 
-            // InternalExtendedIML.g:817:2: ( '/' )?
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            // InternalExtendedIML.g:669:2: ( '/' )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
 
-            if ( (LA8_0==14) ) {
-                alt8=1;
+            if ( (LA7_0==12) ) {
+                alt7=1;
             }
-            switch (alt8) {
+            switch (alt7) {
                 case 1 :
-                    // InternalExtendedIML.g:817:3: '/'
+                    // InternalExtendedIML.g:669:3: '/'
                     {
-                    match(input,14,FOLLOW_2); 
+                    match(input,12,FOLLOW_2); 
 
                     }
                     break;
@@ -2562,16 +2111,16 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedPath__Group_2__0"
-    // InternalExtendedIML.g:826:1: rule__QualifiedPath__Group_2__0 : rule__QualifiedPath__Group_2__0__Impl rule__QualifiedPath__Group_2__1 ;
+    // InternalExtendedIML.g:678:1: rule__QualifiedPath__Group_2__0 : rule__QualifiedPath__Group_2__0__Impl rule__QualifiedPath__Group_2__1 ;
     public final void rule__QualifiedPath__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:830:1: ( rule__QualifiedPath__Group_2__0__Impl rule__QualifiedPath__Group_2__1 )
-            // InternalExtendedIML.g:831:2: rule__QualifiedPath__Group_2__0__Impl rule__QualifiedPath__Group_2__1
+            // InternalExtendedIML.g:682:1: ( rule__QualifiedPath__Group_2__0__Impl rule__QualifiedPath__Group_2__1 )
+            // InternalExtendedIML.g:683:2: rule__QualifiedPath__Group_2__0__Impl rule__QualifiedPath__Group_2__1
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_5);
             rule__QualifiedPath__Group_2__0__Impl();
 
             state._fsp--;
@@ -2600,20 +2149,20 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedPath__Group_2__0__Impl"
-    // InternalExtendedIML.g:838:1: rule__QualifiedPath__Group_2__0__Impl : ( '/' ) ;
+    // InternalExtendedIML.g:690:1: rule__QualifiedPath__Group_2__0__Impl : ( '/' ) ;
     public final void rule__QualifiedPath__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:842:1: ( ( '/' ) )
-            // InternalExtendedIML.g:843:1: ( '/' )
+            // InternalExtendedIML.g:694:1: ( ( '/' ) )
+            // InternalExtendedIML.g:695:1: ( '/' )
             {
-            // InternalExtendedIML.g:843:1: ( '/' )
-            // InternalExtendedIML.g:844:2: '/'
+            // InternalExtendedIML.g:695:1: ( '/' )
+            // InternalExtendedIML.g:696:2: '/'
             {
              before(grammarAccess.getQualifiedPathAccess().getSolidusKeyword_2_0()); 
-            match(input,14,FOLLOW_2); 
+            match(input,12,FOLLOW_2); 
              after(grammarAccess.getQualifiedPathAccess().getSolidusKeyword_2_0()); 
 
             }
@@ -2637,14 +2186,14 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedPath__Group_2__1"
-    // InternalExtendedIML.g:853:1: rule__QualifiedPath__Group_2__1 : rule__QualifiedPath__Group_2__1__Impl ;
+    // InternalExtendedIML.g:705:1: rule__QualifiedPath__Group_2__1 : rule__QualifiedPath__Group_2__1__Impl ;
     public final void rule__QualifiedPath__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:857:1: ( rule__QualifiedPath__Group_2__1__Impl )
-            // InternalExtendedIML.g:858:2: rule__QualifiedPath__Group_2__1__Impl
+            // InternalExtendedIML.g:709:1: ( rule__QualifiedPath__Group_2__1__Impl )
+            // InternalExtendedIML.g:710:2: rule__QualifiedPath__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedPath__Group_2__1__Impl();
@@ -2670,17 +2219,17 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedPath__Group_2__1__Impl"
-    // InternalExtendedIML.g:864:1: rule__QualifiedPath__Group_2__1__Impl : ( RULE_ID ) ;
+    // InternalExtendedIML.g:716:1: rule__QualifiedPath__Group_2__1__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedPath__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:868:1: ( ( RULE_ID ) )
-            // InternalExtendedIML.g:869:1: ( RULE_ID )
+            // InternalExtendedIML.g:720:1: ( ( RULE_ID ) )
+            // InternalExtendedIML.g:721:1: ( RULE_ID )
             {
-            // InternalExtendedIML.g:869:1: ( RULE_ID )
-            // InternalExtendedIML.g:870:2: RULE_ID
+            // InternalExtendedIML.g:721:1: ( RULE_ID )
+            // InternalExtendedIML.g:722:2: RULE_ID
             {
              before(grammarAccess.getQualifiedPathAccess().getIDTerminalRuleCall_2_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -2707,14 +2256,14 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirImporter__Group__0"
-    // InternalExtendedIML.g:880:1: rule__DirImporter__Group__0 : rule__DirImporter__Group__0__Impl rule__DirImporter__Group__1 ;
+    // InternalExtendedIML.g:732:1: rule__DirImporter__Group__0 : rule__DirImporter__Group__0__Impl rule__DirImporter__Group__1 ;
     public final void rule__DirImporter__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:884:1: ( rule__DirImporter__Group__0__Impl rule__DirImporter__Group__1 )
-            // InternalExtendedIML.g:885:2: rule__DirImporter__Group__0__Impl rule__DirImporter__Group__1
+            // InternalExtendedIML.g:736:1: ( rule__DirImporter__Group__0__Impl rule__DirImporter__Group__1 )
+            // InternalExtendedIML.g:737:2: rule__DirImporter__Group__0__Impl rule__DirImporter__Group__1
             {
             pushFollow(FOLLOW_8);
             rule__DirImporter__Group__0__Impl();
@@ -2745,20 +2294,20 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirImporter__Group__0__Impl"
-    // InternalExtendedIML.g:892:1: rule__DirImporter__Group__0__Impl : ( 'images' ) ;
+    // InternalExtendedIML.g:744:1: rule__DirImporter__Group__0__Impl : ( 'images' ) ;
     public final void rule__DirImporter__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:896:1: ( ( 'images' ) )
-            // InternalExtendedIML.g:897:1: ( 'images' )
+            // InternalExtendedIML.g:748:1: ( ( 'images' ) )
+            // InternalExtendedIML.g:749:1: ( 'images' )
             {
-            // InternalExtendedIML.g:897:1: ( 'images' )
-            // InternalExtendedIML.g:898:2: 'images'
+            // InternalExtendedIML.g:749:1: ( 'images' )
+            // InternalExtendedIML.g:750:2: 'images'
             {
              before(grammarAccess.getDirImporterAccess().getImagesKeyword_0()); 
-            match(input,15,FOLLOW_2); 
+            match(input,13,FOLLOW_2); 
              after(grammarAccess.getDirImporterAccess().getImagesKeyword_0()); 
 
             }
@@ -2782,14 +2331,14 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirImporter__Group__1"
-    // InternalExtendedIML.g:907:1: rule__DirImporter__Group__1 : rule__DirImporter__Group__1__Impl ;
+    // InternalExtendedIML.g:759:1: rule__DirImporter__Group__1 : rule__DirImporter__Group__1__Impl ;
     public final void rule__DirImporter__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:911:1: ( rule__DirImporter__Group__1__Impl )
-            // InternalExtendedIML.g:912:2: rule__DirImporter__Group__1__Impl
+            // InternalExtendedIML.g:763:1: ( rule__DirImporter__Group__1__Impl )
+            // InternalExtendedIML.g:764:2: rule__DirImporter__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DirImporter__Group__1__Impl();
@@ -2815,21 +2364,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirImporter__Group__1__Impl"
-    // InternalExtendedIML.g:918:1: rule__DirImporter__Group__1__Impl : ( ( rule__DirImporter__PathDirAssignment_1 ) ) ;
+    // InternalExtendedIML.g:770:1: rule__DirImporter__Group__1__Impl : ( ( rule__DirImporter__PathDirAssignment_1 ) ) ;
     public final void rule__DirImporter__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:922:1: ( ( ( rule__DirImporter__PathDirAssignment_1 ) ) )
-            // InternalExtendedIML.g:923:1: ( ( rule__DirImporter__PathDirAssignment_1 ) )
+            // InternalExtendedIML.g:774:1: ( ( ( rule__DirImporter__PathDirAssignment_1 ) ) )
+            // InternalExtendedIML.g:775:1: ( ( rule__DirImporter__PathDirAssignment_1 ) )
             {
-            // InternalExtendedIML.g:923:1: ( ( rule__DirImporter__PathDirAssignment_1 ) )
-            // InternalExtendedIML.g:924:2: ( rule__DirImporter__PathDirAssignment_1 )
+            // InternalExtendedIML.g:775:1: ( ( rule__DirImporter__PathDirAssignment_1 ) )
+            // InternalExtendedIML.g:776:2: ( rule__DirImporter__PathDirAssignment_1 )
             {
              before(grammarAccess.getDirImporterAccess().getPathDirAssignment_1()); 
-            // InternalExtendedIML.g:925:2: ( rule__DirImporter__PathDirAssignment_1 )
-            // InternalExtendedIML.g:925:3: rule__DirImporter__PathDirAssignment_1
+            // InternalExtendedIML.g:777:2: ( rule__DirImporter__PathDirAssignment_1 )
+            // InternalExtendedIML.g:777:3: rule__DirImporter__PathDirAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__DirImporter__PathDirAssignment_1();
@@ -2862,16 +2411,16 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__RotateOperation__Group__0"
-    // InternalExtendedIML.g:934:1: rule__RotateOperation__Group__0 : rule__RotateOperation__Group__0__Impl rule__RotateOperation__Group__1 ;
+    // InternalExtendedIML.g:786:1: rule__RotateOperation__Group__0 : rule__RotateOperation__Group__0__Impl rule__RotateOperation__Group__1 ;
     public final void rule__RotateOperation__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:938:1: ( rule__RotateOperation__Group__0__Impl rule__RotateOperation__Group__1 )
-            // InternalExtendedIML.g:939:2: rule__RotateOperation__Group__0__Impl rule__RotateOperation__Group__1
+            // InternalExtendedIML.g:790:1: ( rule__RotateOperation__Group__0__Impl rule__RotateOperation__Group__1 )
+            // InternalExtendedIML.g:791:2: rule__RotateOperation__Group__0__Impl rule__RotateOperation__Group__1
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_5);
             rule__RotateOperation__Group__0__Impl();
 
             state._fsp--;
@@ -2900,20 +2449,20 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__RotateOperation__Group__0__Impl"
-    // InternalExtendedIML.g:946:1: rule__RotateOperation__Group__0__Impl : ( 'rotate' ) ;
+    // InternalExtendedIML.g:798:1: rule__RotateOperation__Group__0__Impl : ( 'rotate' ) ;
     public final void rule__RotateOperation__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:950:1: ( ( 'rotate' ) )
-            // InternalExtendedIML.g:951:1: ( 'rotate' )
+            // InternalExtendedIML.g:802:1: ( ( 'rotate' ) )
+            // InternalExtendedIML.g:803:1: ( 'rotate' )
             {
-            // InternalExtendedIML.g:951:1: ( 'rotate' )
-            // InternalExtendedIML.g:952:2: 'rotate'
+            // InternalExtendedIML.g:803:1: ( 'rotate' )
+            // InternalExtendedIML.g:804:2: 'rotate'
             {
              before(grammarAccess.getRotateOperationAccess().getRotateKeyword_0()); 
-            match(input,16,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getRotateOperationAccess().getRotateKeyword_0()); 
 
             }
@@ -2937,14 +2486,14 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__RotateOperation__Group__1"
-    // InternalExtendedIML.g:961:1: rule__RotateOperation__Group__1 : rule__RotateOperation__Group__1__Impl rule__RotateOperation__Group__2 ;
+    // InternalExtendedIML.g:813:1: rule__RotateOperation__Group__1 : rule__RotateOperation__Group__1__Impl rule__RotateOperation__Group__2 ;
     public final void rule__RotateOperation__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:965:1: ( rule__RotateOperation__Group__1__Impl rule__RotateOperation__Group__2 )
-            // InternalExtendedIML.g:966:2: rule__RotateOperation__Group__1__Impl rule__RotateOperation__Group__2
+            // InternalExtendedIML.g:817:1: ( rule__RotateOperation__Group__1__Impl rule__RotateOperation__Group__2 )
+            // InternalExtendedIML.g:818:2: rule__RotateOperation__Group__1__Impl rule__RotateOperation__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__RotateOperation__Group__1__Impl();
@@ -2975,21 +2524,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__RotateOperation__Group__1__Impl"
-    // InternalExtendedIML.g:973:1: rule__RotateOperation__Group__1__Impl : ( ( rule__RotateOperation__VarAssignment_1 ) ) ;
+    // InternalExtendedIML.g:825:1: rule__RotateOperation__Group__1__Impl : ( ( rule__RotateOperation__VarAssignment_1 ) ) ;
     public final void rule__RotateOperation__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:977:1: ( ( ( rule__RotateOperation__VarAssignment_1 ) ) )
-            // InternalExtendedIML.g:978:1: ( ( rule__RotateOperation__VarAssignment_1 ) )
+            // InternalExtendedIML.g:829:1: ( ( ( rule__RotateOperation__VarAssignment_1 ) ) )
+            // InternalExtendedIML.g:830:1: ( ( rule__RotateOperation__VarAssignment_1 ) )
             {
-            // InternalExtendedIML.g:978:1: ( ( rule__RotateOperation__VarAssignment_1 ) )
-            // InternalExtendedIML.g:979:2: ( rule__RotateOperation__VarAssignment_1 )
+            // InternalExtendedIML.g:830:1: ( ( rule__RotateOperation__VarAssignment_1 ) )
+            // InternalExtendedIML.g:831:2: ( rule__RotateOperation__VarAssignment_1 )
             {
              before(grammarAccess.getRotateOperationAccess().getVarAssignment_1()); 
-            // InternalExtendedIML.g:980:2: ( rule__RotateOperation__VarAssignment_1 )
-            // InternalExtendedIML.g:980:3: rule__RotateOperation__VarAssignment_1
+            // InternalExtendedIML.g:832:2: ( rule__RotateOperation__VarAssignment_1 )
+            // InternalExtendedIML.g:832:3: rule__RotateOperation__VarAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__RotateOperation__VarAssignment_1();
@@ -3022,14 +2571,14 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__RotateOperation__Group__2"
-    // InternalExtendedIML.g:988:1: rule__RotateOperation__Group__2 : rule__RotateOperation__Group__2__Impl ;
+    // InternalExtendedIML.g:840:1: rule__RotateOperation__Group__2 : rule__RotateOperation__Group__2__Impl ;
     public final void rule__RotateOperation__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:992:1: ( rule__RotateOperation__Group__2__Impl )
-            // InternalExtendedIML.g:993:2: rule__RotateOperation__Group__2__Impl
+            // InternalExtendedIML.g:844:1: ( rule__RotateOperation__Group__2__Impl )
+            // InternalExtendedIML.g:845:2: rule__RotateOperation__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__RotateOperation__Group__2__Impl();
@@ -3055,21 +2604,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__RotateOperation__Group__2__Impl"
-    // InternalExtendedIML.g:999:1: rule__RotateOperation__Group__2__Impl : ( ( rule__RotateOperation__DegreeAssignment_2 ) ) ;
+    // InternalExtendedIML.g:851:1: rule__RotateOperation__Group__2__Impl : ( ( rule__RotateOperation__DegreeAssignment_2 ) ) ;
     public final void rule__RotateOperation__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1003:1: ( ( ( rule__RotateOperation__DegreeAssignment_2 ) ) )
-            // InternalExtendedIML.g:1004:1: ( ( rule__RotateOperation__DegreeAssignment_2 ) )
+            // InternalExtendedIML.g:855:1: ( ( ( rule__RotateOperation__DegreeAssignment_2 ) ) )
+            // InternalExtendedIML.g:856:1: ( ( rule__RotateOperation__DegreeAssignment_2 ) )
             {
-            // InternalExtendedIML.g:1004:1: ( ( rule__RotateOperation__DegreeAssignment_2 ) )
-            // InternalExtendedIML.g:1005:2: ( rule__RotateOperation__DegreeAssignment_2 )
+            // InternalExtendedIML.g:856:1: ( ( rule__RotateOperation__DegreeAssignment_2 ) )
+            // InternalExtendedIML.g:857:2: ( rule__RotateOperation__DegreeAssignment_2 )
             {
              before(grammarAccess.getRotateOperationAccess().getDegreeAssignment_2()); 
-            // InternalExtendedIML.g:1006:2: ( rule__RotateOperation__DegreeAssignment_2 )
-            // InternalExtendedIML.g:1006:3: rule__RotateOperation__DegreeAssignment_2
+            // InternalExtendedIML.g:858:2: ( rule__RotateOperation__DegreeAssignment_2 )
+            // InternalExtendedIML.g:858:3: rule__RotateOperation__DegreeAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__RotateOperation__DegreeAssignment_2();
@@ -3102,16 +2651,16 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__FilterOperation__Group__0"
-    // InternalExtendedIML.g:1015:1: rule__FilterOperation__Group__0 : rule__FilterOperation__Group__0__Impl rule__FilterOperation__Group__1 ;
+    // InternalExtendedIML.g:867:1: rule__FilterOperation__Group__0 : rule__FilterOperation__Group__0__Impl rule__FilterOperation__Group__1 ;
     public final void rule__FilterOperation__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1019:1: ( rule__FilterOperation__Group__0__Impl rule__FilterOperation__Group__1 )
-            // InternalExtendedIML.g:1020:2: rule__FilterOperation__Group__0__Impl rule__FilterOperation__Group__1
+            // InternalExtendedIML.g:871:1: ( rule__FilterOperation__Group__0__Impl rule__FilterOperation__Group__1 )
+            // InternalExtendedIML.g:872:2: rule__FilterOperation__Group__0__Impl rule__FilterOperation__Group__1
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_5);
             rule__FilterOperation__Group__0__Impl();
 
             state._fsp--;
@@ -3140,20 +2689,20 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__FilterOperation__Group__0__Impl"
-    // InternalExtendedIML.g:1027:1: rule__FilterOperation__Group__0__Impl : ( 'filter' ) ;
+    // InternalExtendedIML.g:879:1: rule__FilterOperation__Group__0__Impl : ( 'filter' ) ;
     public final void rule__FilterOperation__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1031:1: ( ( 'filter' ) )
-            // InternalExtendedIML.g:1032:1: ( 'filter' )
+            // InternalExtendedIML.g:883:1: ( ( 'filter' ) )
+            // InternalExtendedIML.g:884:1: ( 'filter' )
             {
-            // InternalExtendedIML.g:1032:1: ( 'filter' )
-            // InternalExtendedIML.g:1033:2: 'filter'
+            // InternalExtendedIML.g:884:1: ( 'filter' )
+            // InternalExtendedIML.g:885:2: 'filter'
             {
              before(grammarAccess.getFilterOperationAccess().getFilterKeyword_0()); 
-            match(input,17,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getFilterOperationAccess().getFilterKeyword_0()); 
 
             }
@@ -3177,14 +2726,14 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__FilterOperation__Group__1"
-    // InternalExtendedIML.g:1042:1: rule__FilterOperation__Group__1 : rule__FilterOperation__Group__1__Impl rule__FilterOperation__Group__2 ;
+    // InternalExtendedIML.g:894:1: rule__FilterOperation__Group__1 : rule__FilterOperation__Group__1__Impl rule__FilterOperation__Group__2 ;
     public final void rule__FilterOperation__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1046:1: ( rule__FilterOperation__Group__1__Impl rule__FilterOperation__Group__2 )
-            // InternalExtendedIML.g:1047:2: rule__FilterOperation__Group__1__Impl rule__FilterOperation__Group__2
+            // InternalExtendedIML.g:898:1: ( rule__FilterOperation__Group__1__Impl rule__FilterOperation__Group__2 )
+            // InternalExtendedIML.g:899:2: rule__FilterOperation__Group__1__Impl rule__FilterOperation__Group__2
             {
             pushFollow(FOLLOW_10);
             rule__FilterOperation__Group__1__Impl();
@@ -3215,21 +2764,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__FilterOperation__Group__1__Impl"
-    // InternalExtendedIML.g:1054:1: rule__FilterOperation__Group__1__Impl : ( ( rule__FilterOperation__VarAssignment_1 ) ) ;
+    // InternalExtendedIML.g:906:1: rule__FilterOperation__Group__1__Impl : ( ( rule__FilterOperation__VarAssignment_1 ) ) ;
     public final void rule__FilterOperation__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1058:1: ( ( ( rule__FilterOperation__VarAssignment_1 ) ) )
-            // InternalExtendedIML.g:1059:1: ( ( rule__FilterOperation__VarAssignment_1 ) )
+            // InternalExtendedIML.g:910:1: ( ( ( rule__FilterOperation__VarAssignment_1 ) ) )
+            // InternalExtendedIML.g:911:1: ( ( rule__FilterOperation__VarAssignment_1 ) )
             {
-            // InternalExtendedIML.g:1059:1: ( ( rule__FilterOperation__VarAssignment_1 ) )
-            // InternalExtendedIML.g:1060:2: ( rule__FilterOperation__VarAssignment_1 )
+            // InternalExtendedIML.g:911:1: ( ( rule__FilterOperation__VarAssignment_1 ) )
+            // InternalExtendedIML.g:912:2: ( rule__FilterOperation__VarAssignment_1 )
             {
              before(grammarAccess.getFilterOperationAccess().getVarAssignment_1()); 
-            // InternalExtendedIML.g:1061:2: ( rule__FilterOperation__VarAssignment_1 )
-            // InternalExtendedIML.g:1061:3: rule__FilterOperation__VarAssignment_1
+            // InternalExtendedIML.g:913:2: ( rule__FilterOperation__VarAssignment_1 )
+            // InternalExtendedIML.g:913:3: rule__FilterOperation__VarAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__FilterOperation__VarAssignment_1();
@@ -3262,14 +2811,14 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__FilterOperation__Group__2"
-    // InternalExtendedIML.g:1069:1: rule__FilterOperation__Group__2 : rule__FilterOperation__Group__2__Impl ;
+    // InternalExtendedIML.g:921:1: rule__FilterOperation__Group__2 : rule__FilterOperation__Group__2__Impl ;
     public final void rule__FilterOperation__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1073:1: ( rule__FilterOperation__Group__2__Impl )
-            // InternalExtendedIML.g:1074:2: rule__FilterOperation__Group__2__Impl
+            // InternalExtendedIML.g:925:1: ( rule__FilterOperation__Group__2__Impl )
+            // InternalExtendedIML.g:926:2: rule__FilterOperation__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FilterOperation__Group__2__Impl();
@@ -3295,20 +2844,20 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__FilterOperation__Group__2__Impl"
-    // InternalExtendedIML.g:1080:1: rule__FilterOperation__Group__2__Impl : ( 'gray' ) ;
+    // InternalExtendedIML.g:932:1: rule__FilterOperation__Group__2__Impl : ( 'gray' ) ;
     public final void rule__FilterOperation__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1084:1: ( ( 'gray' ) )
-            // InternalExtendedIML.g:1085:1: ( 'gray' )
+            // InternalExtendedIML.g:936:1: ( ( 'gray' ) )
+            // InternalExtendedIML.g:937:1: ( 'gray' )
             {
-            // InternalExtendedIML.g:1085:1: ( 'gray' )
-            // InternalExtendedIML.g:1086:2: 'gray'
+            // InternalExtendedIML.g:937:1: ( 'gray' )
+            // InternalExtendedIML.g:938:2: 'gray'
             {
              before(grammarAccess.getFilterOperationAccess().getGrayKeyword_2()); 
-            match(input,18,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getFilterOperationAccess().getGrayKeyword_2()); 
 
             }
@@ -3332,16 +2881,16 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__BlurOperation__Group__0"
-    // InternalExtendedIML.g:1096:1: rule__BlurOperation__Group__0 : rule__BlurOperation__Group__0__Impl rule__BlurOperation__Group__1 ;
+    // InternalExtendedIML.g:948:1: rule__BlurOperation__Group__0 : rule__BlurOperation__Group__0__Impl rule__BlurOperation__Group__1 ;
     public final void rule__BlurOperation__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1100:1: ( rule__BlurOperation__Group__0__Impl rule__BlurOperation__Group__1 )
-            // InternalExtendedIML.g:1101:2: rule__BlurOperation__Group__0__Impl rule__BlurOperation__Group__1
+            // InternalExtendedIML.g:952:1: ( rule__BlurOperation__Group__0__Impl rule__BlurOperation__Group__1 )
+            // InternalExtendedIML.g:953:2: rule__BlurOperation__Group__0__Impl rule__BlurOperation__Group__1
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_5);
             rule__BlurOperation__Group__0__Impl();
 
             state._fsp--;
@@ -3370,20 +2919,20 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__BlurOperation__Group__0__Impl"
-    // InternalExtendedIML.g:1108:1: rule__BlurOperation__Group__0__Impl : ( 'blur' ) ;
+    // InternalExtendedIML.g:960:1: rule__BlurOperation__Group__0__Impl : ( 'blur' ) ;
     public final void rule__BlurOperation__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1112:1: ( ( 'blur' ) )
-            // InternalExtendedIML.g:1113:1: ( 'blur' )
+            // InternalExtendedIML.g:964:1: ( ( 'blur' ) )
+            // InternalExtendedIML.g:965:1: ( 'blur' )
             {
-            // InternalExtendedIML.g:1113:1: ( 'blur' )
-            // InternalExtendedIML.g:1114:2: 'blur'
+            // InternalExtendedIML.g:965:1: ( 'blur' )
+            // InternalExtendedIML.g:966:2: 'blur'
             {
              before(grammarAccess.getBlurOperationAccess().getBlurKeyword_0()); 
-            match(input,19,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getBlurOperationAccess().getBlurKeyword_0()); 
 
             }
@@ -3407,14 +2956,14 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__BlurOperation__Group__1"
-    // InternalExtendedIML.g:1123:1: rule__BlurOperation__Group__1 : rule__BlurOperation__Group__1__Impl rule__BlurOperation__Group__2 ;
+    // InternalExtendedIML.g:975:1: rule__BlurOperation__Group__1 : rule__BlurOperation__Group__1__Impl rule__BlurOperation__Group__2 ;
     public final void rule__BlurOperation__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1127:1: ( rule__BlurOperation__Group__1__Impl rule__BlurOperation__Group__2 )
-            // InternalExtendedIML.g:1128:2: rule__BlurOperation__Group__1__Impl rule__BlurOperation__Group__2
+            // InternalExtendedIML.g:979:1: ( rule__BlurOperation__Group__1__Impl rule__BlurOperation__Group__2 )
+            // InternalExtendedIML.g:980:2: rule__BlurOperation__Group__1__Impl rule__BlurOperation__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__BlurOperation__Group__1__Impl();
@@ -3445,21 +2994,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__BlurOperation__Group__1__Impl"
-    // InternalExtendedIML.g:1135:1: rule__BlurOperation__Group__1__Impl : ( ( rule__BlurOperation__VarAssignment_1 ) ) ;
+    // InternalExtendedIML.g:987:1: rule__BlurOperation__Group__1__Impl : ( ( rule__BlurOperation__VarAssignment_1 ) ) ;
     public final void rule__BlurOperation__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1139:1: ( ( ( rule__BlurOperation__VarAssignment_1 ) ) )
-            // InternalExtendedIML.g:1140:1: ( ( rule__BlurOperation__VarAssignment_1 ) )
+            // InternalExtendedIML.g:991:1: ( ( ( rule__BlurOperation__VarAssignment_1 ) ) )
+            // InternalExtendedIML.g:992:1: ( ( rule__BlurOperation__VarAssignment_1 ) )
             {
-            // InternalExtendedIML.g:1140:1: ( ( rule__BlurOperation__VarAssignment_1 ) )
-            // InternalExtendedIML.g:1141:2: ( rule__BlurOperation__VarAssignment_1 )
+            // InternalExtendedIML.g:992:1: ( ( rule__BlurOperation__VarAssignment_1 ) )
+            // InternalExtendedIML.g:993:2: ( rule__BlurOperation__VarAssignment_1 )
             {
              before(grammarAccess.getBlurOperationAccess().getVarAssignment_1()); 
-            // InternalExtendedIML.g:1142:2: ( rule__BlurOperation__VarAssignment_1 )
-            // InternalExtendedIML.g:1142:3: rule__BlurOperation__VarAssignment_1
+            // InternalExtendedIML.g:994:2: ( rule__BlurOperation__VarAssignment_1 )
+            // InternalExtendedIML.g:994:3: rule__BlurOperation__VarAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__BlurOperation__VarAssignment_1();
@@ -3492,14 +3041,14 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__BlurOperation__Group__2"
-    // InternalExtendedIML.g:1150:1: rule__BlurOperation__Group__2 : rule__BlurOperation__Group__2__Impl ;
+    // InternalExtendedIML.g:1002:1: rule__BlurOperation__Group__2 : rule__BlurOperation__Group__2__Impl ;
     public final void rule__BlurOperation__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1154:1: ( rule__BlurOperation__Group__2__Impl )
-            // InternalExtendedIML.g:1155:2: rule__BlurOperation__Group__2__Impl
+            // InternalExtendedIML.g:1006:1: ( rule__BlurOperation__Group__2__Impl )
+            // InternalExtendedIML.g:1007:2: rule__BlurOperation__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BlurOperation__Group__2__Impl();
@@ -3525,21 +3074,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__BlurOperation__Group__2__Impl"
-    // InternalExtendedIML.g:1161:1: rule__BlurOperation__Group__2__Impl : ( ( rule__BlurOperation__IntensityAssignment_2 ) ) ;
+    // InternalExtendedIML.g:1013:1: rule__BlurOperation__Group__2__Impl : ( ( rule__BlurOperation__IntensityAssignment_2 ) ) ;
     public final void rule__BlurOperation__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1165:1: ( ( ( rule__BlurOperation__IntensityAssignment_2 ) ) )
-            // InternalExtendedIML.g:1166:1: ( ( rule__BlurOperation__IntensityAssignment_2 ) )
+            // InternalExtendedIML.g:1017:1: ( ( ( rule__BlurOperation__IntensityAssignment_2 ) ) )
+            // InternalExtendedIML.g:1018:1: ( ( rule__BlurOperation__IntensityAssignment_2 ) )
             {
-            // InternalExtendedIML.g:1166:1: ( ( rule__BlurOperation__IntensityAssignment_2 ) )
-            // InternalExtendedIML.g:1167:2: ( rule__BlurOperation__IntensityAssignment_2 )
+            // InternalExtendedIML.g:1018:1: ( ( rule__BlurOperation__IntensityAssignment_2 ) )
+            // InternalExtendedIML.g:1019:2: ( rule__BlurOperation__IntensityAssignment_2 )
             {
              before(grammarAccess.getBlurOperationAccess().getIntensityAssignment_2()); 
-            // InternalExtendedIML.g:1168:2: ( rule__BlurOperation__IntensityAssignment_2 )
-            // InternalExtendedIML.g:1168:3: rule__BlurOperation__IntensityAssignment_2
+            // InternalExtendedIML.g:1020:2: ( rule__BlurOperation__IntensityAssignment_2 )
+            // InternalExtendedIML.g:1020:3: rule__BlurOperation__IntensityAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__BlurOperation__IntensityAssignment_2();
@@ -3572,16 +3121,16 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__EqualizeOperation__Group__0"
-    // InternalExtendedIML.g:1177:1: rule__EqualizeOperation__Group__0 : rule__EqualizeOperation__Group__0__Impl rule__EqualizeOperation__Group__1 ;
+    // InternalExtendedIML.g:1029:1: rule__EqualizeOperation__Group__0 : rule__EqualizeOperation__Group__0__Impl rule__EqualizeOperation__Group__1 ;
     public final void rule__EqualizeOperation__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1181:1: ( rule__EqualizeOperation__Group__0__Impl rule__EqualizeOperation__Group__1 )
-            // InternalExtendedIML.g:1182:2: rule__EqualizeOperation__Group__0__Impl rule__EqualizeOperation__Group__1
+            // InternalExtendedIML.g:1033:1: ( rule__EqualizeOperation__Group__0__Impl rule__EqualizeOperation__Group__1 )
+            // InternalExtendedIML.g:1034:2: rule__EqualizeOperation__Group__0__Impl rule__EqualizeOperation__Group__1
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_5);
             rule__EqualizeOperation__Group__0__Impl();
 
             state._fsp--;
@@ -3610,20 +3159,20 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__EqualizeOperation__Group__0__Impl"
-    // InternalExtendedIML.g:1189:1: rule__EqualizeOperation__Group__0__Impl : ( 'equalize' ) ;
+    // InternalExtendedIML.g:1041:1: rule__EqualizeOperation__Group__0__Impl : ( 'equalize' ) ;
     public final void rule__EqualizeOperation__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1193:1: ( ( 'equalize' ) )
-            // InternalExtendedIML.g:1194:1: ( 'equalize' )
+            // InternalExtendedIML.g:1045:1: ( ( 'equalize' ) )
+            // InternalExtendedIML.g:1046:1: ( 'equalize' )
             {
-            // InternalExtendedIML.g:1194:1: ( 'equalize' )
-            // InternalExtendedIML.g:1195:2: 'equalize'
+            // InternalExtendedIML.g:1046:1: ( 'equalize' )
+            // InternalExtendedIML.g:1047:2: 'equalize'
             {
              before(grammarAccess.getEqualizeOperationAccess().getEqualizeKeyword_0()); 
-            match(input,20,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getEqualizeOperationAccess().getEqualizeKeyword_0()); 
 
             }
@@ -3647,14 +3196,14 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__EqualizeOperation__Group__1"
-    // InternalExtendedIML.g:1204:1: rule__EqualizeOperation__Group__1 : rule__EqualizeOperation__Group__1__Impl ;
+    // InternalExtendedIML.g:1056:1: rule__EqualizeOperation__Group__1 : rule__EqualizeOperation__Group__1__Impl ;
     public final void rule__EqualizeOperation__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1208:1: ( rule__EqualizeOperation__Group__1__Impl )
-            // InternalExtendedIML.g:1209:2: rule__EqualizeOperation__Group__1__Impl
+            // InternalExtendedIML.g:1060:1: ( rule__EqualizeOperation__Group__1__Impl )
+            // InternalExtendedIML.g:1061:2: rule__EqualizeOperation__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EqualizeOperation__Group__1__Impl();
@@ -3680,21 +3229,21 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__EqualizeOperation__Group__1__Impl"
-    // InternalExtendedIML.g:1215:1: rule__EqualizeOperation__Group__1__Impl : ( ( rule__EqualizeOperation__VarAssignment_1 ) ) ;
+    // InternalExtendedIML.g:1067:1: rule__EqualizeOperation__Group__1__Impl : ( ( rule__EqualizeOperation__VarAssignment_1 ) ) ;
     public final void rule__EqualizeOperation__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1219:1: ( ( ( rule__EqualizeOperation__VarAssignment_1 ) ) )
-            // InternalExtendedIML.g:1220:1: ( ( rule__EqualizeOperation__VarAssignment_1 ) )
+            // InternalExtendedIML.g:1071:1: ( ( ( rule__EqualizeOperation__VarAssignment_1 ) ) )
+            // InternalExtendedIML.g:1072:1: ( ( rule__EqualizeOperation__VarAssignment_1 ) )
             {
-            // InternalExtendedIML.g:1220:1: ( ( rule__EqualizeOperation__VarAssignment_1 ) )
-            // InternalExtendedIML.g:1221:2: ( rule__EqualizeOperation__VarAssignment_1 )
+            // InternalExtendedIML.g:1072:1: ( ( rule__EqualizeOperation__VarAssignment_1 ) )
+            // InternalExtendedIML.g:1073:2: ( rule__EqualizeOperation__VarAssignment_1 )
             {
              before(grammarAccess.getEqualizeOperationAccess().getVarAssignment_1()); 
-            // InternalExtendedIML.g:1222:2: ( rule__EqualizeOperation__VarAssignment_1 )
-            // InternalExtendedIML.g:1222:3: rule__EqualizeOperation__VarAssignment_1
+            // InternalExtendedIML.g:1074:2: ( rule__EqualizeOperation__VarAssignment_1 )
+            // InternalExtendedIML.g:1074:3: rule__EqualizeOperation__VarAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__EqualizeOperation__VarAssignment_1();
@@ -3726,18 +3275,328 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__EqualizeOperation__Group__1__Impl"
 
 
+    // $ANTLR start "rule__ShowOperation__Group__0"
+    // InternalExtendedIML.g:1083:1: rule__ShowOperation__Group__0 : rule__ShowOperation__Group__0__Impl rule__ShowOperation__Group__1 ;
+    public final void rule__ShowOperation__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalExtendedIML.g:1087:1: ( rule__ShowOperation__Group__0__Impl rule__ShowOperation__Group__1 )
+            // InternalExtendedIML.g:1088:2: rule__ShowOperation__Group__0__Impl rule__ShowOperation__Group__1
+            {
+            pushFollow(FOLLOW_5);
+            rule__ShowOperation__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ShowOperation__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ShowOperation__Group__0"
+
+
+    // $ANTLR start "rule__ShowOperation__Group__0__Impl"
+    // InternalExtendedIML.g:1095:1: rule__ShowOperation__Group__0__Impl : ( 'show' ) ;
+    public final void rule__ShowOperation__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalExtendedIML.g:1099:1: ( ( 'show' ) )
+            // InternalExtendedIML.g:1100:1: ( 'show' )
+            {
+            // InternalExtendedIML.g:1100:1: ( 'show' )
+            // InternalExtendedIML.g:1101:2: 'show'
+            {
+             before(grammarAccess.getShowOperationAccess().getShowKeyword_0()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getShowOperationAccess().getShowKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ShowOperation__Group__0__Impl"
+
+
+    // $ANTLR start "rule__ShowOperation__Group__1"
+    // InternalExtendedIML.g:1110:1: rule__ShowOperation__Group__1 : rule__ShowOperation__Group__1__Impl ;
+    public final void rule__ShowOperation__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalExtendedIML.g:1114:1: ( rule__ShowOperation__Group__1__Impl )
+            // InternalExtendedIML.g:1115:2: rule__ShowOperation__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__ShowOperation__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ShowOperation__Group__1"
+
+
+    // $ANTLR start "rule__ShowOperation__Group__1__Impl"
+    // InternalExtendedIML.g:1121:1: rule__ShowOperation__Group__1__Impl : ( ( rule__ShowOperation__VarAssignment_1 ) ) ;
+    public final void rule__ShowOperation__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalExtendedIML.g:1125:1: ( ( ( rule__ShowOperation__VarAssignment_1 ) ) )
+            // InternalExtendedIML.g:1126:1: ( ( rule__ShowOperation__VarAssignment_1 ) )
+            {
+            // InternalExtendedIML.g:1126:1: ( ( rule__ShowOperation__VarAssignment_1 ) )
+            // InternalExtendedIML.g:1127:2: ( rule__ShowOperation__VarAssignment_1 )
+            {
+             before(grammarAccess.getShowOperationAccess().getVarAssignment_1()); 
+            // InternalExtendedIML.g:1128:2: ( rule__ShowOperation__VarAssignment_1 )
+            // InternalExtendedIML.g:1128:3: rule__ShowOperation__VarAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__ShowOperation__VarAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getShowOperationAccess().getVarAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ShowOperation__Group__1__Impl"
+
+
+    // $ANTLR start "rule__SaveOperation__Group__0"
+    // InternalExtendedIML.g:1137:1: rule__SaveOperation__Group__0 : rule__SaveOperation__Group__0__Impl rule__SaveOperation__Group__1 ;
+    public final void rule__SaveOperation__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalExtendedIML.g:1141:1: ( rule__SaveOperation__Group__0__Impl rule__SaveOperation__Group__1 )
+            // InternalExtendedIML.g:1142:2: rule__SaveOperation__Group__0__Impl rule__SaveOperation__Group__1
+            {
+            pushFollow(FOLLOW_5);
+            rule__SaveOperation__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SaveOperation__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SaveOperation__Group__0"
+
+
+    // $ANTLR start "rule__SaveOperation__Group__0__Impl"
+    // InternalExtendedIML.g:1149:1: rule__SaveOperation__Group__0__Impl : ( 'save' ) ;
+    public final void rule__SaveOperation__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalExtendedIML.g:1153:1: ( ( 'save' ) )
+            // InternalExtendedIML.g:1154:1: ( 'save' )
+            {
+            // InternalExtendedIML.g:1154:1: ( 'save' )
+            // InternalExtendedIML.g:1155:2: 'save'
+            {
+             before(grammarAccess.getSaveOperationAccess().getSaveKeyword_0()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getSaveOperationAccess().getSaveKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SaveOperation__Group__0__Impl"
+
+
+    // $ANTLR start "rule__SaveOperation__Group__1"
+    // InternalExtendedIML.g:1164:1: rule__SaveOperation__Group__1 : rule__SaveOperation__Group__1__Impl ;
+    public final void rule__SaveOperation__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalExtendedIML.g:1168:1: ( rule__SaveOperation__Group__1__Impl )
+            // InternalExtendedIML.g:1169:2: rule__SaveOperation__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__SaveOperation__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SaveOperation__Group__1"
+
+
+    // $ANTLR start "rule__SaveOperation__Group__1__Impl"
+    // InternalExtendedIML.g:1175:1: rule__SaveOperation__Group__1__Impl : ( ( rule__SaveOperation__VarAssignment_1 ) ) ;
+    public final void rule__SaveOperation__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalExtendedIML.g:1179:1: ( ( ( rule__SaveOperation__VarAssignment_1 ) ) )
+            // InternalExtendedIML.g:1180:1: ( ( rule__SaveOperation__VarAssignment_1 ) )
+            {
+            // InternalExtendedIML.g:1180:1: ( ( rule__SaveOperation__VarAssignment_1 ) )
+            // InternalExtendedIML.g:1181:2: ( rule__SaveOperation__VarAssignment_1 )
+            {
+             before(grammarAccess.getSaveOperationAccess().getVarAssignment_1()); 
+            // InternalExtendedIML.g:1182:2: ( rule__SaveOperation__VarAssignment_1 )
+            // InternalExtendedIML.g:1182:3: rule__SaveOperation__VarAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__SaveOperation__VarAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSaveOperationAccess().getVarAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SaveOperation__Group__1__Impl"
+
+
     // $ANTLR start "rule__Model__ElementsAssignment"
-    // InternalExtendedIML.g:1231:1: rule__Model__ElementsAssignment : ( ruleAbstractElement ) ;
+    // InternalExtendedIML.g:1191:1: rule__Model__ElementsAssignment : ( ruleAbstractElement ) ;
     public final void rule__Model__ElementsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1235:1: ( ( ruleAbstractElement ) )
-            // InternalExtendedIML.g:1236:2: ( ruleAbstractElement )
+            // InternalExtendedIML.g:1195:1: ( ( ruleAbstractElement ) )
+            // InternalExtendedIML.g:1196:2: ( ruleAbstractElement )
             {
-            // InternalExtendedIML.g:1236:2: ( ruleAbstractElement )
-            // InternalExtendedIML.g:1237:3: ruleAbstractElement
+            // InternalExtendedIML.g:1196:2: ( ruleAbstractElement )
+            // InternalExtendedIML.g:1197:3: ruleAbstractElement
             {
              before(grammarAccess.getModelAccess().getElementsAbstractElementParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -3767,92 +3626,18 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Model__ElementsAssignment"
 
 
-    // $ANTLR start "rule__Save__VarAssignment_1"
-    // InternalExtendedIML.g:1246:1: rule__Save__VarAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Save__VarAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalExtendedIML.g:1250:1: ( ( RULE_ID ) )
-            // InternalExtendedIML.g:1251:2: ( RULE_ID )
-            {
-            // InternalExtendedIML.g:1251:2: ( RULE_ID )
-            // InternalExtendedIML.g:1252:3: RULE_ID
-            {
-             before(grammarAccess.getSaveAccess().getVarIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getSaveAccess().getVarIDTerminalRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Save__VarAssignment_1"
-
-
-    // $ANTLR start "rule__Show__VarAssignment_1"
-    // InternalExtendedIML.g:1261:1: rule__Show__VarAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Show__VarAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalExtendedIML.g:1265:1: ( ( RULE_ID ) )
-            // InternalExtendedIML.g:1266:2: ( RULE_ID )
-            {
-            // InternalExtendedIML.g:1266:2: ( RULE_ID )
-            // InternalExtendedIML.g:1267:3: RULE_ID
-            {
-             before(grammarAccess.getShowAccess().getVarIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getShowAccess().getVarIDTerminalRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Show__VarAssignment_1"
-
-
     // $ANTLR start "rule__ImageImporter__NameAssignment_0"
-    // InternalExtendedIML.g:1276:1: rule__ImageImporter__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalExtendedIML.g:1206:1: rule__ImageImporter__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__ImageImporter__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1280:1: ( ( RULE_ID ) )
-            // InternalExtendedIML.g:1281:2: ( RULE_ID )
+            // InternalExtendedIML.g:1210:1: ( ( RULE_ID ) )
+            // InternalExtendedIML.g:1211:2: ( RULE_ID )
             {
-            // InternalExtendedIML.g:1281:2: ( RULE_ID )
-            // InternalExtendedIML.g:1282:3: RULE_ID
+            // InternalExtendedIML.g:1211:2: ( RULE_ID )
+            // InternalExtendedIML.g:1212:3: RULE_ID
             {
              before(grammarAccess.getImageImporterAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -3879,17 +3664,17 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ImageImporter__ImportedNamespaceAssignment_2"
-    // InternalExtendedIML.g:1291:1: rule__ImageImporter__ImportedNamespaceAssignment_2 : ( ruleQualifiedImageName ) ;
+    // InternalExtendedIML.g:1221:1: rule__ImageImporter__ImportedNamespaceAssignment_2 : ( ruleQualifiedImageName ) ;
     public final void rule__ImageImporter__ImportedNamespaceAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1295:1: ( ( ruleQualifiedImageName ) )
-            // InternalExtendedIML.g:1296:2: ( ruleQualifiedImageName )
+            // InternalExtendedIML.g:1225:1: ( ( ruleQualifiedImageName ) )
+            // InternalExtendedIML.g:1226:2: ( ruleQualifiedImageName )
             {
-            // InternalExtendedIML.g:1296:2: ( ruleQualifiedImageName )
-            // InternalExtendedIML.g:1297:3: ruleQualifiedImageName
+            // InternalExtendedIML.g:1226:2: ( ruleQualifiedImageName )
+            // InternalExtendedIML.g:1227:3: ruleQualifiedImageName
             {
              before(grammarAccess.getImageImporterAccess().getImportedNamespaceQualifiedImageNameParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -3920,17 +3705,17 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirImporter__PathDirAssignment_1"
-    // InternalExtendedIML.g:1306:1: rule__DirImporter__PathDirAssignment_1 : ( ruleQualifiedPath ) ;
+    // InternalExtendedIML.g:1236:1: rule__DirImporter__PathDirAssignment_1 : ( ruleQualifiedPath ) ;
     public final void rule__DirImporter__PathDirAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1310:1: ( ( ruleQualifiedPath ) )
-            // InternalExtendedIML.g:1311:2: ( ruleQualifiedPath )
+            // InternalExtendedIML.g:1240:1: ( ( ruleQualifiedPath ) )
+            // InternalExtendedIML.g:1241:2: ( ruleQualifiedPath )
             {
-            // InternalExtendedIML.g:1311:2: ( ruleQualifiedPath )
-            // InternalExtendedIML.g:1312:3: ruleQualifiedPath
+            // InternalExtendedIML.g:1241:2: ( ruleQualifiedPath )
+            // InternalExtendedIML.g:1242:3: ruleQualifiedPath
             {
              before(grammarAccess.getDirImporterAccess().getPathDirQualifiedPathParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -3961,17 +3746,17 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__RotateOperation__VarAssignment_1"
-    // InternalExtendedIML.g:1321:1: rule__RotateOperation__VarAssignment_1 : ( RULE_ID ) ;
+    // InternalExtendedIML.g:1251:1: rule__RotateOperation__VarAssignment_1 : ( RULE_ID ) ;
     public final void rule__RotateOperation__VarAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1325:1: ( ( RULE_ID ) )
-            // InternalExtendedIML.g:1326:2: ( RULE_ID )
+            // InternalExtendedIML.g:1255:1: ( ( RULE_ID ) )
+            // InternalExtendedIML.g:1256:2: ( RULE_ID )
             {
-            // InternalExtendedIML.g:1326:2: ( RULE_ID )
-            // InternalExtendedIML.g:1327:3: RULE_ID
+            // InternalExtendedIML.g:1256:2: ( RULE_ID )
+            // InternalExtendedIML.g:1257:3: RULE_ID
             {
              before(grammarAccess.getRotateOperationAccess().getVarIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -3998,17 +3783,17 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__RotateOperation__DegreeAssignment_2"
-    // InternalExtendedIML.g:1336:1: rule__RotateOperation__DegreeAssignment_2 : ( RULE_INT ) ;
+    // InternalExtendedIML.g:1266:1: rule__RotateOperation__DegreeAssignment_2 : ( RULE_INT ) ;
     public final void rule__RotateOperation__DegreeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1340:1: ( ( RULE_INT ) )
-            // InternalExtendedIML.g:1341:2: ( RULE_INT )
+            // InternalExtendedIML.g:1270:1: ( ( RULE_INT ) )
+            // InternalExtendedIML.g:1271:2: ( RULE_INT )
             {
-            // InternalExtendedIML.g:1341:2: ( RULE_INT )
-            // InternalExtendedIML.g:1342:3: RULE_INT
+            // InternalExtendedIML.g:1271:2: ( RULE_INT )
+            // InternalExtendedIML.g:1272:3: RULE_INT
             {
              before(grammarAccess.getRotateOperationAccess().getDegreeINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -4035,17 +3820,17 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__FilterOperation__VarAssignment_1"
-    // InternalExtendedIML.g:1351:1: rule__FilterOperation__VarAssignment_1 : ( RULE_ID ) ;
+    // InternalExtendedIML.g:1281:1: rule__FilterOperation__VarAssignment_1 : ( RULE_ID ) ;
     public final void rule__FilterOperation__VarAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1355:1: ( ( RULE_ID ) )
-            // InternalExtendedIML.g:1356:2: ( RULE_ID )
+            // InternalExtendedIML.g:1285:1: ( ( RULE_ID ) )
+            // InternalExtendedIML.g:1286:2: ( RULE_ID )
             {
-            // InternalExtendedIML.g:1356:2: ( RULE_ID )
-            // InternalExtendedIML.g:1357:3: RULE_ID
+            // InternalExtendedIML.g:1286:2: ( RULE_ID )
+            // InternalExtendedIML.g:1287:3: RULE_ID
             {
              before(grammarAccess.getFilterOperationAccess().getVarIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -4072,17 +3857,17 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__BlurOperation__VarAssignment_1"
-    // InternalExtendedIML.g:1366:1: rule__BlurOperation__VarAssignment_1 : ( RULE_ID ) ;
+    // InternalExtendedIML.g:1296:1: rule__BlurOperation__VarAssignment_1 : ( RULE_ID ) ;
     public final void rule__BlurOperation__VarAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1370:1: ( ( RULE_ID ) )
-            // InternalExtendedIML.g:1371:2: ( RULE_ID )
+            // InternalExtendedIML.g:1300:1: ( ( RULE_ID ) )
+            // InternalExtendedIML.g:1301:2: ( RULE_ID )
             {
-            // InternalExtendedIML.g:1371:2: ( RULE_ID )
-            // InternalExtendedIML.g:1372:3: RULE_ID
+            // InternalExtendedIML.g:1301:2: ( RULE_ID )
+            // InternalExtendedIML.g:1302:3: RULE_ID
             {
              before(grammarAccess.getBlurOperationAccess().getVarIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -4109,17 +3894,17 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__BlurOperation__IntensityAssignment_2"
-    // InternalExtendedIML.g:1381:1: rule__BlurOperation__IntensityAssignment_2 : ( RULE_INT ) ;
+    // InternalExtendedIML.g:1311:1: rule__BlurOperation__IntensityAssignment_2 : ( RULE_INT ) ;
     public final void rule__BlurOperation__IntensityAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1385:1: ( ( RULE_INT ) )
-            // InternalExtendedIML.g:1386:2: ( RULE_INT )
+            // InternalExtendedIML.g:1315:1: ( ( RULE_INT ) )
+            // InternalExtendedIML.g:1316:2: ( RULE_INT )
             {
-            // InternalExtendedIML.g:1386:2: ( RULE_INT )
-            // InternalExtendedIML.g:1387:3: RULE_INT
+            // InternalExtendedIML.g:1316:2: ( RULE_INT )
+            // InternalExtendedIML.g:1317:3: RULE_INT
             {
              before(grammarAccess.getBlurOperationAccess().getIntensityINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -4146,17 +3931,17 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__EqualizeOperation__VarAssignment_1"
-    // InternalExtendedIML.g:1396:1: rule__EqualizeOperation__VarAssignment_1 : ( RULE_ID ) ;
+    // InternalExtendedIML.g:1326:1: rule__EqualizeOperation__VarAssignment_1 : ( RULE_ID ) ;
     public final void rule__EqualizeOperation__VarAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExtendedIML.g:1400:1: ( ( RULE_ID ) )
-            // InternalExtendedIML.g:1401:2: ( RULE_ID )
+            // InternalExtendedIML.g:1330:1: ( ( RULE_ID ) )
+            // InternalExtendedIML.g:1331:2: ( RULE_ID )
             {
-            // InternalExtendedIML.g:1401:2: ( RULE_ID )
-            // InternalExtendedIML.g:1402:3: RULE_ID
+            // InternalExtendedIML.g:1331:2: ( RULE_ID )
+            // InternalExtendedIML.g:1332:3: RULE_ID
             {
              before(grammarAccess.getEqualizeOperationAccess().getVarIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -4181,6 +3966,80 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
     }
     // $ANTLR end "rule__EqualizeOperation__VarAssignment_1"
 
+
+    // $ANTLR start "rule__ShowOperation__VarAssignment_1"
+    // InternalExtendedIML.g:1341:1: rule__ShowOperation__VarAssignment_1 : ( RULE_ID ) ;
+    public final void rule__ShowOperation__VarAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalExtendedIML.g:1345:1: ( ( RULE_ID ) )
+            // InternalExtendedIML.g:1346:2: ( RULE_ID )
+            {
+            // InternalExtendedIML.g:1346:2: ( RULE_ID )
+            // InternalExtendedIML.g:1347:3: RULE_ID
+            {
+             before(grammarAccess.getShowOperationAccess().getVarIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getShowOperationAccess().getVarIDTerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ShowOperation__VarAssignment_1"
+
+
+    // $ANTLR start "rule__SaveOperation__VarAssignment_1"
+    // InternalExtendedIML.g:1356:1: rule__SaveOperation__VarAssignment_1 : ( RULE_ID ) ;
+    public final void rule__SaveOperation__VarAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalExtendedIML.g:1360:1: ( ( RULE_ID ) )
+            // InternalExtendedIML.g:1361:2: ( RULE_ID )
+            {
+            // InternalExtendedIML.g:1361:2: ( RULE_ID )
+            // InternalExtendedIML.g:1362:3: RULE_ID
+            {
+             before(grammarAccess.getSaveOperationAccess().getVarIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getSaveOperationAccess().getVarIDTerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SaveOperation__VarAssignment_1"
+
     // Delegated rules
 
 
@@ -4188,13 +4047,13 @@ public class InternalExtendedIMLParser extends AbstractInternalContentAssistPars
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00000000001B9812L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004010L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00000000001EE012L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000001002L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000001010L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000010000L});
 
 }

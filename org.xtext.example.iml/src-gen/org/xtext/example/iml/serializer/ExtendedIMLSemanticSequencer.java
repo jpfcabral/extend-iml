@@ -22,8 +22,8 @@ import org.xtext.example.iml.extendedIML.FilterOperation;
 import org.xtext.example.iml.extendedIML.ImageImporter;
 import org.xtext.example.iml.extendedIML.Model;
 import org.xtext.example.iml.extendedIML.RotateOperation;
-import org.xtext.example.iml.extendedIML.Save;
-import org.xtext.example.iml.extendedIML.Show;
+import org.xtext.example.iml.extendedIML.SaveOperation;
+import org.xtext.example.iml.extendedIML.ShowOperation;
 import org.xtext.example.iml.services.ExtendedIMLGrammarAccess;
 
 @SuppressWarnings("all")
@@ -61,11 +61,11 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case ExtendedIMLPackage.ROTATE_OPERATION:
 				sequence_RotateOperation(context, (RotateOperation) semanticObject); 
 				return; 
-			case ExtendedIMLPackage.SAVE:
-				sequence_Save(context, (Save) semanticObject); 
+			case ExtendedIMLPackage.SAVE_OPERATION:
+				sequence_SaveOperation(context, (SaveOperation) semanticObject); 
 				return; 
-			case ExtendedIMLPackage.SHOW:
-				sequence_Show(context, (Show) semanticObject); 
+			case ExtendedIMLPackage.SHOW_OPERATION:
+				sequence_ShowOperation(context, (ShowOperation) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -215,40 +215,40 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
-	 *     AbstractElement returns Save
-	 *     Exporter returns Save
-	 *     Save returns Save
+	 *     AbstractElement returns SaveOperation
+	 *     Operator returns SaveOperation
+	 *     SaveOperation returns SaveOperation
 	 *
 	 * Constraint:
 	 *     var=ID
 	 */
-	protected void sequence_Save(ISerializationContext context, Save semanticObject) {
+	protected void sequence_SaveOperation(ISerializationContext context, SaveOperation semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.EXPORTER__VAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.EXPORTER__VAR));
+			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSaveAccess().getVarIDTerminalRuleCall_1_0(), semanticObject.getVar());
+		feeder.accept(grammarAccess.getSaveOperationAccess().getVarIDTerminalRuleCall_1_0(), semanticObject.getVar());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     AbstractElement returns Show
-	 *     Exporter returns Show
-	 *     Show returns Show
+	 *     AbstractElement returns ShowOperation
+	 *     Operator returns ShowOperation
+	 *     ShowOperation returns ShowOperation
 	 *
 	 * Constraint:
 	 *     var=ID
 	 */
-	protected void sequence_Show(ISerializationContext context, Show semanticObject) {
+	protected void sequence_ShowOperation(ISerializationContext context, ShowOperation semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.EXPORTER__VAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.EXPORTER__VAR));
+			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getShowAccess().getVarIDTerminalRuleCall_1_0(), semanticObject.getVar());
+		feeder.accept(grammarAccess.getShowOperationAccess().getVarIDTerminalRuleCall_1_0(), semanticObject.getVar());
 		feeder.finish();
 	}
 	

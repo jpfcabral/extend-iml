@@ -129,133 +129,6 @@ ruleAbstractElement returns [EObject current=null]
 			$current = $this_Operator_1.current;
 			afterParserOrEnumRuleCall();
 		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getAbstractElementAccess().getExporterParserRuleCall_2());
-		}
-		this_Exporter_2=ruleExporter
-		{
-			$current = $this_Exporter_2.current;
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
-// Entry rule entryRuleExporter
-entryRuleExporter returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getExporterRule()); }
-	iv_ruleExporter=ruleExporter
-	{ $current=$iv_ruleExporter.current; }
-	EOF;
-
-// Rule Exporter
-ruleExporter returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getExporterAccess().getSaveParserRuleCall_0());
-		}
-		this_Save_0=ruleSave
-		{
-			$current = $this_Save_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getExporterAccess().getShowParserRuleCall_1());
-		}
-		this_Show_1=ruleShow
-		{
-			$current = $this_Show_1.current;
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
-// Entry rule entryRuleSave
-entryRuleSave returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getSaveRule()); }
-	iv_ruleSave=ruleSave
-	{ $current=$iv_ruleSave.current; }
-	EOF;
-
-// Rule Save
-ruleSave returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='save'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getSaveAccess().getSaveKeyword_0());
-		}
-		(
-			(
-				lv_var_1_0=RULE_ID
-				{
-					newLeafNode(lv_var_1_0, grammarAccess.getSaveAccess().getVarIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSaveRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"var",
-						lv_var_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleShow
-entryRuleShow returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getShowRule()); }
-	iv_ruleShow=ruleShow
-	{ $current=$iv_ruleShow.current; }
-	EOF;
-
-// Rule Show
-ruleShow returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='show'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getShowAccess().getShowKeyword_0());
-		}
-		(
-			(
-				lv_var_1_0=RULE_ID
-				{
-					newLeafNode(lv_var_1_0, grammarAccess.getShowAccess().getVarIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getShowRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"var",
-						lv_var_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
 	)
 ;
 
@@ -526,6 +399,24 @@ ruleOperator returns [EObject current=null]
 			$current = $this_EqualizeOperation_3.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getOperatorAccess().getShowOperationParserRuleCall_4());
+		}
+		this_ShowOperation_4=ruleShowOperation
+		{
+			$current = $this_ShowOperation_4.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getOperatorAccess().getSaveOperationParserRuleCall_5());
+		}
+		this_SaveOperation_5=ruleSaveOperation
+		{
+			$current = $this_SaveOperation_5.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -721,6 +612,88 @@ ruleEqualizeOperation returns [EObject current=null]
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getEqualizeOperationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"var",
+						lv_var_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleShowOperation
+entryRuleShowOperation returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getShowOperationRule()); }
+	iv_ruleShowOperation=ruleShowOperation
+	{ $current=$iv_ruleShowOperation.current; }
+	EOF;
+
+// Rule ShowOperation
+ruleShowOperation returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='show'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getShowOperationAccess().getShowKeyword_0());
+		}
+		(
+			(
+				lv_var_1_0=RULE_ID
+				{
+					newLeafNode(lv_var_1_0, grammarAccess.getShowOperationAccess().getVarIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getShowOperationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"var",
+						lv_var_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleSaveOperation
+entryRuleSaveOperation returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSaveOperationRule()); }
+	iv_ruleSaveOperation=ruleSaveOperation
+	{ $current=$iv_ruleSaveOperation.current; }
+	EOF;
+
+// Rule SaveOperation
+ruleSaveOperation returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='save'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSaveOperationAccess().getSaveKeyword_0());
+		}
+		(
+			(
+				lv_var_1_0=RULE_ID
+				{
+					newLeafNode(lv_var_1_0, grammarAccess.getSaveOperationAccess().getVarIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSaveOperationRule());
 					}
 					setWithLastConsumed(
 						$current,

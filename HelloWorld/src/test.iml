@@ -2,6 +2,7 @@ images imagens
 rotate by 40
 filter by gray
 rotate by 45
-blur by 25
+blur by 10
 equalize it
 show it
+save it
