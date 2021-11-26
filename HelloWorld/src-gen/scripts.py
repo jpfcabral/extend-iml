@@ -40,23 +40,27 @@ def save_image(image, source_path):
 	output_image_full_path = path.join(output_dir, image_name)
 	cv2.imwrite(output_image_full_path, img)
 
-# def fill_image(img, size=(_size,_size)):
-#     h, w = img.shape[:2]
-#     c = img.shape[2] if len(img.shape)>2 else 1
-#     if h == w: 
-#         return cv2.resize(img, size, cv2.INTER_AREA)
-#     dif = h if h > w else w
-#     interpolation = cv2.INTER_AREA if dif > (size[0]+size[1])//2 else cv2.INTER_CUBIC
-#     x_pos = (dif - w)//2
-#     y_pos = (dif - h)//2
-#     if len(img.shape) == 2:
-#         mask = np.zeros((dif, dif), dtype=img.dtype)
-#         mask[y_pos:y_pos+h, x_pos:x_pos+w] = img[:h, :w]
-#     else:
-#         mask = np.zeros((dif, dif, c), dtype=img.dtype)
-#         mask[y_pos:y_pos+h, x_pos:x_pos+w, :] = img[:h, :w, :]
-# 
-#     return cv2.resize(mask, size, interpolation)
+def fill_image(img, _size):
+	size=(_size, _size)
+	if(len(img.shape)==3):
+		h, w, c = img.shape
+	else:
+		h, w = img.shape
+	c = img.shape[2] if len(img.shape)>2 else 1
+	if h == w: 
+		return cv2.resize(img, size, cv2.INTER_AREA)
+	dif = h if h > w else w
+	interpolation = cv2.INTER_AREA if dif > (size[0]+size[1])//2 else cv2.INTER_CUBIC
+	x_pos = (dif - w)//2
+	y_pos = (dif - h)//2
+	if len(img.shape) == 2:
+		mask = np.zeros((dif, dif), dtype=img.dtype)
+		mask[y_pos:y_pos+h, x_pos:x_pos+w] = img[:h, :w]
+	else:
+		mask = np.zeros((dif, dif, c), dtype=img.dtype)
+		mask[y_pos:y_pos+h, x_pos:x_pos+w, :] = img[:h, :w, :]
+ 
+	return cv2.resize(mask, size, interpolation)
 
 for image_name in listdir('imagens'):
 	image_full_path = path.join('imagens', image_name)
@@ -64,9 +68,7 @@ for image_name in listdir('imagens'):
 	if not img is None:
 		img = rotate_image(img, 40)
 		img = convert_to_gray(img)
-		img = rotate_image(img, 45)
-		img = blur_image(img, 0.1)
-		img = equalize_hist(img)
+		# OPERADOR NÃO ENCONTRADO
 		show_image(img)
 		save_image(img, 'imagens')
 		

@@ -44,6 +44,7 @@ public class ExtendedIMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEqualizeOperationAccess().getGroup(), "rule__EqualizeOperation__Group__0");
 			builder.put(grammarAccess.getShowOperationAccess().getGroup(), "rule__ShowOperation__Group__0");
 			builder.put(grammarAccess.getSaveOperationAccess().getGroup(), "rule__SaveOperation__Group__0");
+			builder.put(grammarAccess.getFillOperationAccess().getGroup(), "rule__FillOperation__Group__0");
 			builder.put(grammarAccess.getModelAccess().getElementsAssignment(), "rule__Model__ElementsAssignment");
 			builder.put(grammarAccess.getImageImporterAccess().getNameAssignment_0(), "rule__ImageImporter__NameAssignment_0");
 			builder.put(grammarAccess.getImageImporterAccess().getImportedNamespaceAssignment_2(), "rule__ImageImporter__ImportedNamespaceAssignment_2");
@@ -56,6 +57,8 @@ public class ExtendedIMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEqualizeOperationAccess().getVarAssignment_1(), "rule__EqualizeOperation__VarAssignment_1");
 			builder.put(grammarAccess.getShowOperationAccess().getVarAssignment_1(), "rule__ShowOperation__VarAssignment_1");
 			builder.put(grammarAccess.getSaveOperationAccess().getVarAssignment_1(), "rule__SaveOperation__VarAssignment_1");
+			builder.put(grammarAccess.getFillOperationAccess().getVarAssignment_1(), "rule__FillOperation__VarAssignment_1");
+			builder.put(grammarAccess.getFillOperationAccess().getTamAssignment_2(), "rule__FillOperation__TamAssignment_2");
 		}
 	}
 	

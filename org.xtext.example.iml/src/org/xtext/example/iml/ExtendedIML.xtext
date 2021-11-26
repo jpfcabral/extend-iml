@@ -25,7 +25,7 @@ DirImporter:
 
 Operator:
 	RotateOperation | FilterOperation | BlurOperation | EqualizeOperation |
-	ShowOperation | SaveOperation;
+	ShowOperation | SaveOperation | FillOperation;
 
 RotateOperation:
 	"rotate" var=ID degree=INT;
@@ -44,3 +44,6 @@ ShowOperation:
 
 SaveOperation:
 	"save" var=ID;
+
+FillOperation:
+	"fill" var=ID tam=INT;

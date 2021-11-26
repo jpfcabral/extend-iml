@@ -184,14 +184,15 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final RuleCall cEqualizeOperationParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cShowOperationParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cSaveOperationParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cFillOperationParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		
 		//Operator:
 		//    RotateOperation | FilterOperation | BlurOperation | EqualizeOperation |
-		//    ShowOperation | SaveOperation;
+		//    ShowOperation | SaveOperation | FillOperation;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//RotateOperation | FilterOperation | BlurOperation | EqualizeOperation |
-		//ShowOperation | SaveOperation
+		//ShowOperation | SaveOperation | FillOperation
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//RotateOperation
@@ -211,6 +212,9 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		
 		//SaveOperation
 		public RuleCall getSaveOperationParserRuleCall_5() { return cSaveOperationParserRuleCall_5; }
+		
+		//FillOperation
+		public RuleCall getFillOperationParserRuleCall_6() { return cFillOperationParserRuleCall_6; }
 	}
 	public class RotateOperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.RotateOperation");
@@ -370,6 +374,37 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		//ID
 		public RuleCall getVarIDTerminalRuleCall_1_0() { return cVarIDTerminalRuleCall_1_0; }
 	}
+	public class FillOperationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.FillOperation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cFillKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
+		private final Assignment cTamAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTamINTTerminalRuleCall_2_0 = (RuleCall)cTamAssignment_2.eContents().get(0);
+		
+		//FillOperation:
+		//    "fill" var=ID tam=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"fill" var=ID tam=INT
+		public Group getGroup() { return cGroup; }
+		
+		//"fill"
+		public Keyword getFillKeyword_0() { return cFillKeyword_0; }
+		
+		//var=ID
+		public Assignment getVarAssignment_1() { return cVarAssignment_1; }
+		
+		//ID
+		public RuleCall getVarIDTerminalRuleCall_1_0() { return cVarIDTerminalRuleCall_1_0; }
+		
+		//tam=INT
+		public Assignment getTamAssignment_2() { return cTamAssignment_2; }
+		
+		//INT
+		public RuleCall getTamINTTerminalRuleCall_2_0() { return cTamINTTerminalRuleCall_2_0; }
+	}
 	
 	
 	private final ModelElements pModel;
@@ -386,6 +421,7 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	private final EqualizeOperationElements pEqualizeOperation;
 	private final ShowOperationElements pShowOperation;
 	private final SaveOperationElements pSaveOperation;
+	private final FillOperationElements pFillOperation;
 	
 	private final Grammar grammar;
 	
@@ -410,6 +446,7 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.pEqualizeOperation = new EqualizeOperationElements();
 		this.pShowOperation = new ShowOperationElements();
 		this.pSaveOperation = new SaveOperationElements();
+		this.pFillOperation = new FillOperationElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -511,7 +548,7 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	//Operator:
 	//    RotateOperation | FilterOperation | BlurOperation | EqualizeOperation |
-	//    ShowOperation | SaveOperation;
+	//    ShowOperation | SaveOperation | FillOperation;
 	public OperatorElements getOperatorAccess() {
 		return pOperator;
 	}
@@ -578,6 +615,16 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	public ParserRule getSaveOperationRule() {
 		return getSaveOperationAccess().getRule();
+	}
+	
+	//FillOperation:
+	//    "fill" var=ID tam=INT;
+	public FillOperationElements getFillOperationAccess() {
+		return pFillOperation;
+	}
+	
+	public ParserRule getFillOperationRule() {
+		return getFillOperationAccess().getRule();
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

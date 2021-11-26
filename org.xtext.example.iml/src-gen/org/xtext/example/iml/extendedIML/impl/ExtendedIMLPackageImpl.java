@@ -16,6 +16,7 @@ import org.xtext.example.iml.extendedIML.DirImporter;
 import org.xtext.example.iml.extendedIML.EqualizeOperation;
 import org.xtext.example.iml.extendedIML.ExtendedIMLFactory;
 import org.xtext.example.iml.extendedIML.ExtendedIMLPackage;
+import org.xtext.example.iml.extendedIML.FillOperation;
 import org.xtext.example.iml.extendedIML.FilterOperation;
 import org.xtext.example.iml.extendedIML.ImageImporter;
 import org.xtext.example.iml.extendedIML.Importer;
@@ -116,6 +117,13 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
    * @generated
    */
   private EClass saveOperationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass fillOperationEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -395,6 +403,28 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
    * @generated
    */
   @Override
+  public EClass getFillOperation()
+  {
+    return fillOperationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFillOperation_Tam()
+  {
+    return (EAttribute)fillOperationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public ExtendedIMLFactory getExtendedIMLFactory()
   {
     return (ExtendedIMLFactory)getEFactoryInstance();
@@ -450,6 +480,9 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
     showOperationEClass = createEClass(SHOW_OPERATION);
 
     saveOperationEClass = createEClass(SAVE_OPERATION);
+
+    fillOperationEClass = createEClass(FILL_OPERATION);
+    createEAttribute(fillOperationEClass, FILL_OPERATION__TAM);
   }
 
   /**
@@ -491,6 +524,7 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
     equalizeOperationEClass.getESuperTypes().add(this.getOperator());
     showOperationEClass.getESuperTypes().add(this.getOperator());
     saveOperationEClass.getESuperTypes().add(this.getOperator());
+    fillOperationEClass.getESuperTypes().add(this.getOperator());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -523,6 +557,9 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
     initEClass(showOperationEClass, ShowOperation.class, "ShowOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(saveOperationEClass, SaveOperation.class, "SaveOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(fillOperationEClass, FillOperation.class, "FillOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFillOperation_Tam(), ecorePackage.getEInt(), "tam", null, 0, 1, FillOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

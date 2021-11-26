@@ -28,4 +28,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="EqualizeOperation" eSuperTypes="#//Operator"/>
   <eClassifiers xsi:type="ecore:EClass" name="ShowOperation" eSuperTypes="#//Operator"/>
   <eClassifiers xsi:type="ecore:EClass" name="SaveOperation" eSuperTypes="#//Operator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FillOperation" eSuperTypes="#//Operator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tam" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
 </ecore:EPackage>

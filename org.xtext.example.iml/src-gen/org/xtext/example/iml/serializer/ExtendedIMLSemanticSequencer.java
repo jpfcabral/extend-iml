@@ -18,6 +18,7 @@ import org.xtext.example.iml.extendedIML.BlurOperation;
 import org.xtext.example.iml.extendedIML.DirImporter;
 import org.xtext.example.iml.extendedIML.EqualizeOperation;
 import org.xtext.example.iml.extendedIML.ExtendedIMLPackage;
+import org.xtext.example.iml.extendedIML.FillOperation;
 import org.xtext.example.iml.extendedIML.FilterOperation;
 import org.xtext.example.iml.extendedIML.ImageImporter;
 import org.xtext.example.iml.extendedIML.Model;
@@ -48,6 +49,9 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 				return; 
 			case ExtendedIMLPackage.EQUALIZE_OPERATION:
 				sequence_EqualizeOperation(context, (EqualizeOperation) semanticObject); 
+				return; 
+			case ExtendedIMLPackage.FILL_OPERATION:
+				sequence_FillOperation(context, (FillOperation) semanticObject); 
 				return; 
 			case ExtendedIMLPackage.FILTER_OPERATION:
 				sequence_FilterOperation(context, (FilterOperation) semanticObject); 
@@ -131,6 +135,29 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getEqualizeOperationAccess().getVarIDTerminalRuleCall_1_0(), semanticObject.getVar());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractElement returns FillOperation
+	 *     Operator returns FillOperation
+	 *     FillOperation returns FillOperation
+	 *
+	 * Constraint:
+	 *     (var=ID tam=INT)
+	 */
+	protected void sequence_FillOperation(ISerializationContext context, FillOperation semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR));
+			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.FILL_OPERATION__TAM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.FILL_OPERATION__TAM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getFillOperationAccess().getVarIDTerminalRuleCall_1_0(), semanticObject.getVar());
+		feeder.accept(grammarAccess.getFillOperationAccess().getTamINTTerminalRuleCall_2_0(), semanticObject.getTam());
 		feeder.finish();
 	}
 	

@@ -402,6 +402,43 @@ public interface ExtendedIMLPackage extends EPackage
    */
   int SAVE_OPERATION_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 0;
 
+  /**
+   * The meta object id for the '{@link org.xtext.example.iml.extendedIML.impl.FillOperationImpl <em>Fill Operation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.iml.extendedIML.impl.FillOperationImpl
+   * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getFillOperation()
+   * @generated
+   */
+  int FILL_OPERATION = 12;
+
+  /**
+   * The feature id for the '<em><b>Var</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FILL_OPERATION__VAR = OPERATOR__VAR;
+
+  /**
+   * The feature id for the '<em><b>Tam</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FILL_OPERATION__TAM = OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Fill Operation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FILL_OPERATION_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 1;
+
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.iml.extendedIML.Model <em>Model</em>}'.
@@ -601,6 +638,27 @@ public interface ExtendedIMLPackage extends EPackage
   EClass getSaveOperation();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.example.iml.extendedIML.FillOperation <em>Fill Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Fill Operation</em>'.
+   * @see org.xtext.example.iml.extendedIML.FillOperation
+   * @generated
+   */
+  EClass getFillOperation();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.iml.extendedIML.FillOperation#getTam <em>Tam</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Tam</em>'.
+   * @see org.xtext.example.iml.extendedIML.FillOperation#getTam()
+   * @see #getFillOperation()
+   * @generated
+   */
+  EAttribute getFillOperation_Tam();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -798,6 +856,24 @@ public interface ExtendedIMLPackage extends EPackage
      * @generated
      */
     EClass SAVE_OPERATION = eINSTANCE.getSaveOperation();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.iml.extendedIML.impl.FillOperationImpl <em>Fill Operation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.iml.extendedIML.impl.FillOperationImpl
+     * @see org.xtext.example.iml.extendedIML.impl.ExtendedIMLPackageImpl#getFillOperation()
+     * @generated
+     */
+    EClass FILL_OPERATION = eINSTANCE.getFillOperation();
+
+    /**
+     * The meta object literal for the '<em><b>Tam</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FILL_OPERATION__TAM = eINSTANCE.getFillOperation_Tam();
 
   }
 

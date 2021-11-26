@@ -77,6 +77,7 @@ public class ExtendedIMLFactoryImpl extends EFactoryImpl implements ExtendedIMLF
       case ExtendedIMLPackage.EQUALIZE_OPERATION: return createEqualizeOperation();
       case ExtendedIMLPackage.SHOW_OPERATION: return createShowOperation();
       case ExtendedIMLPackage.SAVE_OPERATION: return createSaveOperation();
+      case ExtendedIMLPackage.FILL_OPERATION: return createFillOperation();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -224,6 +225,18 @@ public class ExtendedIMLFactoryImpl extends EFactoryImpl implements ExtendedIMLF
   {
     SaveOperationImpl saveOperation = new SaveOperationImpl();
     return saveOperation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FillOperation createFillOperation()
+  {
+    FillOperationImpl fillOperation = new FillOperationImpl();
+    return fillOperation;
   }
 
   /**

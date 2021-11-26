@@ -417,6 +417,15 @@ ruleOperator returns [EObject current=null]
 			$current = $this_SaveOperation_5.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getOperatorAccess().getFillOperationParserRuleCall_6());
+		}
+		this_FillOperation_6=ruleFillOperation
+		{
+			$current = $this_FillOperation_6.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -700,6 +709,65 @@ ruleSaveOperation returns [EObject current=null]
 						"var",
 						lv_var_1_0,
 						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleFillOperation
+entryRuleFillOperation returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFillOperationRule()); }
+	iv_ruleFillOperation=ruleFillOperation
+	{ $current=$iv_ruleFillOperation.current; }
+	EOF;
+
+// Rule FillOperation
+ruleFillOperation returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='fill'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getFillOperationAccess().getFillKeyword_0());
+		}
+		(
+			(
+				lv_var_1_0=RULE_ID
+				{
+					newLeafNode(lv_var_1_0, grammarAccess.getFillOperationAccess().getVarIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFillOperationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"var",
+						lv_var_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_tam_2_0=RULE_INT
+				{
+					newLeafNode(lv_tam_2_0, grammarAccess.getFillOperationAccess().getTamINTTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFillOperationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"tam",
+						lv_tam_2_0,
+						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)

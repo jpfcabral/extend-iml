@@ -136,6 +136,11 @@ public class ExtendedIMLAdapterFactory extends AdapterFactoryImpl
         return createSaveOperationAdapter();
       }
       @Override
+      public Adapter caseFillOperation(FillOperation object)
+      {
+        return createFillOperationAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -333,6 +338,21 @@ public class ExtendedIMLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSaveOperationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.iml.extendedIML.FillOperation <em>Fill Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.iml.extendedIML.FillOperation
+   * @generated
+   */
+  public Adapter createFillOperationAdapter()
   {
     return null;
   }

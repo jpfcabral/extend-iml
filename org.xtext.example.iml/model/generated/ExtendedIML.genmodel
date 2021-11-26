@@ -31,5 +31,8 @@
     <genClasses ecoreClass="ExtendedIML.ecore#//EqualizeOperation"/>
     <genClasses ecoreClass="ExtendedIML.ecore#//ShowOperation"/>
     <genClasses ecoreClass="ExtendedIML.ecore#//SaveOperation"/>
+    <genClasses ecoreClass="ExtendedIML.ecore#//FillOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExtendedIML.ecore#//FillOperation/tam"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

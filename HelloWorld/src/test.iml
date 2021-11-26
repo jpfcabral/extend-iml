@@ -1,8 +1,6 @@
 images imagens
 rotate by 40
 filter by gray
-rotate by 45
-blur by 10
-equalize it
+fill by 400
 show it
 save it
