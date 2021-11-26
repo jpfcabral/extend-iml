@@ -688,6 +688,24 @@ ruleValidBlur returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken
 		{
 			newLeafNode(this_INT2_1, grammarAccess.getValidBlurAccess().getINT2TerminalRuleCall_1());
 		}
+		    |
+		kw='low'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getValidBlurAccess().getLowKeyword_2());
+		}
+		    |
+		kw='medium'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getValidBlurAccess().getMediumKeyword_3());
+		}
+		    |
+		kw='high'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getValidBlurAccess().getHighKeyword_4());
+		}
 	)
 ;
 

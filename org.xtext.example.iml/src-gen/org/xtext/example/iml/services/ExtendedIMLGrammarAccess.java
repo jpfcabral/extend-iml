@@ -345,11 +345,14 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cINT1TerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cINT2TerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Keyword cLowKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cMediumKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cHighKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
 		
-		//ValidBlur: INT1 | INT2;
+		//ValidBlur: INT1 | INT2 | "low" | "medium" | "high" ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//INT1 | INT2
+		//INT1 | INT2 | "low" | "medium" | "high"
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//INT1
@@ -357,6 +360,15 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		
 		//INT2
 		public RuleCall getINT2TerminalRuleCall_1() { return cINT2TerminalRuleCall_1; }
+		
+		//"low"
+		public Keyword getLowKeyword_2() { return cLowKeyword_2; }
+		
+		//"medium"
+		public Keyword getMediumKeyword_3() { return cMediumKeyword_3; }
+		
+		//"high"
+		public Keyword getHighKeyword_4() { return cHighKeyword_4; }
 	}
 	public class EqualizeOperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.iml.ExtendedIML.EqualizeOperation");
@@ -714,7 +726,7 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		return getBlurOperationAccess().getRule();
 	}
 	
-	//ValidBlur: INT1 | INT2;
+	//ValidBlur: INT1 | INT2 | "low" | "medium" | "high" ;
 	public ValidBlurElements getValidBlurAccess() {
 		return pValidBlur;
 	}

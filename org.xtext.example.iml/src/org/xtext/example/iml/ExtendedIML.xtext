@@ -42,7 +42,7 @@ FilterOperation:
 BlurOperation:
 	"blur" (var=ID)? intensity=ValidBlur;
 
-ValidBlur: INT1 | INT2;
+ValidBlur: INT1 | INT2 | "low" | "medium" | "high" ;
 
 EqualizeOperation:
 	{EqualizeOperation} "equalize" (var=ID)?;

@@ -10,6 +10,7 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.xtext.example.iml.extendedIML.BlurOperation;
@@ -252,9 +253,8 @@ public class ExtendedIMLGenerator extends AbstractGenerator {
             } else {
               if ((o instanceof BlurOperation)) {
                 _builder.append("img = blur_image(img, ");
-                Integer _valueOf = Integer.valueOf(((BlurOperation)o).getIntensity());
-                double _divide = ((_valueOf).intValue() / 100.0);
-                _builder.append(_divide);
+                Double _blurIntensity = this.blurIntensity(((BlurOperation)o).getIntensity());
+                _builder.append(_blurIntensity);
                 _builder.append(")");
                 _builder.newLineIfNotEmpty();
               } else {
@@ -295,5 +295,40 @@ public class ExtendedIMLGenerator extends AbstractGenerator {
     }
     _builder.newLine();
     return _builder.toString();
+  }
+  
+  private Double blurIntensity(final String intensity) {
+    double _xtrycatchfinallyexpression = (double) 0;
+    try {
+      Integer _valueOf = Integer.valueOf(intensity);
+      final double realIntensity = ((_valueOf).intValue() / 100.0);
+      return Double.valueOf(realIntensity);
+    } catch (final Throwable _t) {
+      if (_t instanceof Exception) {
+        double _switchResult = (double) 0;
+        if (intensity != null) {
+          switch (intensity) {
+            case "low":
+              _switchResult = 0.15;
+              break;
+            case "medium":
+              _switchResult = 0.5;
+              break;
+            case "high":
+              _switchResult = 0.75;
+              break;
+            default:
+              _switchResult = 0.0;
+              break;
+          }
+        } else {
+          _switchResult = 0.0;
+        }
+        _xtrycatchfinallyexpression = _switchResult;
+      } else {
+        throw Exceptions.sneakyThrow(_t);
+      }
+    }
+    return Double.valueOf(_xtrycatchfinallyexpression);
   }
 }

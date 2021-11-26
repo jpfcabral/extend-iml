@@ -635,6 +635,24 @@ rule__ValidBlur__Alternatives
 		RULE_INT2
 		{ after(grammarAccess.getValidBlurAccess().getINT2TerminalRuleCall_1()); }
 	)
+	|
+	(
+		{ before(grammarAccess.getValidBlurAccess().getLowKeyword_2()); }
+		'low'
+		{ after(grammarAccess.getValidBlurAccess().getLowKeyword_2()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getValidBlurAccess().getMediumKeyword_3()); }
+		'medium'
+		{ after(grammarAccess.getValidBlurAccess().getMediumKeyword_3()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getValidBlurAccess().getHighKeyword_4()); }
+		'high'
+		{ after(grammarAccess.getValidBlurAccess().getHighKeyword_4()); }
+	)
 ;
 finally {
 	restoreStackSize(stackSize);

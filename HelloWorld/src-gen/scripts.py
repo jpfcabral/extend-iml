@@ -33,8 +33,7 @@ def show_image(image):
 	cv2.waitKey(0)
 	cv2.destroyAllWindows()
 
-def save_image(image, source_path):
-	output_dir = path.join(source_path, 'output')
+def save_image(image, output_dir):
 	if (not path.exists(output_dir)):
 		mkdir(output_dir)
 	output_image_full_path = path.join(output_dir, image_name)
@@ -62,11 +61,12 @@ def fill_image(img, _size):
  
 	return cv2.resize(mask, size, interpolation)
 
-for image_name in listdir('./teste/'):
-	image_full_path = path.join('./teste/', image_name)
+for image_name in listdir('./imagens/'):
+	image_full_path = path.join('./imagens/', image_name)
 	img = cv2.imread(image_full_path)
 	if not img is None:
-		img = fill_image(img, 500)
+		img = fill_image(img, 800)
 		img = rotate_image(img, 180)
+		img = blur_image(img, 0.75)
 		show_image(img)
 		

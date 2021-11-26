@@ -124,7 +124,7 @@ class ExtendedIMLGenerator extends AbstractGenerator {
 		«ELSEIF o instanceof FilterOperation»
 			img = convert_to_gray(img)
 		«ELSEIF o instanceof BlurOperation»
-			img = blur_image(img, «(Integer.valueOf(o.intensity) / 100.0)»)
+			img = blur_image(img, «blurIntensity(o.intensity)»)
 		«ELSEIF o instanceof EqualizeOperation»
 			img = equalize_hist(img)
 		«ELSEIF o instanceof FillOperation»
@@ -140,5 +140,19 @@ class ExtendedIMLGenerator extends AbstractGenerator {
 	«ENDFOR»
 	
 	'''
+	
+	private def Double blurIntensity(String intensity) {
+		try {
+			val realIntensity = Integer.valueOf(intensity) / 100.0
+			return realIntensity
+		} catch (Exception e) {
+			switch (intensity) {
+				case 'low': 0.15
+				case 'medium': 0.5
+				case 'high': 0.75
+				default : 0.0
+			}
+		}
+	}
 
 }

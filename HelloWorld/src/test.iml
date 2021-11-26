@@ -1,4 +1,5 @@
-path ./teste/
-fill by 500
+path ./imagens/
+fill by 800
 rotate by 180
-show it
+blur high
+show 
