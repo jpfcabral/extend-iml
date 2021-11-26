@@ -16,6 +16,7 @@ import org.xtext.example.iml.extendedIML.BlurOperation
 import org.xtext.example.iml.extendedIML.EqualizeOperation
 import org.xtext.example.iml.extendedIML.ShowOperation
 import org.xtext.example.iml.extendedIML.SaveOperation
+import org.xtext.example.iml.extendedIML.FillOperation
 
 /**
  * Generates code from your model files on save.
@@ -85,23 +86,27 @@ class ExtendedIMLGenerator extends AbstractGenerator {
 		output_image_full_path = path.join(output_dir, image_name)
 		cv2.imwrite(output_image_full_path, img)
 	
-	# def fill_image(img, size=(_size,_size)):
-	#     h, w = img.shape[:2]
-	#     c = img.shape[2] if len(img.shape)>2 else 1
-	#     if h == w: 
-	#         return cv2.resize(img, size, cv2.INTER_AREA)
-	#     dif = h if h > w else w
-	#     interpolation = cv2.INTER_AREA if dif > (size[0]+size[1])//2 else cv2.INTER_CUBIC
-	#     x_pos = (dif - w)//2
-	#     y_pos = (dif - h)//2
-	#     if len(img.shape) == 2:
-	#         mask = np.zeros((dif, dif), dtype=img.dtype)
-	#         mask[y_pos:y_pos+h, x_pos:x_pos+w] = img[:h, :w]
-	#     else:
-	#         mask = np.zeros((dif, dif, c), dtype=img.dtype)
-	#         mask[y_pos:y_pos+h, x_pos:x_pos+w, :] = img[:h, :w, :]
-	# 
-	#     return cv2.resize(mask, size, interpolation)
+	def fill_image(img, _size):
+		size=(_size, _size)
+		if(len(img.shape)==3):
+			h, w, c = img.shape
+		else:
+			h, w = img.shape
+		c = img.shape[2] if len(img.shape)>2 else 1
+		if h == w: 
+			return cv2.resize(img, size, cv2.INTER_AREA)
+		dif = h if h > w else w
+		interpolation = cv2.INTER_AREA if dif > (size[0]+size[1])//2 else cv2.INTER_CUBIC
+		x_pos = (dif - w)//2
+		y_pos = (dif - h)//2
+		if len(img.shape) == 2:
+			mask = np.zeros((dif, dif), dtype=img.dtype)
+			mask[y_pos:y_pos+h, x_pos:x_pos+w] = img[:h, :w]
+		else:
+			mask = np.zeros((dif, dif, c), dtype=img.dtype)
+			mask[y_pos:y_pos+h, x_pos:x_pos+w, :] = img[:h, :w, :]
+	 
+		return cv2.resize(mask, size, interpolation)
 	
 	'''
 
@@ -123,6 +128,8 @@ class ExtendedIMLGenerator extends AbstractGenerator {
 			img = blur_image(img, «(Integer.valueOf(o.intensity) / 100.0)»)
 		«ELSEIF o instanceof EqualizeOperation»
 			img = equalize_hist(img)
+		«ELSEIF o instanceof FillOperation»
+			img = fill_image(img, «o.size»)
 		«ELSEIF o instanceof ShowOperation»
 			show_image(img)
 		«ELSEIF o instanceof SaveOperation»

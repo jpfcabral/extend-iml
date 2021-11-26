@@ -755,9 +755,9 @@ ruleFillOperation returns [EObject current=null]
 		)
 		(
 			(
-				lv_tam_2_0=RULE_INT
+				lv_size_2_0=RULE_INT
 				{
-					newLeafNode(lv_tam_2_0, grammarAccess.getFillOperationAccess().getTamINTTerminalRuleCall_2_0());
+					newLeafNode(lv_size_2_0, grammarAccess.getFillOperationAccess().getSizeINTTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -765,8 +765,8 @@ ruleFillOperation returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"tam",
-						lv_tam_2_0,
+						"size",
+						lv_size_2_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)

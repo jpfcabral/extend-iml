@@ -1949,23 +1949,23 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFillOperation"
-    // InternalExtendedIML.g:726:1: ruleFillOperation returns [EObject current=null] : (otherlv_0= 'fill' ( (lv_var_1_0= RULE_ID ) ) ( (lv_tam_2_0= RULE_INT ) ) ) ;
+    // InternalExtendedIML.g:726:1: ruleFillOperation returns [EObject current=null] : (otherlv_0= 'fill' ( (lv_var_1_0= RULE_ID ) ) ( (lv_size_2_0= RULE_INT ) ) ) ;
     public final EObject ruleFillOperation() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_var_1_0=null;
-        Token lv_tam_2_0=null;
+        Token lv_size_2_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalExtendedIML.g:732:2: ( (otherlv_0= 'fill' ( (lv_var_1_0= RULE_ID ) ) ( (lv_tam_2_0= RULE_INT ) ) ) )
-            // InternalExtendedIML.g:733:2: (otherlv_0= 'fill' ( (lv_var_1_0= RULE_ID ) ) ( (lv_tam_2_0= RULE_INT ) ) )
+            // InternalExtendedIML.g:732:2: ( (otherlv_0= 'fill' ( (lv_var_1_0= RULE_ID ) ) ( (lv_size_2_0= RULE_INT ) ) ) )
+            // InternalExtendedIML.g:733:2: (otherlv_0= 'fill' ( (lv_var_1_0= RULE_ID ) ) ( (lv_size_2_0= RULE_INT ) ) )
             {
-            // InternalExtendedIML.g:733:2: (otherlv_0= 'fill' ( (lv_var_1_0= RULE_ID ) ) ( (lv_tam_2_0= RULE_INT ) ) )
-            // InternalExtendedIML.g:734:3: otherlv_0= 'fill' ( (lv_var_1_0= RULE_ID ) ) ( (lv_tam_2_0= RULE_INT ) )
+            // InternalExtendedIML.g:733:2: (otherlv_0= 'fill' ( (lv_var_1_0= RULE_ID ) ) ( (lv_size_2_0= RULE_INT ) ) )
+            // InternalExtendedIML.g:734:3: otherlv_0= 'fill' ( (lv_var_1_0= RULE_ID ) ) ( (lv_size_2_0= RULE_INT ) )
             {
             otherlv_0=(Token)match(input,21,FOLLOW_5); 
 
@@ -1997,15 +1997,15 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalExtendedIML.g:756:3: ( (lv_tam_2_0= RULE_INT ) )
-            // InternalExtendedIML.g:757:4: (lv_tam_2_0= RULE_INT )
+            // InternalExtendedIML.g:756:3: ( (lv_size_2_0= RULE_INT ) )
+            // InternalExtendedIML.g:757:4: (lv_size_2_0= RULE_INT )
             {
-            // InternalExtendedIML.g:757:4: (lv_tam_2_0= RULE_INT )
-            // InternalExtendedIML.g:758:5: lv_tam_2_0= RULE_INT
+            // InternalExtendedIML.g:757:4: (lv_size_2_0= RULE_INT )
+            // InternalExtendedIML.g:758:5: lv_size_2_0= RULE_INT
             {
-            lv_tam_2_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+            lv_size_2_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
-            					newLeafNode(lv_tam_2_0, grammarAccess.getFillOperationAccess().getTamINTTerminalRuleCall_2_0());
+            					newLeafNode(lv_size_2_0, grammarAccess.getFillOperationAccess().getSizeINTTerminalRuleCall_2_0());
             				
 
             					if (current==null) {
@@ -2013,8 +2013,8 @@ public class InternalExtendedIMLParser extends AbstractInternalAntlrParser {
             					}
             					setWithLastConsumed(
             						current,
-            						"tam",
-            						lv_tam_2_0,
+            						"size",
+            						lv_size_2_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 

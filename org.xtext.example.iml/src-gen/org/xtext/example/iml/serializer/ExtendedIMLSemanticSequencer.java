@@ -146,18 +146,18 @@ public class ExtendedIMLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     FillOperation returns FillOperation
 	 *
 	 * Constraint:
-	 *     (var=ID tam=INT)
+	 *     (var=ID size=INT)
 	 */
 	protected void sequence_FillOperation(ISerializationContext context, FillOperation semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.OPERATOR__VAR));
-			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.FILL_OPERATION__TAM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.FILL_OPERATION__TAM));
+			if (transientValues.isValueTransient(semanticObject, ExtendedIMLPackage.Literals.FILL_OPERATION__SIZE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExtendedIMLPackage.Literals.FILL_OPERATION__SIZE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getFillOperationAccess().getVarIDTerminalRuleCall_1_0(), semanticObject.getVar());
-		feeder.accept(grammarAccess.getFillOperationAccess().getTamINTTerminalRuleCall_2_0(), semanticObject.getTam());
+		feeder.accept(grammarAccess.getFillOperationAccess().getSizeINTTerminalRuleCall_2_0(), semanticObject.getSize());
 		feeder.finish();
 	}
 	

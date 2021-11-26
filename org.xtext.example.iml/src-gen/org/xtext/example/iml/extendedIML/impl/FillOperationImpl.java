@@ -20,7 +20,7 @@ import org.xtext.example.iml.extendedIML.FillOperation;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.iml.extendedIML.impl.FillOperationImpl#getTam <em>Tam</em>}</li>
+ *   <li>{@link org.xtext.example.iml.extendedIML.impl.FillOperationImpl#getSize <em>Size</em>}</li>
  * </ul>
  *
  * @generated
@@ -28,24 +28,24 @@ import org.xtext.example.iml.extendedIML.FillOperation;
 public class FillOperationImpl extends OperatorImpl implements FillOperation
 {
   /**
-   * The default value of the '{@link #getTam() <em>Tam</em>}' attribute.
+   * The default value of the '{@link #getSize() <em>Size</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTam()
+   * @see #getSize()
    * @generated
    * @ordered
    */
-  protected static final int TAM_EDEFAULT = 0;
+  protected static final int SIZE_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getTam() <em>Tam</em>}' attribute.
+   * The cached value of the '{@link #getSize() <em>Size</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTam()
+   * @see #getSize()
    * @generated
    * @ordered
    */
-  protected int tam = TAM_EDEFAULT;
+  protected int size = SIZE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,9 +74,9 @@ public class FillOperationImpl extends OperatorImpl implements FillOperation
    * @generated
    */
   @Override
-  public int getTam()
+  public int getSize()
   {
-    return tam;
+    return size;
   }
 
   /**
@@ -85,12 +85,12 @@ public class FillOperationImpl extends OperatorImpl implements FillOperation
    * @generated
    */
   @Override
-  public void setTam(int newTam)
+  public void setSize(int newSize)
   {
-    int oldTam = tam;
-    tam = newTam;
+    int oldSize = size;
+    size = newSize;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExtendedIMLPackage.FILL_OPERATION__TAM, oldTam, tam));
+      eNotify(new ENotificationImpl(this, Notification.SET, ExtendedIMLPackage.FILL_OPERATION__SIZE, oldSize, size));
   }
 
   /**
@@ -103,8 +103,8 @@ public class FillOperationImpl extends OperatorImpl implements FillOperation
   {
     switch (featureID)
     {
-      case ExtendedIMLPackage.FILL_OPERATION__TAM:
-        return getTam();
+      case ExtendedIMLPackage.FILL_OPERATION__SIZE:
+        return getSize();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -119,8 +119,8 @@ public class FillOperationImpl extends OperatorImpl implements FillOperation
   {
     switch (featureID)
     {
-      case ExtendedIMLPackage.FILL_OPERATION__TAM:
-        setTam((Integer)newValue);
+      case ExtendedIMLPackage.FILL_OPERATION__SIZE:
+        setSize((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -136,8 +136,8 @@ public class FillOperationImpl extends OperatorImpl implements FillOperation
   {
     switch (featureID)
     {
-      case ExtendedIMLPackage.FILL_OPERATION__TAM:
-        setTam(TAM_EDEFAULT);
+      case ExtendedIMLPackage.FILL_OPERATION__SIZE:
+        setSize(SIZE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -153,8 +153,8 @@ public class FillOperationImpl extends OperatorImpl implements FillOperation
   {
     switch (featureID)
     {
-      case ExtendedIMLPackage.FILL_OPERATION__TAM:
-        return tam != TAM_EDEFAULT;
+      case ExtendedIMLPackage.FILL_OPERATION__SIZE:
+        return size != SIZE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -170,8 +170,8 @@ public class FillOperationImpl extends OperatorImpl implements FillOperation
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (tam: ");
-    result.append(tam);
+    result.append(" (size: ");
+    result.append(size);
     result.append(')');
     return result.toString();
   }

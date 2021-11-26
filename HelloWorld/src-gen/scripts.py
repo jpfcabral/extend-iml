@@ -68,7 +68,7 @@ for image_name in listdir('imagens'):
 	if not img is None:
 		img = rotate_image(img, 40)
 		img = convert_to_gray(img)
-		# OPERADOR NÃO ENCONTRADO
+		img = fill_image(img, 400)
 		show_image(img)
 		save_image(img, 'imagens')
 		

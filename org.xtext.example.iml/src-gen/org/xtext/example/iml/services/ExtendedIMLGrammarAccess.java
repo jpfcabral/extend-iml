@@ -380,14 +380,14 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cFillKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
-		private final Assignment cTamAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTamINTTerminalRuleCall_2_0 = (RuleCall)cTamAssignment_2.eContents().get(0);
+		private final Assignment cSizeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cSizeINTTerminalRuleCall_2_0 = (RuleCall)cSizeAssignment_2.eContents().get(0);
 		
 		//FillOperation:
-		//    "fill" var=ID tam=INT;
+		//    "fill" var=ID size=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"fill" var=ID tam=INT
+		//"fill" var=ID size=INT
 		public Group getGroup() { return cGroup; }
 		
 		//"fill"
@@ -399,11 +399,11 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 		//ID
 		public RuleCall getVarIDTerminalRuleCall_1_0() { return cVarIDTerminalRuleCall_1_0; }
 		
-		//tam=INT
-		public Assignment getTamAssignment_2() { return cTamAssignment_2; }
+		//size=INT
+		public Assignment getSizeAssignment_2() { return cSizeAssignment_2; }
 		
 		//INT
-		public RuleCall getTamINTTerminalRuleCall_2_0() { return cTamINTTerminalRuleCall_2_0; }
+		public RuleCall getSizeINTTerminalRuleCall_2_0() { return cSizeINTTerminalRuleCall_2_0; }
 	}
 	
 	
@@ -618,7 +618,7 @@ public class ExtendedIMLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//FillOperation:
-	//    "fill" var=ID tam=INT;
+	//    "fill" var=ID size=INT;
 	public FillOperationElements getFillOperationAccess() {
 		return pFillOperation;
 	}

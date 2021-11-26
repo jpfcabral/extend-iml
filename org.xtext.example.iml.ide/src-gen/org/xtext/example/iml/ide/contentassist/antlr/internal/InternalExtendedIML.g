@@ -1290,9 +1290,9 @@ rule__FillOperation__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getFillOperationAccess().getTamAssignment_2()); }
-	(rule__FillOperation__TamAssignment_2)
-	{ after(grammarAccess.getFillOperationAccess().getTamAssignment_2()); }
+	{ before(grammarAccess.getFillOperationAccess().getSizeAssignment_2()); }
+	(rule__FillOperation__SizeAssignment_2)
+	{ after(grammarAccess.getFillOperationAccess().getSizeAssignment_2()); }
 )
 ;
 finally {
@@ -1495,15 +1495,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FillOperation__TamAssignment_2
+rule__FillOperation__SizeAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getFillOperationAccess().getTamINTTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getFillOperationAccess().getSizeINTTerminalRuleCall_2_0()); }
 		RULE_INT
-		{ after(grammarAccess.getFillOperationAccess().getTamINTTerminalRuleCall_2_0()); }
+		{ after(grammarAccess.getFillOperationAccess().getSizeINTTerminalRuleCall_2_0()); }
 	)
 ;
 finally {

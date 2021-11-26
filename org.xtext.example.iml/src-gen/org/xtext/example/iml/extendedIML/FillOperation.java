@@ -13,7 +13,7 @@ package org.xtext.example.iml.extendedIML;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.iml.extendedIML.FillOperation#getTam <em>Tam</em>}</li>
+ *   <li>{@link org.xtext.example.iml.extendedIML.FillOperation#getSize <em>Size</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.iml.extendedIML.ExtendedIMLPackage#getFillOperation()
@@ -23,25 +23,25 @@ package org.xtext.example.iml.extendedIML;
 public interface FillOperation extends Operator
 {
   /**
-   * Returns the value of the '<em><b>Tam</b></em>' attribute.
+   * Returns the value of the '<em><b>Size</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Tam</em>' attribute.
-   * @see #setTam(int)
-   * @see org.xtext.example.iml.extendedIML.ExtendedIMLPackage#getFillOperation_Tam()
+   * @return the value of the '<em>Size</em>' attribute.
+   * @see #setSize(int)
+   * @see org.xtext.example.iml.extendedIML.ExtendedIMLPackage#getFillOperation_Size()
    * @model
    * @generated
    */
-  int getTam();
+  int getSize();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.iml.extendedIML.FillOperation#getTam <em>Tam</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.iml.extendedIML.FillOperation#getSize <em>Size</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Tam</em>' attribute.
-   * @see #getTam()
+   * @param value the new value of the '<em>Size</em>' attribute.
+   * @see #getSize()
    * @generated
    */
-  void setTam(int value);
+  void setSize(int value);
 
 } // FillOperation

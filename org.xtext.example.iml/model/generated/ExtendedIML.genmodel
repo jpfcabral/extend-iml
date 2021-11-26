@@ -32,7 +32,7 @@
     <genClasses ecoreClass="ExtendedIML.ecore#//ShowOperation"/>
     <genClasses ecoreClass="ExtendedIML.ecore#//SaveOperation"/>
     <genClasses ecoreClass="ExtendedIML.ecore#//FillOperation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExtendedIML.ecore#//FillOperation/tam"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExtendedIML.ecore#//FillOperation/size"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

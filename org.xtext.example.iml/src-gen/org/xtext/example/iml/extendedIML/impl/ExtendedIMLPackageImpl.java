@@ -414,7 +414,7 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
    * @generated
    */
   @Override
-  public EAttribute getFillOperation_Tam()
+  public EAttribute getFillOperation_Size()
   {
     return (EAttribute)fillOperationEClass.getEStructuralFeatures().get(0);
   }
@@ -482,7 +482,7 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
     saveOperationEClass = createEClass(SAVE_OPERATION);
 
     fillOperationEClass = createEClass(FILL_OPERATION);
-    createEAttribute(fillOperationEClass, FILL_OPERATION__TAM);
+    createEAttribute(fillOperationEClass, FILL_OPERATION__SIZE);
   }
 
   /**
@@ -559,7 +559,7 @@ public class ExtendedIMLPackageImpl extends EPackageImpl implements ExtendedIMLP
     initEClass(saveOperationEClass, SaveOperation.class, "SaveOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(fillOperationEClass, FillOperation.class, "FillOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFillOperation_Tam(), ecorePackage.getEInt(), "tam", null, 0, 1, FillOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFillOperation_Size(), ecorePackage.getEInt(), "size", null, 0, 1, FillOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -15,6 +15,7 @@ import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.xtext.example.iml.extendedIML.BlurOperation;
 import org.xtext.example.iml.extendedIML.DirImporter;
 import org.xtext.example.iml.extendedIML.EqualizeOperation;
+import org.xtext.example.iml.extendedIML.FillOperation;
 import org.xtext.example.iml.extendedIML.FilterOperation;
 import org.xtext.example.iml.extendedIML.Operator;
 import org.xtext.example.iml.extendedIML.RotateOperation;
@@ -163,35 +164,49 @@ public class ExtendedIMLGenerator extends AbstractGenerator {
     _builder.append("\t\t");
     _builder.append("h, w = img.shape");
     _builder.newLine();
-    _builder.append("\tc = img.shape[2] if len(img.shape)>2 else 1");
+    _builder.append("\t");
+    _builder.append("c = img.shape[2] if len(img.shape)>2 else 1");
     _builder.newLine();
-    _builder.append("\tif h == w: ");
+    _builder.append("\t");
+    _builder.append("if h == w: ");
     _builder.newLine();
-    _builder.append("\t\treturn cv2.resize(img, size, cv2.INTER_AREA)");
+    _builder.append("\t\t");
+    _builder.append("return cv2.resize(img, size, cv2.INTER_AREA)");
     _builder.newLine();
-    _builder.append("\tdif = h if h > w else w");
+    _builder.append("\t");
+    _builder.append("dif = h if h > w else w");
     _builder.newLine();
-    _builder.append("\tinterpolation = cv2.INTER_AREA if dif > (size[0]+size[1])//2 else cv2.INTER_CUBIC");
+    _builder.append("\t");
+    _builder.append("interpolation = cv2.INTER_AREA if dif > (size[0]+size[1])//2 else cv2.INTER_CUBIC");
     _builder.newLine();
-    _builder.append("\tx_pos = (dif - w)//2");
+    _builder.append("\t");
+    _builder.append("x_pos = (dif - w)//2");
     _builder.newLine();
-    _builder.append("\ty_pos = (dif - h)//2");
+    _builder.append("\t");
+    _builder.append("y_pos = (dif - h)//2");
     _builder.newLine();
-    _builder.append("\tif len(img.shape) == 2:");
+    _builder.append("\t");
+    _builder.append("if len(img.shape) == 2:");
     _builder.newLine();
-    _builder.append("\t\tmask = np.zeros((dif, dif), dtype=img.dtype)");
+    _builder.append("\t\t");
+    _builder.append("mask = np.zeros((dif, dif), dtype=img.dtype)");
     _builder.newLine();
-    _builder.append("\t\tmask[y_pos:y_pos+h, x_pos:x_pos+w] = img[:h, :w]");
+    _builder.append("\t\t");
+    _builder.append("mask[y_pos:y_pos+h, x_pos:x_pos+w] = img[:h, :w]");
     _builder.newLine();
-    _builder.append("\telse:");
+    _builder.append("\t");
+    _builder.append("else:");
     _builder.newLine();
-    _builder.append("\t\tmask = np.zeros((dif, dif, c), dtype=img.dtype)");
+    _builder.append("\t\t");
+    _builder.append("mask = np.zeros((dif, dif, c), dtype=img.dtype)");
     _builder.newLine();
-    _builder.append("\t\tmask[y_pos:y_pos+h, x_pos:x_pos+w, :] = img[:h, :w, :]");
+    _builder.append("\t\t");
+    _builder.append("mask[y_pos:y_pos+h, x_pos:x_pos+w, :] = img[:h, :w, :]");
     _builder.newLine();
     _builder.append(" ");
     _builder.newLine();
-    _builder.append("\treturn cv2.resize(mask, size, interpolation)");
+    _builder.append("\t");
+    _builder.append("return cv2.resize(mask, size, interpolation)");
     _builder.newLine();
     _builder.newLine();
     return _builder;
@@ -250,18 +265,26 @@ public class ExtendedIMLGenerator extends AbstractGenerator {
                   _builder.append("img = equalize_hist(img)");
                   _builder.newLine();
                 } else {
-                  if ((o instanceof ShowOperation)) {
-                    _builder.append("show_image(img)");
-                    _builder.newLine();
+                  if ((o instanceof FillOperation)) {
+                    _builder.append("img = fill_image(img, ");
+                    int _size = ((FillOperation)o).getSize();
+                    _builder.append(_size);
+                    _builder.append(")");
+                    _builder.newLineIfNotEmpty();
                   } else {
-                    if ((o instanceof SaveOperation)) {
-                      _builder.append("save_image(img, \'");
-                      _builder.append(path);
-                      _builder.append("\')");
-                      _builder.newLineIfNotEmpty();
-                    } else {
-                      _builder.append("# OPERADOR NÃO ENCONTRADO");
+                    if ((o instanceof ShowOperation)) {
+                      _builder.append("show_image(img)");
                       _builder.newLine();
+                    } else {
+                      if ((o instanceof SaveOperation)) {
+                        _builder.append("save_image(img, \'");
+                        _builder.append(path);
+                        _builder.append("\')");
+                        _builder.newLineIfNotEmpty();
+                      } else {
+                        _builder.append("# OPERADOR NÃO ENCONTRADO");
+                        _builder.newLine();
+                      }
                     }
                   }
                 }

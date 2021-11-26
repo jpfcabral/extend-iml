@@ -46,4 +46,4 @@ SaveOperation:
 	"save" var=ID;
 
 FillOperation:
-	"fill" var=ID tam=INT;
+	"fill" var=ID size=INT;
