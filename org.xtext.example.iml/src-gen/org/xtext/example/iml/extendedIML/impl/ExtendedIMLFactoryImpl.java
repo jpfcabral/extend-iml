@@ -67,6 +67,9 @@ public class ExtendedIMLFactoryImpl extends EFactoryImpl implements ExtendedIMLF
     {
       case ExtendedIMLPackage.MODEL: return createModel();
       case ExtendedIMLPackage.ABSTRACT_ELEMENT: return createAbstractElement();
+      case ExtendedIMLPackage.EXPORTER: return createExporter();
+      case ExtendedIMLPackage.SAVE: return createSave();
+      case ExtendedIMLPackage.SHOW: return createShow();
       case ExtendedIMLPackage.IMPORTER: return createImporter();
       case ExtendedIMLPackage.IMAGE_IMPORTER: return createImageImporter();
       case ExtendedIMLPackage.DIR_IMPORTER: return createDirImporter();
@@ -102,6 +105,42 @@ public class ExtendedIMLFactoryImpl extends EFactoryImpl implements ExtendedIMLF
   {
     AbstractElementImpl abstractElement = new AbstractElementImpl();
     return abstractElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Exporter createExporter()
+  {
+    ExporterImpl exporter = new ExporterImpl();
+    return exporter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Save createSave()
+  {
+    SaveImpl save = new SaveImpl();
+    return save;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Show createShow()
+  {
+    ShowImpl show = new ShowImpl();
+    return show;
   }
 
   /**

@@ -86,6 +86,21 @@ public class ExtendedIMLAdapterFactory extends AdapterFactoryImpl
         return createAbstractElementAdapter();
       }
       @Override
+      public Adapter caseExporter(Exporter object)
+      {
+        return createExporterAdapter();
+      }
+      @Override
+      public Adapter caseSave(Save object)
+      {
+        return createSaveAdapter();
+      }
+      @Override
+      public Adapter caseShow(Show object)
+      {
+        return createShowAdapter();
+      }
+      @Override
       public Adapter caseImporter(Importer object)
       {
         return createImporterAdapter();
@@ -173,6 +188,51 @@ public class ExtendedIMLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAbstractElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.iml.extendedIML.Exporter <em>Exporter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.iml.extendedIML.Exporter
+   * @generated
+   */
+  public Adapter createExporterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.iml.extendedIML.Save <em>Save</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.iml.extendedIML.Save
+   * @generated
+   */
+  public Adapter createSaveAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.iml.extendedIML.Show <em>Show</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.iml.extendedIML.Show
+   * @generated
+   */
+  public Adapter createShowAdapter()
   {
     return null;
   }

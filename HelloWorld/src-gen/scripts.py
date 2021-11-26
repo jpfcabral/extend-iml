@@ -55,14 +55,14 @@ img = rotate_image(img, 90)
 img = convert_to_gray(img)
 img = rotate_image(img, 45)
 img = blur_image(img, 0.25)
-img = equalize_hist(img)
 
 # DEBUG 
 
-org.xtext.example.iml.extendedIML.impl.ModelImpl@17d8206b
-org.xtext.example.iml.extendedIML.impl.DirImporterImpl@264bcac5 (pathDir: no.jpg)
-org.xtext.example.iml.extendedIML.impl.RotateOperationImpl@73f7980c (var: A) (degree: 90)
-org.xtext.example.iml.extendedIML.impl.FilterOperationImpl@5a4efe9d (var: A)
-org.xtext.example.iml.extendedIML.impl.RotateOperationImpl@c4356c7 (var: A) (degree: 45)
-org.xtext.example.iml.extendedIML.impl.BlurOperationImpl@7426b868 (var: A) (intensity: 25)
-org.xtext.example.iml.extendedIML.impl.EqualizeOperationImpl@3b5e6918 (var: A)
+org.xtext.example.iml.extendedIML.impl.ModelImpl@71226ef9
+org.xtext.example.iml.extendedIML.impl.DirImporterImpl@59fb952c (pathDir: no.jpg)
+org.xtext.example.iml.extendedIML.impl.RotateOperationImpl@1cb3db19 (var: A) (degree: 90)
+org.xtext.example.iml.extendedIML.impl.FilterOperationImpl@76aebf35 (var: A)
+org.xtext.example.iml.extendedIML.impl.RotateOperationImpl@149942bf (var: A) (degree: 45)
+org.xtext.example.iml.extendedIML.impl.BlurOperationImpl@11cee7f5 (var: A) (intensity: 25)
+org.xtext.example.iml.extendedIML.impl.ShowImpl@13279dc6 (var: A)
+org.xtext.example.iml.extendedIML.impl.SaveImpl@1073cf80 (var: A)

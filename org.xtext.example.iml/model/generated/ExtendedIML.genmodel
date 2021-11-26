@@ -10,6 +10,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExtendedIML.ecore#//Model/elements"/>
     </genClasses>
     <genClasses ecoreClass="ExtendedIML.ecore#//AbstractElement"/>
+    <genClasses ecoreClass="ExtendedIML.ecore#//Exporter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExtendedIML.ecore#//Exporter/var"/>
+    </genClasses>
+    <genClasses ecoreClass="ExtendedIML.ecore#//Save"/>
+    <genClasses ecoreClass="ExtendedIML.ecore#//Show"/>
     <genClasses ecoreClass="ExtendedIML.ecore#//Importer"/>
     <genClasses ecoreClass="ExtendedIML.ecore#//ImageImporter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExtendedIML.ecore#//ImageImporter/name"/>

@@ -87,6 +87,32 @@ public class ExtendedIMLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ExtendedIMLPackage.EXPORTER:
+      {
+        Exporter exporter = (Exporter)theEObject;
+        T result = caseExporter(exporter);
+        if (result == null) result = caseAbstractElement(exporter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ExtendedIMLPackage.SAVE:
+      {
+        Save save = (Save)theEObject;
+        T result = caseSave(save);
+        if (result == null) result = caseExporter(save);
+        if (result == null) result = caseAbstractElement(save);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ExtendedIMLPackage.SHOW:
+      {
+        Show show = (Show)theEObject;
+        T result = caseShow(show);
+        if (result == null) result = caseExporter(show);
+        if (result == null) result = caseAbstractElement(show);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ExtendedIMLPackage.IMPORTER:
       {
         Importer importer = (Importer)theEObject;
@@ -189,6 +215,54 @@ public class ExtendedIMLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAbstractElement(AbstractElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Exporter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Exporter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExporter(Exporter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Save</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Save</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSave(Save object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Show</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Show</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseShow(Show object)
   {
     return null;
   }

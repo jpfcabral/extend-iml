@@ -1,0 +1,40 @@
+grammar org.xtext.example.iml.ExtendedIML with org.eclipse.xtext.common.Terminals
+
+generate extendedIML "http://www.xtext.org/example/iml/ExtendedIML"
+
+Model:
+	elements+=AbstractElement*;
+	
+AbstractElement:
+	Importer | Operator ;
+	
+Importer:
+	ImageImporter | DirImporter;
+
+ImageImporter:
+	name=ID "=" importedNamespace=QualifiedImageName;
+	
+QualifiedImageName:
+	ID;
+	
+QualifiedPath:
+	('/')? ID ('/' ID)* ('.' ID) ('/')?;
+	
+DirImporter:
+	"images" pathDir=QualifiedPath;
+
+Operator:
+	RotateOperation | FilterOperation | BlurOperation | EqualizeOperation;
+
+RotateOperation:
+	"rotate" var=ID degree=INT;
+
+FilterOperation:
+	"filter" var=ID "gray";
+
+BlurOperation:
+	"blur" var=ID intensity=INT;
+
+EqualizeOperation:
+	"equalize" var=ID
+;

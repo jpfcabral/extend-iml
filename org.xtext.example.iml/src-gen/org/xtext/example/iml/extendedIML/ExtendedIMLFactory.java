@@ -42,6 +42,33 @@ public interface ExtendedIMLFactory extends EFactory
   AbstractElement createAbstractElement();
 
   /**
+   * Returns a new object of class '<em>Exporter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Exporter</em>'.
+   * @generated
+   */
+  Exporter createExporter();
+
+  /**
+   * Returns a new object of class '<em>Save</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Save</em>'.
+   * @generated
+   */
+  Save createSave();
+
+  /**
+   * Returns a new object of class '<em>Show</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Show</em>'.
+   * @generated
+   */
+  Show createShow();
+
+  /**
    * Returns a new object of class '<em>Importer</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

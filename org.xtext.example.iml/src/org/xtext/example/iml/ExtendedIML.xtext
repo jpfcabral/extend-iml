@@ -6,7 +6,16 @@ Model:
 	elements+=AbstractElement*;
 	
 AbstractElement:
-	Importer | Operator ;
+	Importer | Operator | Exporter;
+	
+Exporter:
+	Save | Show;
+
+Save:
+	"save" var=ID;
+
+Show:
+	"show" var=ID;
 	
 Importer:
 	ImageImporter | DirImporter;
