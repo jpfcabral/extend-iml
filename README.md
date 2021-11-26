@@ -8,8 +8,7 @@ Discentes:
 
 ## Trabalho final da disciplina de código: PPGTI1007 - 	LINGUAGENS DE DOMÍNIO ESPECÍFICO
 
-A finalidade dessa linguagem é realizar operações em um conjunto de imagens utilizando poucos comandos. 
-Também não é necessária a fluência em linguagens de programação, já que a sintaxe é bem próxima a linguagem natural. 
+A finalidade dessa linguagem é realizar operações em grandes quantidades de imagens utilizando poucos comandos. Não existe obrigação de abrir cada imagem para realizar as operações mas, caso desejado, é possível visualizar o resultado após cada operação. Não é necessária a fluência em linguagens de programação, já que a sintaxe é bem próxima a linguagem natural. 
 
 **Principais Comandos:**
 
@@ -30,3 +29,19 @@ Também não é necessária a fluência em linguagens de programação, já que 
  - `show it` : Esse comando exibe o resultado da última operação realizada numa janela. As operações só continuam depois de fechar a janela.
  
  - `save it` : Salva uma imagem com o resultado da última operação na linguagem em uma pasta criada automaticamente dentro do path de imagens que estão sendo realizadas as operações. Caso o caminho seja `./imagens/` a imagem da última operação é salva como `imagens/outputs/nome_da_imagem_original.jpg`.
+
+
+**Exemplo de código**
+
+```
+path ./imagens/
+fill 300
+rotate by 30 
+filter gray
+rotate 45
+show it
+blur medium
+show
+save
+
+```
